@@ -60,6 +60,6 @@ plot(doublefinal);
 title("final po podzieleniu");
 
 
-sound(doublefinal,Fs);
+%sound(doublefinal,Fs);
 
 audiowrite('output.wav',doublefinal,Fs);
