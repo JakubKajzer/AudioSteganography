@@ -53,10 +53,10 @@ title("final po skalarze");
 
 doublefinal=double(final);
 
-final=final./32768;
+doublefinal=doublefinal./32768;
 
 nexttile;
-plot(final);
+plot(doublefinal);
 title("final po podzieleniu");
 
 
