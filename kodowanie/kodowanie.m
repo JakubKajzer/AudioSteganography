@@ -1,16 +1,15 @@
 clear all;
+close all;
+tiledlayout(3,3);
 [y, Fs] = audioread("sample.wav",[4*44100 7*44100],'native');
 
-
-
-tajne=file2bin('tajne.txt');
-
-
+secret = '100001011001';
 samples = y*32768;
 sample_int = int16(samples);
 sample_int_abs = abs(sample_int);
 
 scalar_matrix = sample_int./sample_int_abs;
+
 scalar_matrix2 = scalar_matrix;
 for i=1:numel(scalar_matrix)
     if scalar_matrix(i)==0        
@@ -18,37 +17,49 @@ for i=1:numel(scalar_matrix)
     end
 end
 
+nexttile;
+plot(sample_int);
+title("sample int");
 
-for i=1:length(samples) %zamiast tego mo¿na przesun¹æ o bit w prawo a potem bit lewo, prostsze w implementacji na FPGA
+nexttile;
+plot(sample_int_abs);
+title("sample int abs");
+
+for i=1:length(sample_int_abs) %zamiast tego mo¿na przesun¹æ o bit w prawo a potem bit lewo, prostsze w implementacji na FPGA
    
-    if mod(samples(i),2)== 1;
-        samples(i)=samples(i)-1;
+    if mod(sample_int_abs(i),2)== 1;
+        sample_int_abs(i)=sample_int_abs(i)-1;
     end
 end
 
-for i=1:length(bity) %kodowanie bitu na LSB
+nexttile;
+plot(sample_int_abs);
+title("sample int abs zerowanie");
+
+for i=1:length(secret) %kodowanie bitu na LSB
    
-    samples(i)=samples(i)+bity(i);
+    sample_int_abs(i)=sample_int_abs(i)+secret(i);
 end
 
+nexttile;
+plot(sample_int_abs);
+title("sample int abs kodowanie");
+
+final = sample_int_abs.*scalar_matrix2;
+
+nexttile;
+plot(final);
+title("final po skalarze");
+
+doublefinal=double(final);
+
+final=final./32768;
+
+nexttile;
+plot(final);
+title("final po podzieleniu");
 
 
-%%%%%NORMALIZACJA I ZMIANA NA DOUBLE%%%%%%%%%
-% double_y=double(y);
-% 
-% maxy=max(double_y);
-% miny=min(double_y);
-% 
-% if abs(maxy) > abs(miny)
-%     dzielnik=maxy;
-% else
-%     dzielnik=miny;
-% end
-% 
-% double_y=double_y./dzielnik;
-% 
+sound(doublefinal,Fs);
 
-
-%sound(yout,Fs);
-%yout=transpose(yout);
-audiowrite('output.wav',yout,Fs,'BitsPerSample',32);
+audiowrite('output.wav',doublefinal,Fs);
