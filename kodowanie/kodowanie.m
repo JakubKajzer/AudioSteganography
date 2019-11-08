@@ -1,9 +1,16 @@
 clear all;
 close all;
-tiledlayout(3,3);
-[y, Fs] = audioread("sample.wav",[4*44100 7*44100],'native');
+[y, Fs] = audioread("sample.wav",'native');
 
-secret = '100001011001';
+secret = "Szczerek to jest elegancki ziomek, ciekawe czy to sie zakoduje"; %Bez polskich znaków
+ack='0100011100000110000111001011'; % '#ACK' binarnie
+secret_char=char(secret);
+secret_bin=dec2bin(secret_char);
+secret_bin=transpose(secret_bin); %dlatego bo reshape ogarnia kolumnowo a nie wierszowo
+secret_bin=reshape(secret_bin,1,[]);
+
+
+
 samples = y*32768;
 sample_int = int16(samples);
 sample_int_abs = abs(sample_int);
@@ -17,14 +24,6 @@ for i=1:numel(scalar_matrix)
     end
 end
 
-nexttile;
-plot(sample_int);
-title("sample int");
-
-nexttile;
-plot(sample_int_abs);
-title("sample int abs");
-
 for i=1:length(sample_int_abs) %zamiast tego mo¿na przesun¹æ o bit w prawo a potem bit lewo, prostsze w implementacji na FPGA
    
     if mod(sample_int_abs(i),2)== 1;
@@ -32,33 +31,30 @@ for i=1:length(sample_int_abs) %zamiast tego mo¿na przesun¹æ o bit w prawo a pot
     end
 end
 
-nexttile;
-plot(sample_int_abs);
-title("sample int abs zerowanie");
-
-for i=1:length(secret) %kodowanie bitu na LSB
-   
-    sample_int_abs(i)=sample_int_abs(i)+secret(i);
+%zapis na ca³ym pliku, ka¿dy zapis bêdzie rozdzielony znakami"#ACK" aby móc
+%rozpoznaæ koniec i pocz¹tek sekwencji. Zapobiega to przez wszystkim przez
+%prób¹ wycinania czêœci pliku dŸwiêkowego. Dodatkowo redundancja danych
+%pozwoli na uzyskanie wiêkszego prawdopodobieñstwa odzyskania danych
+i=1;
+while(length(sample_int_abs)-i > length(ack) + length(secret_bin))%kodowanie bitu na LSB  
+        
+    for j=1:length(ack)
+        sample_int_abs(i)=sample_int_abs(i)+ack(j);
+        i = i + 1;
+    end
+    
+    for j=1:length(secret_bin)
+        sample_int_abs(i)=sample_int_abs(i)+secret_bin(j);
+        i = i + 1;
+    end
 end
-
-nexttile;
-plot(sample_int_abs);
-title("sample int abs kodowanie");
 
 final = sample_int_abs.*scalar_matrix2;
 
-nexttile;
-plot(final);
-title("final po skalarze");
 
 doublefinal=double(final);
 
 doublefinal=doublefinal./32768;
-
-nexttile;
-plot(doublefinal);
-title("final po podzieleniu");
-
 
 %sound(doublefinal,Fs);
 

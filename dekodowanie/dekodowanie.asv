@@ -35,5 +35,3 @@ MoreChoppedText = vec2mat(choppedText,7);
 Wycinek=MoreChoppedText(1:dlugosc_kodu,:);
 Wycinek=bin2dec(Wycinek);
 Wycinek=char(Wycinek);
-Wycinek=transpose(Wycinek);
-Wycinek=string(Wycinek)
