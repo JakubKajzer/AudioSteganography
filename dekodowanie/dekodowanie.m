@@ -20,7 +20,7 @@ ack_string=string(ack);
 
 miejsca=strfind(final_string,ack_string);
 
-dlugosc_kodu=(miejsca(2)-miejsca(1)-length(ack))/7;
+ilosc_liter=(miejsca(2)-miejsca(1)-length(ack))/7;
 
 for i=1 : length(miejsca)-1
     
@@ -32,8 +32,7 @@ end
 
 MoreChoppedText = vec2mat(choppedText,7);
 
-Wycinek=MoreChoppedText(1:dlugosc_kodu,:);
-Wycinek=bin2dec(Wycinek);
-Wycinek=char(Wycinek);
-Wycinek=transpose(Wycinek);
-Wycinek=string(Wycinek)
+MoreChoppedText=bin2dec(MoreChoppedText);
+MoreChoppedText=char(MoreChoppedText);
+MoreChoppedText=transpose(MoreChoppedText);
+decoded= vec2mat(MoreChoppedText,ilosc_liter)
