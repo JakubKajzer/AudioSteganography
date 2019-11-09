@@ -1,0 +1,26 @@
+clear all;
+close all;
+
+[original, Fs] = audioread("sample.wav",'native');
+[coded, Fs] = audioread("output.wav",'native');
+
+tiledlayout(2,2);
+
+nexttile
+original_fft=abs(fft(original));
+original_fft=original_fft./max(original_fft); %normalizacja
+P1 = P2(1:L/2+1);
+P1(2:end-1) = 2*P1(2:end-1);
+plot(original_fft);
+title('Original')
+
+nexttile
+coded_fft=abs(fft(coded));
+coded_fft=coded_fft./max(coded_fft); %normalizacja
+plot(coded_fft);
+title('Coded')
+
+nexttile([1 2])
+diff_fft=abs(original_fft-coded_fft);
+plot(diff_fft);
+title('Differential FFT')
