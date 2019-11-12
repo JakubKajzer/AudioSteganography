@@ -1,7 +1,7 @@
 clear all;
 close all;
 
-[original, Fs] = audioread("sample.wav",'native');
+[original, Fs] = audioread("samplewav.wav",'native');
 [coded, Fs] = audioread("output.wav",'native');
 
 tiledlayout(2,2);

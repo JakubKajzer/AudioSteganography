@@ -1,9 +1,9 @@
 clear all;
 close all;
-[y, Fs] = audioread("sample.wav",'native');
+[y, Fs] = audioread("samplewav.wav",'native');
 
-secret = "Szczerek to jest elegancki ziomek, ciekawe czy to sie zakoduje"; %Bez polskich znaków
-ack='0100011100000110000111001011'; % '#ACK' binarnie
+secret = "CYCKI"; %Bez polskich znaków
+ack='0000110'; % 'ACK' binarnie
 secret_char=char(secret);
 secret_bin=dec2bin(secret_char);
 secret_bin=transpose(secret_bin); %dlatego bo reshape ogarnia kolumnowo a nie wierszowo

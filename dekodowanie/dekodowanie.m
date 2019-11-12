@@ -4,10 +4,10 @@ clear all;
 %samples = y*32768;
 %sample_int = int16(samples);
 
-ack='0100011100000110000111001011'; % '#ACK' binarnie
+ack='0000110'; % 'ACK' binarnie
 
 
-sample_int=y;
+sample_int=int16(y);
 for i=1:length(sample_int)
    
     wynik(i)=mod(sample_int(i),2);
