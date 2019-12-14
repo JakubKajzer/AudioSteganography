@@ -1,0 +1,197 @@
+# Compile of uart.vhd failed with 2 errors.
+# Compile of adder.vhd was successful.
+# Compile of top.vhd was successful.
+# 3 compiles, 1 failed with 2 errors.
+# Compile of uart.vhd failed with 2 errors.
+# Compile of adder.vhd was successful.
+# Compile of top.vhd was successful.
+# 3 compiles, 1 failed with 2 errors.
+# Compile of uart.vhd failed with 2 errors.
+# Compile of adder.vhd was successful.
+# Compile of top.vhd failed with 2 errors.
+# 3 compiles, 2 failed with 4 errors.
+# Compile of uart.vhd was successful.
+# Compile of adder.vhd was successful.
+# Compile of top.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+od run.do
+# invalid command name "od"
+do run.do
+# Compile of uart.vhd was successful.
+# Compile of adder.vhd was successful.
+# Compile of top.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+add wave -position end  sim:/top/rx
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Kajzer  Hostname: DESKTOP-9IT9S7L  ProcessID: 14272
+#           Attempting to use alternate WLF file "./wlft2wjti9".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft2wjti9
+add wave -position end  sim:/top/tx
+add wave -position end  sim:/top/LED
+add wave -position end  sim:/top/U1/sig_state
+do run.do
+# Loading work.top(arch)
+# Loading work.adder(arch)
+# Loading work.uart(logic)
+add wave -position end  sim:/top/U1/tx_data
+add wave -position end  sim:/top/U1/rx_data
+do run.do
+add wave -position end  sim:/top/U1/state_of_rx_busy
+add wave -position end  sim:/top/U1/rx_busy
+do run.do
+add wave -position end  sim:/top/U2/os_pulse
+do run.do
+add wave -position 0  sim:/top/clk
+do run.do
+do run.do
+do run.do
+do run.do
+do run.do
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Kajzer/Desktop/Grant/fpga/simulation/modelsim/wave.do
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Kajzer/Desktop/Grant/fpga/simulation/modelsim/wave.do
+# Compile of uart.vhd was successful.
+# Compile of adder.vhd was successful.
+# Compile of top.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+do run.do
+# Loading work.top(arch)
+# Loading work.adder(arch)
+# Loading work.uart(logic)
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Kajzer/Desktop/Grant/fpga/simulation/modelsim/wave.do
+add wave -position end  sim:/top/U1/secret
+do run.do
+# Compile of uart.vhd was successful.
+# Compile of adder.vhd was successful.
+# Compile of top.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+do run.do
+# Loading work.top(arch)
+# Loading work.adder(arch)
+# Loading work.uart(logic)
+# Compile of uart.vhd was successful.
+# Compile of adder.vhd was successful.
+# Compile of top.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+do run.do
+# Loading work.top(arch)
+# Loading work.adder(arch)
+# Loading work.uart(logic)
+do run.do
+do run.do
+do run.do
+
+do run.do
+add wave -position 1  sim:/top/reset
+do run.do
+do run.do
+# Compile of adder.vhd was successful.
+do run.do
+# Loading work.adder(arch)
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run -all
+# Compile of uart.vhd was successful.
+# Compile of adder.vhd was successful.
+# Compile of top.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+# Compile of uart.vhd was successful.
+# Compile of adder.vhd was successful.
+# Compile of top.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+do run.do
+# Loading work.top(arch)
+# Loading work.adder(arch)
+# Loading work.uart(logic)
+do run.do
+# Compile of adder.vhd was successful.
+add wave -position end  sim:/top/U1/i
+do run.do
+# Loading work.adder(arch)
+run -all
+# Compile of uart.vhd was successful.
+# Compile of adder.vhd was successful.
+# Compile of top.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+do run.do
+# Loading work.top(arch)
+# Loading work.adder(arch)
+# Loading work.uart(logic)
+# Compile of uart.vhd was successful.
+# Compile of adder.vhd was successful.
+# Compile of top.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+do run.do
+# Loading work.top(arch)
+# Loading ieee.numeric_std(body)
+# Loading work.adder(arch)
+# Loading work.uart(logic)
+do run.do
+# Compile of uart.vhd was successful.
+# Compile of adder.vhd was successful.
+# Compile of top.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+do run.do
+# Loading work.top(arch)
+# Loading work.adder(arch)
+# Loading work.uart(logic)
+add wave -position end  sim:/top/U2/tx_state
+add wave -position end  sim:/top/U2/tx_buffer
+do run.do
+# Compile of uart.vhd was successful.
+# Compile of adder.vhd was successful.
+# Compile of top.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+do run.do
+# Loading work.top(arch)
+# Loading work.adder(arch)
+# Loading work.uart(logic)
+# Compile of uart.vhd was successful.
+# Compile of adder.vhd failed with 2 errors.
+# Compile of top.vhd was successful.
+# 3 compiles, 1 failed with 2 errors.
+# Compile of uart.vhd was successful.
+# Compile of adder.vhd was successful.
+# Compile of top.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+do run.do
+# Loading work.top(arch)
+# Loading work.adder(arch)
+# Loading work.uart(logic)
+# Warning in wave window restart: (vish-4014) No objects found matching '/top/U1/i'. 
+run
+run
+do run.do
+do run.do
+do run.do
+# Compile of uart.vhd was successful.
+# Compile of adder.vhd was successful.
+# Compile of top.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+do run.do
+# Loading work.top(arch)
+# Loading work.adder(arch)
+# Loading work.uart(logic)
+add wave -position end  sim:/top/U1/output
+do run.do
+do run.do
+# Compile of uart.vhd was successful.
+# Compile of adder.vhd was successful.
+# Compile of top.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+do run.do
+# Loading work.top(arch)
+# Loading work.adder(arch)
+# Loading work.uart(logic)
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Kajzer/Desktop/Grant/fpga/simulation/modelsim/wave.do
+# End time: 18:49:42 on Dec 14,2019, Elapsed time: 43:59:50
+# Errors: 2, Warnings: 2

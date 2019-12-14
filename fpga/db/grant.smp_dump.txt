@@ -1,0 +1,6 @@
+
+State Machine - |top|adder:U1|sig_state
+Name sig_state.S2 sig_state.S1 sig_state.S0 
+sig_state.S0 0 0 0 
+sig_state.S1 0 1 1 
+sig_state.S2 1 0 1 

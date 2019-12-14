@@ -2,7 +2,7 @@ clear all;
 close all;
 [y, Fs] = audioread("samplewav.wav",'native');
 
-secret = "CYCKI"; %Bez polskich znaków
+secret = "SEKRETY RETY"; %Bez polskich znaków
 ack='0000110'; % 'ACK' binarnie
 secret_char=char(secret);
 secret_bin=dec2bin(secret_char);

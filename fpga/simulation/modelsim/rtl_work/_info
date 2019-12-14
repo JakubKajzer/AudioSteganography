@@ -1,0 +1,129 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Kajzer/Desktop/Grant/fpga/simulation/modelsim
+Eadder
+Z1 w1576349224
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/Users/Kajzer/Desktop/Grant/fpga/adder.vhd
+Z6 FC:/Users/Kajzer/Desktop/Grant/fpga/adder.vhd
+l0
+L6
+V`_bKU6dNd1mEQ[g6O[P2Y2
+!s100 kz0:WAPRKVC=LBIA=2Sn>0
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1576349347
+!i10b 1
+Z9 !s108 1576349347.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Kajzer/Desktop/Grant/fpga/adder.vhd|
+Z11 !s107 C:/Users/Kajzer/Desktop/Grant/fpga/adder.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Aarch
+R2
+R3
+R4
+DEx4 work 5 adder 0 22 `_bKU6dNd1mEQ[g6O[P2Y2
+l34
+L18
+VKWV>912dhgGT4kA>bh@Lz0
+!s100 k?1AIZQj8PZ8CQUKJinK21
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Etop
+Z14 w1576349138
+R3
+R4
+R0
+Z15 8C:/Users/Kajzer/Desktop/Grant/fpga/top.vhd
+Z16 FC:/Users/Kajzer/Desktop/Grant/fpga/top.vhd
+l0
+L5
+VgQ3D6J2TOM9=Aon;9KMTE0
+!s100 ^<QQWKXd;X>;1F0]PVO1D1
+R7
+31
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/Kajzer/Desktop/Grant/fpga/top.vhd|
+Z18 !s107 C:/Users/Kajzer/Desktop/Grant/fpga/top.vhd|
+!i113 1
+R12
+R13
+Aarch
+R3
+R4
+DEx4 work 3 top 0 22 gQ3D6J2TOM9=Aon;9KMTE0
+l55
+L14
+V?e04Nk9K;G;;`DiXR;5Nm1
+!s100 mP2G;DlNhzK@6?XLEOfhW0
+R7
+31
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Euart
+R14
+R3
+R4
+R0
+Z19 8C:/Users/Kajzer/Desktop/Grant/fpga/uart.vhd
+Z20 FC:/Users/Kajzer/Desktop/Grant/fpga/uart.vhd
+l0
+L26
+V=a7=AUDg;@T5FkX8mJaWV0
+!s100 9X2S9M@FbSYFBN^8g>J2i1
+R7
+31
+R8
+!i10b 1
+R9
+Z21 !s90 -reportprogress|300|-93|-work|work|C:/Users/Kajzer/Desktop/Grant/fpga/uart.vhd|
+Z22 !s107 C:/Users/Kajzer/Desktop/Grant/fpga/uart.vhd|
+!i113 1
+R12
+R13
+Alogic
+R3
+R4
+DEx4 work 4 uart 0 22 =a7=AUDg;@T5FkX8mJaWV0
+l59
+L47
+Vi?nJTJ7z6MK?]9CgHWBX13
+!s100 XgA6?@TmN^D1<mCCf0zdn0
+R7
+31
+R8
+!i10b 1
+R9
+R21
+R22
+!i113 1
+R12
+R13
