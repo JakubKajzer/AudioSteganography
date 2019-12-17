@@ -15,7 +15,8 @@ ARCHITECTURE arch OF top IS
 
   COMPONENT adder IS
   PORT(
-    clk   : IN    STD_LOGIC;                    --system clock
+    clk     : IN    STD_LOGIC;                    --system clock
+    reset_n : IN    STD_LOGIC;
     tx_ena  : OUT    STD_LOGIC;                    --initiate transmission
     tx_data : OUT    STD_LOGIC_VECTOR(7 DOWNTO 0);  --data to transmit
     rx_busy : IN STD_LOGIC;                    --data reception in progress       
@@ -28,7 +29,7 @@ END COMPONENT;
 COMPONENT uart IS
   GENERIC(
     clk_freq    : INTEGER   := 50_000_000;  --frequency of system clock in Hertz
-    baud_rate : INTEGER   := 115_200;--19_200;    --data link baud rate in bits/second
+    baud_rate : INTEGER   := 9_600;--19_200;    --data link baud rate in bits/second
     os_rate   : INTEGER   := 16;      --oversampling rate to find center of receive bits (in samples per baud period)
     d_width   : INTEGER   := 8;       --data bus width
     parity    : INTEGER   := 1;       --0 for no parity, 1 for parity
@@ -53,7 +54,7 @@ END COMPONENT;
   SIGNAL  Stx_busy : STD_LOGIC;                  
 
 BEGIN
-  U1: adder port map(clk,Stx_ena,Stx_data,Srx_busy,Srx_data,Stx_busy,LED);
+  U1: adder port map(clk,reset,Stx_ena,Stx_data,Srx_busy,Srx_data,Stx_busy,LED);
   U2: uart port map(clk,reset,Stx_ena,Stx_data,rx,Srx_busy,open,Srx_data,Stx_busy,tx);
   
 END arch;

@@ -66,3 +66,87 @@ force -freeze sim:/top/rx 1 0
 run  8000
 force -freeze sim:/top/rx 1 0
 run  8000
+
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 1 0
+run  8000
+force -freeze sim:/top/rx 1 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 1 0
+run  8000
+force -freeze sim:/top/rx 1 0
+run  8000
+
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 1 0
+run  8000
+force -freeze sim:/top/rx 1 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 1 0
+run  8000
+force -freeze sim:/top/rx 1 0
+run  8000
+
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 1 0
+run  8000
+force -freeze sim:/top/rx 1 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 1 0
+run  8000
+force -freeze sim:/top/rx 1 0
+run  8000
+
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 1 0
+run  8000
+force -freeze sim:/top/rx 1 0
+run  8000
+force -freeze sim:/top/rx 0 0
+run  8000
+force -freeze sim:/top/rx 1 0
+run  8000
+force -freeze sim:/top/rx 1 0
+run  8000

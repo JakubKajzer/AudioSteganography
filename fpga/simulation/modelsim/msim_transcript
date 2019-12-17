@@ -12,18 +12,18 @@
 # 
 # vcom -93 -work work {C:/Users/Kajzer/Desktop/Grant/fpga/top.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:49:07 on Dec 14,2019
+# Start time: 15:36:04 on Dec 15,2019
 # vcom -reportprogress 300 -93 -work work C:/Users/Kajzer/Desktop/Grant/fpga/top.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity top
 # -- Compiling architecture arch of top
-# End time: 19:49:07 on Dec 14,2019, Elapsed time: 0:00:00
+# End time: 15:36:04 on Dec 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Kajzer/Desktop/Grant/fpga/adder.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:49:07 on Dec 14,2019
+# Start time: 15:36:05 on Dec 15,2019
 # vcom -reportprogress 300 -93 -work work C:/Users/Kajzer/Desktop/Grant/fpga/adder.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -31,23 +31,35 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity adder
 # -- Compiling architecture arch of adder
-# End time: 19:49:07 on Dec 14,2019, Elapsed time: 0:00:00
+# End time: 15:36:05 on Dec 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Kajzer/Desktop/Grant/fpga/uart.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:49:07 on Dec 14,2019
+# Start time: 15:36:05 on Dec 15,2019
 # vcom -reportprogress 300 -93 -work work C:/Users/Kajzer/Desktop/Grant/fpga/uart.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity uart
 # -- Compiling architecture logic of uart
-# End time: 19:49:07 on Dec 14,2019, Elapsed time: 0:00:00
+# End time: 15:36:05 on Dec 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
+vsim work.top
+# vsim work.top 
+# Start time: 15:36:09 on Dec 15,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.top(arch)
+# Loading ieee.numeric_std(body)
+# Loading work.adder(arch)
+# Loading work.uart(logic)
 vsim work.top(arch)
+# End time: 15:36:16 on Dec 15,2019, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 0
 # vsim work.top(arch) 
-# Start time: 19:49:10 on Dec 14,2019
+# Start time: 15:36:16 on Dec 15,2019
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -58,46 +70,15 @@ vsim work.top(arch)
 do wave.do
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: Kajzer  Hostname: DESKTOP-9IT9S7L  ProcessID: 14272
-#           Attempting to use alternate WLF file "./wlftxqw419".
+#           Attempting to use alternate WLF file "./wlftfc4iq3".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftxqw419
-do run.do
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-do .run .do
-# Cannot open macro file: .run
+#           Using alternate file: ./wlftfc4iq3
+# ** Error: (vish-4014) No objects found matching '/top/U1/output'.
+# Executing ONERROR command at macro ./wave.do line 14
 do run.do
 do run.do
+# Break key hit
+run -all
 do run.do
-do run.do
-do run.do
-do run.do
-# End time: 23:39:52 on Dec 14,2019, Elapsed time: 3:50:42
-# Errors: 1, Warnings: 2
+# End time: 16:02:12 on Dec 15,2019, Elapsed time: 0:25:56
+# Errors: 3, Warnings: 2

@@ -15,6 +15,7 @@ USE ieee.numeric_std.all;
 ENTITY adder IS
   PORT(
     clk     : IN    STD_LOGIC;                     --system clock
+    reset_n : IN    STD_LOGIC;
     tx_ena  : OUT   STD_LOGIC;                     --initiate transmission
     tx_data : OUT   STD_LOGIC_VECTOR(7 DOWNTO 0);  --data to transmit
     rx_busy : IN    STD_LOGIC;                     --data reception in progress       
@@ -38,10 +39,17 @@ ARCHITECTURE arch OF adder IS
 
 BEGIN
 
-  PROCESS(clk)
+  PROCESS(reset_n,clk)
   VARIABLE i : INTEGER RANGE 0 TO 16 := 0;
-  BEGIN                       
-    IF(rising_edge(clk)) THEN
+  BEGIN       
+    IF reset_n = '0' THEN
+      secret <= (OTHERS => '0');
+      tmp <= (OTHERS => '0');
+      state_of_rx_busy <= '0';
+      sig_state <= S0;
+      i := 0;
+                    
+    ELSIF(rising_edge(clk)) THEN
       
       CASE sig_state IS
 
@@ -58,7 +66,7 @@ BEGIN
          IF (state_of_rx_busy = '1' AND rx_busy = '0' ) THEN 
             tmp <= rx_data;
             IF i MOD 2 = 1 THEN
-              tmp <= tmp(7 DOWNTO 1) & secret(i/2);
+              tmp <= tmp(7 DOWNTO 1) & secret(7-(i/2));
             END IF;
             i := i+1;
             state_of_rx_busy <= '0';
