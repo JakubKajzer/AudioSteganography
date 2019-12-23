@@ -26,10 +26,10 @@ USE ieee.std_logic_1164.all;
 ENTITY uart IS
   GENERIC(
     clk_freq    : INTEGER   := 50_000_000;  --frequency of system clock in Hertz
-    baud_rate : INTEGER   := 9_600;--19_200;    --data link baud rate in bits/second
+    baud_rate : INTEGER   := 460800;--19_200;    --data link baud rate in bits/second
     os_rate   : INTEGER   := 16;      --oversampling rate to find center of receive bits (in samples per baud period)
     d_width   : INTEGER   := 8;       --data bus width
-    parity    : INTEGER   := 0;       --0 for no parity, 1 for parity
+    parity    : INTEGER   := 1;       --0 for no parity, 1 for parity
     parity_eo : STD_LOGIC := '0');      --'0' for even, '1' for odd parity
   PORT(
     clk   : IN    STD_LOGIC;                    --system clock

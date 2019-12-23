@@ -1,61 +1,59 @@
 clear all;
 close all;
 [y, Fs] = audioread("samplewav.wav",'native');
-
+%%
+s = serialport("COM8",460800);
+s.Parity = "even";
+s.ByteOrder = "big-endian";
+s.Timeout = 2;
+configureTerminator(s,"LF");
+%%
 secret = "SEKRETY RETY"; %Bez polskich znaków
 ack='0000110'; % 'ACK' binarnie
-secret_char=char(secret);
-secret_bin=dec2bin(secret_char);
+secret_bin=dec2bin(char(secret));
 secret_bin=transpose(secret_bin); %dlatego bo reshape ogarnia kolumnowo a nie wierszowo
 secret_bin=reshape(secret_bin,1,[]);
+secret_to_send=[];
+while (length(secret_to_send)+length(secret_bin)+length(ack)<length(y))
+   secret_to_send=[secret_to_send,ack,secret_bin]; 
+end
+secret_to_send=reshape(secret_to_send,1,[]);
+dopelnienie=mod(length(secret_to_send),8); %% powinno byæ do iloœci próbek, a potem do 8 dope³nienie
+secret_to_send=[secret_to_send,zeros(1,8-dopelnienie)];
+secret_to_send=reshape(secret_to_send,[],8);
 
+clear secret_bin,dopelnienie; 
 
 
 samples = y*32768;
-sample_int = int16(samples);
-sample_int_abs = abs(sample_int);
+samples = int16(samples);
+clear y;
+coded = [];
+%%%DOPISAÆ RESET PO UARCIE PO WYS£ANIU WSZYSTKIEGO
+%%
+j = 1;
+i = 1;
+% for i=1 :8: length(samples)
+      tic
+     write(s,bin2dec(secret_to_send(j,:)),'uint8');
+     write(s,samples(i)  ,'int16');
+     write(s,samples(i+1),'int16');
+     write(s,samples(i+2),'int16');
+     write(s,samples(i+3),'int16');
+     write(s,samples(i+4),'int16');
+     write(s,samples(i+5),'int16');
+     write(s,samples(i+6),'int16');
+     write(s,samples(i+7),'int16');
+     
+     coded=[coded;read(s,8,'int16')];
+     j=j+1;
+           toc
+% end;
 
-scalar_matrix = sample_int./sample_int_abs;
+final=double(coded);
 
-scalar_matrix2 = scalar_matrix;
-for i=1:numel(scalar_matrix)
-    if scalar_matrix(i)==0        
-        scalar_matrix2(i)=1;
-    end
-end
+final=final./32768;
 
-for i=1:length(sample_int_abs) %zamiast tego mo¿na przesun¹æ o bit w prawo a potem bit lewo, prostsze w implementacji na FPGA
-   
-    if mod(sample_int_abs(i),2)== 1;
-        sample_int_abs(i)=sample_int_abs(i)-1;
-    end
-end
+sound(final,Fs);
 
-%zapis na ca³ym pliku, ka¿dy zapis bêdzie rozdzielony znakami"#ACK" aby móc
-%rozpoznaæ koniec i pocz¹tek sekwencji. Zapobiega to przez wszystkim przez
-%prób¹ wycinania czêœci pliku dŸwiêkowego. Dodatkowo redundancja danych
-%pozwoli na uzyskanie wiêkszego prawdopodobieñstwa odzyskania danych
-i=1;
-while(length(sample_int_abs)-i > length(ack) + length(secret_bin))%kodowanie bitu na LSB  
-        
-    for j=1:length(ack)
-        sample_int_abs(i)=sample_int_abs(i)+ack(j);
-        i = i + 1;
-    end
-    
-    for j=1:length(secret_bin)
-        sample_int_abs(i)=sample_int_abs(i)+secret_bin(j);
-        i = i + 1;
-    end
-end
-
-final = sample_int_abs.*scalar_matrix2;
-
-
-doublefinal=double(final);
-
-doublefinal=doublefinal./32768;
-
-%sound(doublefinal,Fs);
-
-audiowrite('output.wav',doublefinal,Fs);
+audiowrite('output.wav',final,Fs);

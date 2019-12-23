@@ -12,18 +12,18 @@
 # 
 # vcom -93 -work work {C:/Users/Kajzer/Desktop/Grant/fpga/top.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:36:04 on Dec 15,2019
+# Start time: 18:00:44 on Dec 22,2019
 # vcom -reportprogress 300 -93 -work work C:/Users/Kajzer/Desktop/Grant/fpga/top.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity top
 # -- Compiling architecture arch of top
-# End time: 15:36:04 on Dec 15,2019, Elapsed time: 0:00:00
+# End time: 18:00:44 on Dec 22,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Kajzer/Desktop/Grant/fpga/adder.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:36:05 on Dec 15,2019
+# Start time: 18:00:44 on Dec 22,2019
 # vcom -reportprogress 300 -93 -work work C:/Users/Kajzer/Desktop/Grant/fpga/adder.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -31,35 +31,23 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity adder
 # -- Compiling architecture arch of adder
-# End time: 15:36:05 on Dec 15,2019, Elapsed time: 0:00:00
+# End time: 18:00:45 on Dec 22,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Kajzer/Desktop/Grant/fpga/uart.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:36:05 on Dec 15,2019
+# Start time: 18:00:45 on Dec 22,2019
 # vcom -reportprogress 300 -93 -work work C:/Users/Kajzer/Desktop/Grant/fpga/uart.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity uart
 # -- Compiling architecture logic of uart
-# End time: 15:36:05 on Dec 15,2019, Elapsed time: 0:00:00
+# End time: 18:00:45 on Dec 22,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-vsim work.top
-# vsim work.top 
-# Start time: 15:36:09 on Dec 15,2019
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.top(arch)
-# Loading ieee.numeric_std(body)
-# Loading work.adder(arch)
-# Loading work.uart(logic)
 vsim work.top(arch)
-# End time: 15:36:16 on Dec 15,2019, Elapsed time: 0:00:07
-# Errors: 0, Warnings: 0
 # vsim work.top(arch) 
-# Start time: 15:36:16 on Dec 15,2019
+# Start time: 18:00:48 on Dec 22,2019
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -70,15 +58,110 @@ vsim work.top(arch)
 do wave.do
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: Kajzer  Hostname: DESKTOP-9IT9S7L  ProcessID: 14272
-#           Attempting to use alternate WLF file "./wlftfc4iq3".
+#           Attempting to use alternate WLF file "./wlftdc4hmw".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftfc4iq3
+#           Using alternate file: ./wlftdc4hmw
 # ** Error: (vish-4014) No objects found matching '/top/U1/output'.
 # Executing ONERROR command at macro ./wave.do line 14
 do run.do
+do run.doo
+# Cannot open macro file: run.doo
 do run.do
-# Break key hit
-run -all
+help run
+# The run command advances the simulation by the specified number of timesteps.
+# Usage: run {[<timesteps>[<time_units>]] | -all | -continue| -init | -next | -over [<n>]} | {-step [<n>] [-current] [-out] [-over [<n>]] [-this "this ==<class_handle>]}
 do run.do
-# End time: 16:02:12 on Dec 15,2019, Elapsed time: 0:25:56
-# Errors: 3, Warnings: 2
+do run.do
+vcom -93 -work work C:/Users/Kajzer/Desktop/Grant/fpga/adder.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:06:20 on Dec 22,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/Kajzer/Desktop/Grant/fpga/adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity adder
+# -- Compiling architecture arch of adder
+# End time: 18:06:20 on Dec 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/Kajzer/Desktop/Grant/fpga/top.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:06:20 on Dec 22,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/Kajzer/Desktop/Grant/fpga/top.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity top
+# -- Compiling architecture arch of top
+# End time: 18:06:20 on Dec 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/Kajzer/Desktop/Grant/fpga/top.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:06:20 on Dec 22,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/Kajzer/Desktop/Grant/fpga/top.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity top
+# -- Compiling architecture arch of top
+# End time: 18:06:20 on Dec 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/Kajzer/Desktop/Grant/fpga/uart.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:06:20 on Dec 22,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/Kajzer/Desktop/Grant/fpga/uart.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity uart
+# -- Compiling architecture logic of uart
+# End time: 18:06:21 on Dec 22,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+do run.do
+# Loading work.top(arch)
+# Loading work.adder(arch)
+# Loading work.uart(logic)
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Kajzer/Desktop/Grant/fpga/simulation/modelsim/wave.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 19:56:59 on Dec 22,2019, Elapsed time: 1:56:11
+# Errors: 4, Warnings: 2

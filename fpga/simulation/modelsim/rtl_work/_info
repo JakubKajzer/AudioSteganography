@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/Kajzer/Desktop/Grant/fpga/simulation/modelsim
 Eadder
-Z1 w1576363075
+Z1 w1577033757
 Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
@@ -18,13 +18,13 @@ Z5 8C:/Users/Kajzer/Desktop/Grant/fpga/adder.vhd
 Z6 FC:/Users/Kajzer/Desktop/Grant/fpga/adder.vhd
 l0
 L15
-V5hJ3lHG8TDIHi1nKIj=Pa1
-!s100 K1kG;PVFdRkJkEbB52n0Y0
+VS<fGnY=;C`SgdG?cEfB`g2
+!s100 ?zaLajoZ^k9]>k`zYieO_2
 Z7 OV;C;10.5b;63
 31
-Z8 !s110 1576420565
+Z8 !s110 1577034380
 !i10b 1
-Z9 !s108 1576420565.000000
+Z9 !s108 1577034380.000000
 Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Kajzer/Desktop/Grant/fpga/adder.vhd|
 Z11 !s107 C:/Users/Kajzer/Desktop/Grant/fpga/adder.vhd|
 !i113 1
@@ -34,11 +34,11 @@ Aarch
 R2
 R3
 R4
-DEx4 work 5 adder 0 22 5hJ3lHG8TDIHi1nKIj=Pa1
+DEx4 work 5 adder 0 22 S<fGnY=;C`SgdG?cEfB`g2
 l39
-L27
-V::RhIHGYfQh5AWN`zM9Jn1
-!s100 WPTVojXJ9AnV[z8mPCA^i1
+L28
+V`Mj5CCVF]NR@gEZnjUHSA0
+!s100 RaH<CWfFV?6l@3[CAK<d43
 R7
 31
 R8
@@ -50,7 +50,7 @@ R11
 R12
 R13
 Etop
-Z14 w1576349138
+Z14 w1577034362
 R3
 R4
 R0
@@ -62,11 +62,11 @@ VgQ3D6J2TOM9=Aon;9KMTE0
 !s100 ^<QQWKXd;X>;1F0]PVO1D1
 R7
 31
-Z17 !s110 1576420564
+R8
 !i10b 1
-Z18 !s108 1576420564.000000
-Z19 !s90 -reportprogress|300|-93|-work|work|C:/Users/Kajzer/Desktop/Grant/fpga/top.vhd|
-Z20 !s107 C:/Users/Kajzer/Desktop/Grant/fpga/top.vhd|
+R9
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/Kajzer/Desktop/Grant/fpga/top.vhd|
+Z18 !s107 C:/Users/Kajzer/Desktop/Grant/fpga/top.vhd|
 !i113 1
 R12
 R13
@@ -74,56 +74,56 @@ Aarch
 R3
 R4
 DEx4 work 3 top 0 22 gQ3D6J2TOM9=Aon;9KMTE0
-l55
+l56
 L14
-V?e04Nk9K;G;;`DiXR;5Nm1
-!s100 mP2G;DlNhzK@6?XLEOfhW0
-R7
-31
-R17
-!i10b 1
-R18
-R19
-R20
-!i113 1
-R12
-R13
-Euart
-R14
-R3
-R4
-R0
-Z21 8C:/Users/Kajzer/Desktop/Grant/fpga/uart.vhd
-Z22 FC:/Users/Kajzer/Desktop/Grant/fpga/uart.vhd
-l0
-L26
-V=a7=AUDg;@T5FkX8mJaWV0
-!s100 9X2S9M@FbSYFBN^8g>J2i1
+VD<D__o3:fYbK]eWS1SFZg3
+!s100 o2;FNO3i29CXlXcV>>D0S3
 R7
 31
 R8
 !i10b 1
 R9
-Z23 !s90 -reportprogress|300|-93|-work|work|C:/Users/Kajzer/Desktop/Grant/fpga/uart.vhd|
-Z24 !s107 C:/Users/Kajzer/Desktop/Grant/fpga/uart.vhd|
+R17
+R18
+!i113 1
+R12
+R13
+Euart
+Z19 w1577034365
+R3
+R4
+R0
+Z20 8C:/Users/Kajzer/Desktop/Grant/fpga/uart.vhd
+Z21 FC:/Users/Kajzer/Desktop/Grant/fpga/uart.vhd
+l0
+L26
+V[0h<nEAYFVML4<a]oKMYN3
+!s100 ^GzaLYZ;h]C9D__BFJ=4e3
+R7
+31
+R8
+!i10b 1
+R9
+Z22 !s90 -reportprogress|300|-93|-work|work|C:/Users/Kajzer/Desktop/Grant/fpga/uart.vhd|
+Z23 !s107 C:/Users/Kajzer/Desktop/Grant/fpga/uart.vhd|
 !i113 1
 R12
 R13
 Alogic
 R3
 R4
-DEx4 work 4 uart 0 22 =a7=AUDg;@T5FkX8mJaWV0
+DEx4 work 4 uart 0 22 [0h<nEAYFVML4<a]oKMYN3
 l59
 L47
-Vi?nJTJ7z6MK?]9CgHWBX13
-!s100 XgA6?@TmN^D1<mCCf0zdn0
+Z24 Vi?nJTJ7z6MK?]9CgHWBX13
+Z25 !s100 XgA6?@TmN^D1<mCCf0zdn0
 R7
 31
 R8
 !i10b 1
 R9
+R22
 R23
-R24
 !i113 1
 R12
 R13

@@ -1,5 +1,5 @@
 Timing Analyzer report for grant
-Mon Dec 16 21:58:04 2019
+Mon Dec 23 15:00:36 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -98,13 +98,12 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.02        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.7%      ;
-;     Processors 3-4         ;   0.5%      ;
+;     Processors 2-4         ;   0.4%      ;
 +----------------------------+-------------+
 
 
@@ -117,13 +116,13 @@ refer to the applicable agreement for further details.
 +------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
 
 
-+--------------------------------------------------+
-; Slow 1200mV 85C Model Fmax Summary               ;
-+------------+-----------------+------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
-+------------+-----------------+------------+------+
-; 224.77 MHz ; 224.77 MHz      ; clk        ;      ;
-+------------+-----------------+------------+------+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                        ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 266.03 MHz ; 250.0 MHz       ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -138,7 +137,7 @@ HTML report is unavailable in plain text report export.
 +-------+--------+--------------------+
 ; Clock ; Slack  ; End Point TNS      ;
 +-------+--------+--------------------+
-; clk   ; -3.449 ; -238.390           ;
+; clk   ; -2.759 ; -152.890           ;
 +-------+--------+--------------------+
 
 
@@ -168,116 +167,116 @@ No paths to report.
 +-------+--------+----------------------------------+
 ; Clock ; Slack  ; End Point TNS                    ;
 +-------+--------+----------------------------------+
-; clk   ; -3.000 ; -156.161                         ;
+; clk   ; -3.000 ; -126.421                         ;
 +-------+--------+----------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Setup: 'clk'                                                                                            ;
-+--------+------------------------+-----------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node              ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+------------------------+-----------------------+--------------+-------------+--------------+------------+------------+
-; -3.449 ; uart:U2|count_baud[3]  ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.843      ;
-; -3.365 ; uart:U2|count_baud[0]  ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.759      ;
-; -3.364 ; uart:U2|count_baud[3]  ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.758      ;
-; -3.303 ; uart:U2|count_baud[3]  ; uart:U2|count_os[6]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.697      ;
-; -3.268 ; uart:U2|count_baud[0]  ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.662      ;
-; -3.220 ; uart:U2|count_baud[2]  ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.614      ;
-; -3.219 ; uart:U2|count_baud[0]  ; uart:U2|count_os[6]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.613      ;
-; -3.218 ; uart:U2|count_baud[3]  ; uart:U2|count_os[5]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.612      ;
-; -3.192 ; uart:U2|rx_count[0]    ; uart:U2|rx_data[1]    ; clk          ; clk         ; 1.000        ; -0.081     ; 4.112      ;
-; -3.192 ; uart:U2|rx_count[0]    ; uart:U2|rx_data[3]    ; clk          ; clk         ; 1.000        ; -0.081     ; 4.112      ;
-; -3.157 ; uart:U2|count_baud[3]  ; uart:U2|count_os[4]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.551      ;
-; -3.147 ; uart:U2|rx_count[3]    ; uart:U2|rx_data[1]    ; clk          ; clk         ; 1.000        ; -0.081     ; 4.067      ;
-; -3.147 ; uart:U2|rx_count[3]    ; uart:U2|rx_data[3]    ; clk          ; clk         ; 1.000        ; -0.081     ; 4.067      ;
-; -3.129 ; uart:U2|count_baud[2]  ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.523      ;
-; -3.122 ; uart:U2|count_baud[0]  ; uart:U2|count_os[5]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.516      ;
-; -3.074 ; uart:U2|count_baud[2]  ; uart:U2|count_os[6]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.468      ;
-; -3.073 ; uart:U2|count_baud[0]  ; uart:U2|count_os[4]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.467      ;
-; -3.072 ; uart:U2|count_baud[3]  ; uart:U2|count_os[3]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.466      ;
-; -3.072 ; uart:U2|count_baud[1]  ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.466      ;
-; -3.051 ; uart:U2|count_baud[5]  ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.445      ;
-; -3.011 ; uart:U2|count_baud[3]  ; uart:U2|count_os[2]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.405      ;
-; -2.996 ; uart:U2|count_baud[1]  ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.390      ;
-; -2.983 ; uart:U2|rx_count[0]    ; uart:U2|rx_data[0]    ; clk          ; clk         ; 1.000        ; -0.081     ; 3.903      ;
-; -2.983 ; uart:U2|rx_count[0]    ; uart:U2|rx_buffer[1]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.903      ;
-; -2.983 ; uart:U2|rx_count[0]    ; uart:U2|rx_data[2]    ; clk          ; clk         ; 1.000        ; -0.081     ; 3.903      ;
-; -2.983 ; uart:U2|rx_count[0]    ; uart:U2|rx_buffer[2]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.903      ;
-; -2.983 ; uart:U2|rx_count[0]    ; uart:U2|rx_buffer[3]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.903      ;
-; -2.983 ; uart:U2|rx_count[0]    ; uart:U2|rx_buffer[4]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.903      ;
-; -2.983 ; uart:U2|rx_count[0]    ; uart:U2|rx_data[4]    ; clk          ; clk         ; 1.000        ; -0.081     ; 3.903      ;
-; -2.983 ; uart:U2|rx_count[0]    ; uart:U2|rx_data[5]    ; clk          ; clk         ; 1.000        ; -0.081     ; 3.903      ;
-; -2.983 ; uart:U2|rx_count[0]    ; uart:U2|rx_buffer[5]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.903      ;
-; -2.983 ; uart:U2|rx_count[0]    ; uart:U2|rx_buffer[6]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.903      ;
-; -2.983 ; uart:U2|rx_count[0]    ; uart:U2|rx_data[6]    ; clk          ; clk         ; 1.000        ; -0.081     ; 3.903      ;
-; -2.983 ; uart:U2|rx_count[0]    ; uart:U2|rx_data[7]    ; clk          ; clk         ; 1.000        ; -0.081     ; 3.903      ;
-; -2.983 ; uart:U2|rx_count[0]    ; uart:U2|rx_buffer[7]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.903      ;
-; -2.983 ; uart:U2|rx_count[0]    ; uart:U2|rx_buffer[8]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.903      ;
-; -2.983 ; uart:U2|rx_count[0]    ; uart:U2|rx_buffer[9]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.903      ;
-; -2.983 ; uart:U2|count_baud[2]  ; uart:U2|count_os[5]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.377      ;
-; -2.976 ; uart:U2|count_baud[0]  ; uart:U2|count_os[3]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.370      ;
-; -2.960 ; uart:U2|count_baud[3]  ; uart:U2|count_baud[4] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.880      ;
-; -2.960 ; uart:U2|count_baud[3]  ; uart:U2|count_baud[0] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.880      ;
-; -2.960 ; uart:U2|count_baud[3]  ; uart:U2|count_baud[1] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.880      ;
-; -2.960 ; uart:U2|count_baud[3]  ; uart:U2|count_baud[2] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.880      ;
-; -2.960 ; uart:U2|count_baud[3]  ; uart:U2|count_baud[3] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.880      ;
-; -2.960 ; uart:U2|count_baud[3]  ; uart:U2|count_baud[5] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.880      ;
-; -2.960 ; uart:U2|count_baud[3]  ; uart:U2|count_baud[6] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.880      ;
-; -2.960 ; uart:U2|count_baud[3]  ; uart:U2|count_baud[7] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.880      ;
-; -2.960 ; uart:U2|count_baud[3]  ; uart:U2|count_baud[9] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.880      ;
-; -2.950 ; uart:U2|count_baud[5]  ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.344      ;
-; -2.938 ; uart:U2|rx_count[3]    ; uart:U2|rx_data[0]    ; clk          ; clk         ; 1.000        ; -0.081     ; 3.858      ;
-; -2.938 ; uart:U2|rx_count[3]    ; uart:U2|rx_buffer[1]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.858      ;
-; -2.938 ; uart:U2|rx_count[3]    ; uart:U2|rx_data[2]    ; clk          ; clk         ; 1.000        ; -0.081     ; 3.858      ;
-; -2.938 ; uart:U2|rx_count[3]    ; uart:U2|rx_buffer[2]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.858      ;
-; -2.938 ; uart:U2|rx_count[3]    ; uart:U2|rx_buffer[3]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.858      ;
-; -2.938 ; uart:U2|rx_count[3]    ; uart:U2|rx_buffer[4]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.858      ;
-; -2.938 ; uart:U2|rx_count[3]    ; uart:U2|rx_data[4]    ; clk          ; clk         ; 1.000        ; -0.081     ; 3.858      ;
-; -2.938 ; uart:U2|rx_count[3]    ; uart:U2|rx_data[5]    ; clk          ; clk         ; 1.000        ; -0.081     ; 3.858      ;
-; -2.938 ; uart:U2|rx_count[3]    ; uart:U2|rx_buffer[5]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.858      ;
-; -2.938 ; uart:U2|rx_count[3]    ; uart:U2|rx_buffer[6]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.858      ;
-; -2.938 ; uart:U2|rx_count[3]    ; uart:U2|rx_data[6]    ; clk          ; clk         ; 1.000        ; -0.081     ; 3.858      ;
-; -2.938 ; uart:U2|rx_count[3]    ; uart:U2|rx_data[7]    ; clk          ; clk         ; 1.000        ; -0.081     ; 3.858      ;
-; -2.938 ; uart:U2|rx_count[3]    ; uart:U2|rx_buffer[7]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.858      ;
-; -2.938 ; uart:U2|rx_count[3]    ; uart:U2|rx_buffer[8]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.858      ;
-; -2.938 ; uart:U2|rx_count[3]    ; uart:U2|rx_buffer[9]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.858      ;
-; -2.933 ; uart:U2|count_baud[8]  ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; -0.100     ; 3.834      ;
-; -2.928 ; uart:U2|count_baud[2]  ; uart:U2|count_os[4]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.322      ;
-; -2.927 ; uart:U2|count_baud[0]  ; uart:U2|count_os[2]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.321      ;
-; -2.926 ; uart:U2|count_baud[3]  ; uart:U2|count_os[1]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.320      ;
-; -2.926 ; uart:U2|count_baud[1]  ; uart:U2|count_os[6]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.320      ;
-; -2.924 ; uart:U2|count_baud[3]  ; uart:U2|count_os[0]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.318      ;
-; -2.920 ; uart:U2|os_count[2]    ; uart:U2|rx_data[1]    ; clk          ; clk         ; 1.000        ; -0.082     ; 3.839      ;
-; -2.920 ; uart:U2|os_count[2]    ; uart:U2|rx_data[3]    ; clk          ; clk         ; 1.000        ; -0.082     ; 3.839      ;
-; -2.910 ; uart:U2|rx_count[2]    ; uart:U2|rx_data[1]    ; clk          ; clk         ; 1.000        ; -0.081     ; 3.830      ;
-; -2.910 ; uart:U2|rx_count[2]    ; uart:U2|rx_data[3]    ; clk          ; clk         ; 1.000        ; -0.081     ; 3.830      ;
-; -2.905 ; uart:U2|count_baud[5]  ; uart:U2|count_os[6]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.299      ;
-; -2.876 ; uart:U2|count_baud[0]  ; uart:U2|count_baud[4] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.796      ;
-; -2.876 ; uart:U2|count_baud[0]  ; uart:U2|count_baud[0] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.796      ;
-; -2.876 ; uart:U2|count_baud[0]  ; uart:U2|count_baud[1] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.796      ;
-; -2.876 ; uart:U2|count_baud[0]  ; uart:U2|count_baud[2] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.796      ;
-; -2.876 ; uart:U2|count_baud[0]  ; uart:U2|count_baud[3] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.796      ;
-; -2.876 ; uart:U2|count_baud[0]  ; uart:U2|count_baud[5] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.796      ;
-; -2.876 ; uart:U2|count_baud[0]  ; uart:U2|count_baud[6] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.796      ;
-; -2.876 ; uart:U2|count_baud[0]  ; uart:U2|count_baud[7] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.796      ;
-; -2.876 ; uart:U2|count_baud[0]  ; uart:U2|count_baud[9] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.796      ;
-; -2.873 ; adder:U1|i[1]          ; adder:U1|tmp[0]       ; clk          ; clk         ; 1.000        ; -0.081     ; 3.793      ;
-; -2.872 ; uart:U2|count_baud[8]  ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; -0.100     ; 3.773      ;
-; -2.850 ; uart:U2|count_baud[1]  ; uart:U2|count_os[5]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.244      ;
-; -2.837 ; uart:U2|count_baud[2]  ; uart:U2|count_os[3]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.231      ;
-; -2.833 ; uart:U2|count_baud[6]  ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.227      ;
-; -2.830 ; uart:U2|count_baud[0]  ; uart:U2|count_os[1]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.224      ;
-; -2.828 ; uart:U2|count_baud[0]  ; uart:U2|count_os[0]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.222      ;
-; -2.810 ; adder:U1|i[2]          ; adder:U1|tmp[0]       ; clk          ; clk         ; 1.000        ; -0.081     ; 3.730      ;
-; -2.804 ; uart:U2|count_baud[5]  ; uart:U2|count_os[5]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.198      ;
-; -2.802 ; uart:U2|count_baud[6]  ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; 0.393      ; 4.196      ;
-; -2.801 ; uart:U2|os_count[0]    ; uart:U2|rx_data[1]    ; clk          ; clk         ; 1.000        ; -0.082     ; 3.720      ;
-; -2.801 ; uart:U2|os_count[0]    ; uart:U2|rx_data[3]    ; clk          ; clk         ; 1.000        ; -0.082     ; 3.720      ;
-; -2.790 ; uart:U2|rx_count[1]    ; uart:U2|rx_data[1]    ; clk          ; clk         ; 1.000        ; -0.081     ; 3.710      ;
-; -2.790 ; uart:U2|rx_count[1]    ; uart:U2|rx_data[3]    ; clk          ; clk         ; 1.000        ; -0.081     ; 3.710      ;
-; -2.787 ; uart:U2|count_baud[8]  ; uart:U2|count_os[6]   ; clk          ; clk         ; 1.000        ; -0.100     ; 3.688      ;
-; -2.786 ; uart:U2|count_baud[10] ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; -0.100     ; 3.687      ;
-+--------+------------------------+-----------------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'clk'                                                                                        ;
++--------+---------------------+----------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node           ; To Node              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------+----------------------+--------------+-------------+--------------+------------+------------+
+; -2.759 ; uart:U2|rx_count[0] ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.076     ; 3.684      ;
+; -2.737 ; uart:U2|rx_count[1] ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.076     ; 3.662      ;
+; -2.563 ; uart:U2|rx_count[2] ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.076     ; 3.488      ;
+; -2.465 ; uart:U2|rx_count[0] ; uart:U2|rx_data[1]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.387      ;
+; -2.465 ; uart:U2|rx_count[0] ; uart:U2|rx_data[2]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.387      ;
+; -2.465 ; uart:U2|rx_count[0] ; uart:U2|rx_data[3]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.387      ;
+; -2.465 ; uart:U2|rx_count[0] ; uart:U2|rx_data[4]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.387      ;
+; -2.465 ; uart:U2|rx_count[0] ; uart:U2|rx_data[5]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.387      ;
+; -2.465 ; uart:U2|rx_count[0] ; uart:U2|rx_data[6]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.387      ;
+; -2.465 ; uart:U2|rx_count[0] ; uart:U2|rx_data[7]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.387      ;
+; -2.453 ; uart:U2|os_count[1] ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.076     ; 3.378      ;
+; -2.448 ; uart:U2|os_count[3] ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.076     ; 3.373      ;
+; -2.435 ; uart:U2|rx_count[3] ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.076     ; 3.360      ;
+; -2.431 ; uart:U2|rx_count[1] ; uart:U2|rx_data[1]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.353      ;
+; -2.431 ; uart:U2|rx_count[1] ; uart:U2|rx_data[2]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.353      ;
+; -2.431 ; uart:U2|rx_count[1] ; uart:U2|rx_data[3]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.353      ;
+; -2.431 ; uart:U2|rx_count[1] ; uart:U2|rx_data[4]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.353      ;
+; -2.431 ; uart:U2|rx_count[1] ; uart:U2|rx_data[5]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.353      ;
+; -2.431 ; uart:U2|rx_count[1] ; uart:U2|rx_data[6]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.353      ;
+; -2.431 ; uart:U2|rx_count[1] ; uart:U2|rx_data[7]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.353      ;
+; -2.341 ; uart:U2|os_count[1] ; uart:U2|rx_count[1]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.261      ;
+; -2.341 ; uart:U2|os_count[1] ; uart:U2|rx_count[0]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.261      ;
+; -2.341 ; uart:U2|os_count[1] ; uart:U2|rx_count[2]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.261      ;
+; -2.331 ; uart:U2|os_count[3] ; uart:U2|rx_count[1]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.251      ;
+; -2.331 ; uart:U2|os_count[3] ; uart:U2|rx_count[0]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.251      ;
+; -2.331 ; uart:U2|os_count[3] ; uart:U2|rx_count[2]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.251      ;
+; -2.329 ; uart:U2|os_count[1] ; uart:U2|rx_buffer[1] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.250      ;
+; -2.329 ; uart:U2|os_count[1] ; uart:U2|rx_buffer[2] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.250      ;
+; -2.329 ; uart:U2|os_count[1] ; uart:U2|rx_buffer[3] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.250      ;
+; -2.329 ; uart:U2|os_count[1] ; uart:U2|rx_buffer[4] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.250      ;
+; -2.329 ; uart:U2|os_count[1] ; uart:U2|rx_buffer[5] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.250      ;
+; -2.329 ; uart:U2|os_count[1] ; uart:U2|rx_buffer[6] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.250      ;
+; -2.329 ; uart:U2|os_count[1] ; uart:U2|rx_buffer[7] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.250      ;
+; -2.329 ; uart:U2|os_count[1] ; uart:U2|rx_buffer[8] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.250      ;
+; -2.329 ; uart:U2|os_count[1] ; uart:U2|rx_buffer[9] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.250      ;
+; -2.319 ; uart:U2|os_count[3] ; uart:U2|rx_buffer[1] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.240      ;
+; -2.319 ; uart:U2|os_count[3] ; uart:U2|rx_buffer[2] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.240      ;
+; -2.319 ; uart:U2|os_count[3] ; uart:U2|rx_buffer[3] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.240      ;
+; -2.319 ; uart:U2|os_count[3] ; uart:U2|rx_buffer[4] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.240      ;
+; -2.319 ; uart:U2|os_count[3] ; uart:U2|rx_buffer[5] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.240      ;
+; -2.319 ; uart:U2|os_count[3] ; uart:U2|rx_buffer[6] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.240      ;
+; -2.319 ; uart:U2|os_count[3] ; uart:U2|rx_buffer[7] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.240      ;
+; -2.319 ; uart:U2|os_count[3] ; uart:U2|rx_buffer[8] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.240      ;
+; -2.319 ; uart:U2|os_count[3] ; uart:U2|rx_buffer[9] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.240      ;
+; -2.305 ; uart:U2|tx_busy     ; adder:U1|i[3]        ; clk          ; clk         ; 1.000        ; -0.081     ; 3.225      ;
+; -2.305 ; uart:U2|tx_busy     ; adder:U1|i[4]        ; clk          ; clk         ; 1.000        ; -0.081     ; 3.225      ;
+; -2.305 ; uart:U2|tx_busy     ; adder:U1|i[2]        ; clk          ; clk         ; 1.000        ; -0.081     ; 3.225      ;
+; -2.305 ; uart:U2|tx_busy     ; adder:U1|i[1]        ; clk          ; clk         ; 1.000        ; -0.081     ; 3.225      ;
+; -2.305 ; uart:U2|tx_busy     ; adder:U1|i[0]        ; clk          ; clk         ; 1.000        ; -0.081     ; 3.225      ;
+; -2.277 ; uart:U2|os_count[2] ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.076     ; 3.202      ;
+; -2.271 ; uart:U2|rx_count[2] ; uart:U2|rx_data[1]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.193      ;
+; -2.271 ; uart:U2|rx_count[2] ; uart:U2|rx_data[2]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.193      ;
+; -2.271 ; uart:U2|rx_count[2] ; uart:U2|rx_data[3]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.193      ;
+; -2.271 ; uart:U2|rx_count[2] ; uart:U2|rx_data[4]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.193      ;
+; -2.271 ; uart:U2|rx_count[2] ; uart:U2|rx_data[5]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.193      ;
+; -2.271 ; uart:U2|rx_count[2] ; uart:U2|rx_data[6]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.193      ;
+; -2.271 ; uart:U2|rx_count[2] ; uart:U2|rx_data[7]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.193      ;
+; -2.250 ; uart:U2|rx_count[0] ; uart:U2|rx_buffer[1] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.171      ;
+; -2.250 ; uart:U2|rx_count[0] ; uart:U2|rx_buffer[2] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.171      ;
+; -2.250 ; uart:U2|rx_count[0] ; uart:U2|rx_buffer[3] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.171      ;
+; -2.250 ; uart:U2|rx_count[0] ; uart:U2|rx_buffer[4] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.171      ;
+; -2.250 ; uart:U2|rx_count[0] ; uart:U2|rx_buffer[5] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.171      ;
+; -2.250 ; uart:U2|rx_count[0] ; uart:U2|rx_buffer[6] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.171      ;
+; -2.250 ; uart:U2|rx_count[0] ; uart:U2|rx_buffer[7] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.171      ;
+; -2.250 ; uart:U2|rx_count[0] ; uart:U2|rx_buffer[8] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.171      ;
+; -2.250 ; uart:U2|rx_count[0] ; uart:U2|rx_buffer[9] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.171      ;
+; -2.216 ; uart:U2|rx_count[1] ; uart:U2|rx_buffer[1] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.137      ;
+; -2.216 ; uart:U2|rx_count[1] ; uart:U2|rx_buffer[2] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.137      ;
+; -2.216 ; uart:U2|rx_count[1] ; uart:U2|rx_buffer[3] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.137      ;
+; -2.216 ; uart:U2|rx_count[1] ; uart:U2|rx_buffer[4] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.137      ;
+; -2.216 ; uart:U2|rx_count[1] ; uart:U2|rx_buffer[5] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.137      ;
+; -2.216 ; uart:U2|rx_count[1] ; uart:U2|rx_buffer[6] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.137      ;
+; -2.216 ; uart:U2|rx_count[1] ; uart:U2|rx_buffer[7] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.137      ;
+; -2.216 ; uart:U2|rx_count[1] ; uart:U2|rx_buffer[8] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.137      ;
+; -2.216 ; uart:U2|rx_count[1] ; uart:U2|rx_buffer[9] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.137      ;
+; -2.150 ; uart:U2|os_count[1] ; uart:U2|rx_count[3]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.070      ;
+; -2.150 ; uart:U2|os_count[2] ; uart:U2|rx_count[1]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.070      ;
+; -2.150 ; uart:U2|os_count[2] ; uart:U2|rx_count[0]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.070      ;
+; -2.150 ; uart:U2|os_count[2] ; uart:U2|rx_count[2]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.070      ;
+; -2.149 ; uart:U2|rx_count[3] ; uart:U2|rx_data[1]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.071      ;
+; -2.149 ; uart:U2|rx_count[3] ; uart:U2|rx_data[2]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.071      ;
+; -2.149 ; uart:U2|rx_count[3] ; uart:U2|rx_data[3]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.071      ;
+; -2.149 ; uart:U2|rx_count[3] ; uart:U2|rx_data[4]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.071      ;
+; -2.149 ; uart:U2|rx_count[3] ; uart:U2|rx_data[5]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.071      ;
+; -2.149 ; uart:U2|rx_count[3] ; uart:U2|rx_data[6]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.071      ;
+; -2.149 ; uart:U2|rx_count[3] ; uart:U2|rx_data[7]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.071      ;
+; -2.143 ; uart:U2|os_count[1] ; uart:U2|rx_data[1]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.065      ;
+; -2.143 ; uart:U2|os_count[1] ; uart:U2|rx_data[2]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.065      ;
+; -2.143 ; uart:U2|os_count[1] ; uart:U2|rx_data[3]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.065      ;
+; -2.143 ; uart:U2|os_count[1] ; uart:U2|rx_data[4]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.065      ;
+; -2.143 ; uart:U2|os_count[1] ; uart:U2|rx_data[5]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.065      ;
+; -2.143 ; uart:U2|os_count[1] ; uart:U2|rx_data[6]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.065      ;
+; -2.143 ; uart:U2|os_count[1] ; uart:U2|rx_data[7]   ; clk          ; clk         ; 1.000        ; -0.079     ; 3.065      ;
+; -2.140 ; uart:U2|os_count[3] ; uart:U2|rx_count[3]  ; clk          ; clk         ; 1.000        ; -0.081     ; 3.060      ;
+; -2.138 ; uart:U2|os_count[2] ; uart:U2|rx_buffer[1] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.059      ;
+; -2.138 ; uart:U2|os_count[2] ; uart:U2|rx_buffer[2] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.059      ;
+; -2.138 ; uart:U2|os_count[2] ; uart:U2|rx_buffer[3] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.059      ;
+; -2.138 ; uart:U2|os_count[2] ; uart:U2|rx_buffer[4] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.059      ;
+; -2.138 ; uart:U2|os_count[2] ; uart:U2|rx_buffer[5] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.059      ;
+; -2.138 ; uart:U2|os_count[2] ; uart:U2|rx_buffer[6] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.059      ;
++--------+---------------------+----------------------+--------------+-------------+--------------+------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
@@ -285,106 +284,106 @@ No paths to report.
 +-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
-; 0.453 ; adder:U1|tmp[0]           ; adder:U1|tmp[0]           ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; adder:U1|sig_state.S0     ; adder:U1|sig_state.S0     ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; uart:U2|tx_busy           ; uart:U2|tx_busy           ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; adder:U1|tx_ena           ; adder:U1|tx_ena           ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
 ; 0.453 ; adder:U1|sig_state.S2     ; adder:U1|sig_state.S2     ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
 ; 0.453 ; adder:U1|state_of_rx_busy ; adder:U1|state_of_rx_busy ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; uart:U2|rx_busy           ; uart:U2|rx_busy           ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; uart:U2|os_count[2]       ; uart:U2|os_count[2]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; uart:U2|rx_state          ; uart:U2|rx_state          ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; uart:U2|os_count[1]       ; uart:U2|os_count[1]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; uart:U2|os_count[3]       ; uart:U2|os_count[3]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; uart:U2|os_count[0]       ; uart:U2|os_count[0]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; uart:U2|rx_count[1]       ; uart:U2|rx_count[1]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; uart:U2|rx_count[2]       ; uart:U2|rx_count[2]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
+; 0.453 ; adder:U1|tx_ena           ; adder:U1|tx_ena           ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
+; 0.453 ; uart:U2|tx_busy           ; uart:U2|tx_busy           ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
 ; 0.453 ; uart:U2|rx_count[3]       ; uart:U2|rx_count[3]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
+; 0.453 ; uart:U2|os_count[0]       ; uart:U2|os_count[0]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
+; 0.453 ; uart:U2|os_count[3]       ; uart:U2|os_count[3]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
+; 0.453 ; uart:U2|os_count[2]       ; uart:U2|os_count[2]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
+; 0.453 ; uart:U2|os_count[1]       ; uart:U2|os_count[1]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
+; 0.453 ; uart:U2|rx_count[2]       ; uart:U2|rx_count[2]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
+; 0.453 ; uart:U2|count_os[1]       ; uart:U2|count_os[1]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
+; 0.453 ; uart:U2|count_os[2]       ; uart:U2|count_os[2]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
+; 0.454 ; uart:U2|rx_state          ; uart:U2|rx_state          ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
 ; 0.465 ; uart:U2|rx_count[0]       ; uart:U2|rx_count[0]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.758      ;
-; 0.490 ; uart:U2|count_baud[12]    ; uart:U2|count_baud[12]    ; clk          ; clk         ; 0.000        ; 0.100      ; 0.802      ;
-; 0.493 ; adder:U1|tx_data[6]       ; uart:U2|tx_buffer[8]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.786      ;
-; 0.502 ; uart:U2|tx_buffer[6]      ; uart:U2|tx_buffer[5]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.795      ;
-; 0.502 ; uart:U2|rx_count[1]       ; uart:U2|rx_count[2]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.795      ;
-; 0.503 ; uart:U2|tx_buffer[0]      ; uart:U2|tx                ; clk          ; clk         ; 0.000        ; 0.081      ; 0.796      ;
-; 0.508 ; uart:U2|rx_buffer[3]      ; uart:U2|rx_data[2]        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.801      ;
-; 0.508 ; uart:U2|rx_buffer[6]      ; uart:U2|rx_buffer[5]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.801      ;
-; 0.509 ; uart:U2|rx_buffer[8]      ; uart:U2|rx_data[7]        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.802      ;
-; 0.510 ; uart:U2|rx_buffer[3]      ; uart:U2|rx_buffer[2]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.803      ;
-; 0.511 ; uart:U2|rx_buffer[5]      ; uart:U2|rx_buffer[4]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.804      ;
-; 0.511 ; uart:U2|rx_buffer[5]      ; uart:U2|rx_data[4]        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.804      ;
-; 0.511 ; uart:U2|rx_buffer[7]      ; uart:U2|rx_data[6]        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.804      ;
-; 0.511 ; uart:U2|rx_buffer[8]      ; uart:U2|rx_buffer[7]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.804      ;
-; 0.512 ; uart:U2|rx_buffer[7]      ; uart:U2|rx_buffer[6]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.805      ;
-; 0.513 ; uart:U2|rx_buffer[6]      ; uart:U2|rx_data[5]        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.806      ;
-; 0.523 ; uart:U2|rx_count[0]       ; uart:U2|rx_count[1]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.816      ;
-; 0.526 ; uart:U2|rx_buffer[4]      ; uart:U2|rx_buffer[3]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.819      ;
-; 0.553 ; uart:U2|tx_state          ; uart:U2|tx_busy           ; clk          ; clk         ; 0.000        ; 0.081      ; 0.846      ;
-; 0.576 ; uart:U2|tx_state          ; uart:U2|tx_count[2]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.869      ;
-; 0.608 ; uart:U2|count_baud[7]     ; uart:U2|count_baud[8]     ; clk          ; clk         ; 0.000        ; 0.574      ; 1.394      ;
-; 0.624 ; uart:U2|count_baud[6]     ; uart:U2|count_baud[8]     ; clk          ; clk         ; 0.000        ; 0.574      ; 1.410      ;
-; 0.641 ; uart:U2|tx_buffer[5]      ; uart:U2|tx_buffer[4]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.934      ;
-; 0.641 ; uart:U2|tx_buffer[10]     ; uart:U2|tx_buffer[9]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.934      ;
-; 0.642 ; uart:U2|tx_buffer[8]      ; uart:U2|tx_buffer[7]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.935      ;
-; 0.642 ; uart:U2|tx_buffer[9]      ; uart:U2|tx_buffer[8]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.935      ;
-; 0.656 ; adder:U1|sig_state.S0     ; adder:U1|sig_state.S1     ; clk          ; clk         ; 0.000        ; 0.081      ; 0.949      ;
-; 0.667 ; uart:U2|rx_buffer[2]      ; uart:U2|rx_buffer[1]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.960      ;
-; 0.699 ; uart:U2|rx_buffer[1]      ; uart:U2|rx_data[0]        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.992      ;
-; 0.700 ; adder:U1|tx_data[1]       ; uart:U2|tx_buffer[3]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.993      ;
-; 0.709 ; uart:U2|rx_buffer[2]      ; uart:U2|rx_data[1]        ; clk          ; clk         ; 0.000        ; 0.081      ; 1.002      ;
-; 0.716 ; adder:U1|tx_data[0]       ; uart:U2|tx_buffer[2]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.009      ;
-; 0.717 ; uart:U2|tx_busy           ; adder:U1|sig_state.S2     ; clk          ; clk         ; 0.000        ; 0.082      ; 1.011      ;
-; 0.719 ; uart:U2|count_os[1]       ; uart:U2|count_os[1]       ; clk          ; clk         ; 0.000        ; 0.100      ; 1.031      ;
-; 0.725 ; adder:U1|tmp[6]           ; adder:U1|tx_data[6]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.017      ;
-; 0.727 ; uart:U2|count_os[3]       ; uart:U2|count_os[3]       ; clk          ; clk         ; 0.000        ; 0.100      ; 1.039      ;
-; 0.730 ; uart:U2|count_os[6]       ; uart:U2|count_os[6]       ; clk          ; clk         ; 0.000        ; 0.100      ; 1.042      ;
-; 0.730 ; uart:U2|count_baud[8]     ; uart:U2|count_baud[8]     ; clk          ; clk         ; 0.000        ; 0.100      ; 1.042      ;
-; 0.733 ; uart:U2|rx_buffer[4]      ; uart:U2|rx_data[3]        ; clk          ; clk         ; 0.000        ; 0.081      ; 1.026      ;
-; 0.741 ; uart:U2|tx_buffer[7]      ; uart:U2|tx_buffer[6]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.034      ;
-; 0.742 ; uart:U2|tx_buffer[1]      ; uart:U2|tx_buffer[0]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.035      ;
-; 0.742 ; uart:U2|tx_buffer[2]      ; uart:U2|tx_buffer[1]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.035      ;
-; 0.744 ; uart:U2|tx_buffer[3]      ; uart:U2|tx_buffer[2]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.037      ;
-; 0.744 ; uart:U2|count_baud[11]    ; uart:U2|count_baud[11]    ; clk          ; clk         ; 0.000        ; 0.100      ; 1.056      ;
-; 0.746 ; uart:U2|count_os[7]       ; uart:U2|count_os[7]       ; clk          ; clk         ; 0.000        ; 0.100      ; 1.058      ;
-; 0.747 ; uart:U2|count_baud[6]     ; uart:U2|count_baud[6]     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.040      ;
-; 0.747 ; uart:U2|count_baud[7]     ; uart:U2|count_baud[7]     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.040      ;
-; 0.747 ; uart:U2|count_baud[10]    ; uart:U2|count_baud[10]    ; clk          ; clk         ; 0.000        ; 0.100      ; 1.059      ;
-; 0.748 ; uart:U2|count_baud[7]     ; uart:U2|count_baud[10]    ; clk          ; clk         ; 0.000        ; 0.574      ; 1.534      ;
-; 0.754 ; uart:U2|os_count[0]       ; uart:U2|os_count[1]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.047      ;
-; 0.758 ; uart:U2|count_os[0]       ; uart:U2|count_os[0]       ; clk          ; clk         ; 0.000        ; 0.100      ; 1.070      ;
-; 0.764 ; uart:U2|count_baud[6]     ; uart:U2|count_baud[10]    ; clk          ; clk         ; 0.000        ; 0.574      ; 1.550      ;
-; 0.765 ; uart:U2|count_baud[4]     ; uart:U2|count_baud[4]     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.058      ;
-; 0.767 ; uart:U2|rx_busy           ; adder:U1|state_of_rx_busy ; clk          ; clk         ; 0.000        ; 0.081      ; 1.060      ;
-; 0.771 ; adder:U1|i[3]             ; adder:U1|i[3]             ; clk          ; clk         ; 0.000        ; 0.081      ; 1.064      ;
-; 0.772 ; adder:U1|i[1]             ; adder:U1|i[1]             ; clk          ; clk         ; 0.000        ; 0.081      ; 1.065      ;
-; 0.772 ; adder:U1|i[2]             ; adder:U1|i[2]             ; clk          ; clk         ; 0.000        ; 0.081      ; 1.065      ;
-; 0.782 ; uart:U2|count_baud[4]     ; uart:U2|count_baud[8]     ; clk          ; clk         ; 0.000        ; 0.574      ; 1.568      ;
-; 0.785 ; adder:U1|i[4]             ; adder:U1|i[4]             ; clk          ; clk         ; 0.000        ; 0.081      ; 1.078      ;
-; 0.791 ; uart:U2|tx_state          ; uart:U2|tx_buffer[4]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.084      ;
-; 0.793 ; uart:U2|os_count[3]       ; uart:U2|rx_state          ; clk          ; clk         ; 0.000        ; 0.081      ; 1.086      ;
-; 0.796 ; adder:U1|i[0]             ; adder:U1|i[0]             ; clk          ; clk         ; 0.000        ; 0.081      ; 1.089      ;
-; 0.810 ; uart:U2|count_baud[9]     ; uart:U2|count_baud[10]    ; clk          ; clk         ; 0.000        ; 0.574      ; 1.596      ;
-; 0.823 ; uart:U2|tx_state          ; uart:U2|tx_count[1]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.116      ;
-; 0.823 ; uart:U2|tx_state          ; uart:U2|tx_count[0]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.116      ;
-; 0.824 ; uart:U2|tx_state          ; uart:U2|tx_count[3]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.117      ;
-; 0.827 ; adder:U1|tx_data[2]       ; uart:U2|tx_buffer[4]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.120      ;
-; 0.834 ; adder:U1|tx_data[4]       ; uart:U2|tx_buffer[6]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.127      ;
-; 0.834 ; adder:U1|tx_data[5]       ; uart:U2|tx_buffer[10]     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.127      ;
-; 0.848 ; uart:U2|rx_buffer[9]      ; uart:U2|rx_buffer[8]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.141      ;
-; 0.873 ; adder:U1|tx_data[6]       ; uart:U2|tx_buffer[10]     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.166      ;
-; 0.879 ; uart:U2|count_baud[7]     ; uart:U2|count_baud[11]    ; clk          ; clk         ; 0.000        ; 0.574      ; 1.665      ;
-; 0.880 ; uart:U2|rx_count[1]       ; uart:U2|rx_count[3]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.173      ;
-; 0.888 ; uart:U2|count_baud[7]     ; uart:U2|count_baud[12]    ; clk          ; clk         ; 0.000        ; 0.574      ; 1.674      ;
-; 0.892 ; adder:U1|tmp[2]           ; adder:U1|tx_data[2]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.184      ;
-; 0.895 ; uart:U2|count_baud[6]     ; uart:U2|count_baud[11]    ; clk          ; clk         ; 0.000        ; 0.574      ; 1.681      ;
-; 0.897 ; uart:U2|count_baud[9]     ; uart:U2|count_baud[11]    ; clk          ; clk         ; 0.000        ; 0.574      ; 1.683      ;
-; 0.904 ; uart:U2|count_baud[6]     ; uart:U2|count_baud[12]    ; clk          ; clk         ; 0.000        ; 0.574      ; 1.690      ;
-; 0.915 ; uart:U2|os_count[1]       ; uart:U2|os_count[3]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.208      ;
-; 0.922 ; uart:U2|count_baud[4]     ; uart:U2|count_baud[10]    ; clk          ; clk         ; 0.000        ; 0.574      ; 1.708      ;
-; 0.925 ; adder:U1|tmp[1]           ; adder:U1|tx_data[1]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.217      ;
-; 0.926 ; uart:U2|count_os[5]       ; uart:U2|count_os[5]       ; clk          ; clk         ; 0.000        ; 0.100      ; 1.238      ;
-; 0.934 ; uart:U2|count_os[8]       ; uart:U2|count_os[8]       ; clk          ; clk         ; 0.000        ; 0.100      ; 1.246      ;
-; 0.942 ; uart:U2|tx_busy           ; adder:U1|tx_ena           ; clk          ; clk         ; 0.000        ; 0.082      ; 1.236      ;
-; 0.945 ; adder:U1|tmp[7]           ; adder:U1|tx_data[7]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.237      ;
+; 0.465 ; uart:U2|count_os[0]       ; uart:U2|count_os[0]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.758      ;
+; 0.493 ; uart:U2|count_baud[6]     ; uart:U2|count_baud[6]     ; clk          ; clk         ; 0.000        ; 0.080      ; 0.785      ;
+; 0.501 ; uart:U2|tx_buffer[8]      ; uart:U2|tx_buffer[7]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.794      ;
+; 0.501 ; uart:U2|tx_buffer[9]      ; uart:U2|tx_buffer[8]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.794      ;
+; 0.501 ; uart:U2|tx_buffer[10]     ; uart:U2|tx_buffer[9]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.794      ;
+; 0.502 ; uart:U2|tx_buffer[2]      ; uart:U2|tx_buffer[1]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.795      ;
+; 0.502 ; uart:U2|rx_buffer[9]      ; uart:U2|rx_buffer[8]      ; clk          ; clk         ; 0.000        ; 0.080      ; 0.794      ;
+; 0.503 ; uart:U2|tx_buffer[3]      ; uart:U2|tx_buffer[2]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.796      ;
+; 0.529 ; uart:U2|rx_buffer[7]      ; uart:U2|rx_buffer[6]      ; clk          ; clk         ; 0.000        ; 0.080      ; 0.821      ;
+; 0.543 ; uart:U2|rx_count[0]       ; uart:U2|rx_count[2]       ; clk          ; clk         ; 0.000        ; 0.081      ; 0.836      ;
+; 0.546 ; uart:U2|tx_state          ; uart:U2|tx_busy           ; clk          ; clk         ; 0.000        ; 0.081      ; 0.839      ;
+; 0.568 ; adder:U1|sig_state.S2     ; adder:U1|state_of_rx_busy ; clk          ; clk         ; 0.000        ; 0.081      ; 0.861      ;
+; 0.569 ; adder:U1|sig_state.S2     ; adder:U1|tx_ena           ; clk          ; clk         ; 0.000        ; 0.081      ; 0.862      ;
+; 0.626 ; adder:U1|tx_data[5]       ; uart:U2|tx_buffer[7]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.919      ;
+; 0.627 ; adder:U1|tx_data[3]       ; uart:U2|tx_buffer[5]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.920      ;
+; 0.653 ; uart:U2|count_baud[4]     ; uart:U2|baud_pulse        ; clk          ; clk         ; 0.000        ; 0.080      ; 0.945      ;
+; 0.668 ; uart:U2|rx_buffer[6]      ; uart:U2|rx_buffer[5]      ; clk          ; clk         ; 0.000        ; 0.080      ; 0.960      ;
+; 0.668 ; uart:U2|rx_buffer[8]      ; uart:U2|rx_buffer[7]      ; clk          ; clk         ; 0.000        ; 0.080      ; 0.960      ;
+; 0.685 ; uart:U2|tx_buffer[1]      ; uart:U2|tx_buffer[0]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.978      ;
+; 0.688 ; uart:U2|tx_buffer[6]      ; uart:U2|tx_buffer[5]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.981      ;
+; 0.689 ; uart:U2|tx_buffer[5]      ; uart:U2|tx_buffer[4]      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.982      ;
+; 0.693 ; uart:U2|rx_buffer[5]      ; uart:U2|rx_data[4]        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.986      ;
+; 0.699 ; uart:U2|rx_data[0]        ; adder:U1|secret[0]        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.992      ;
+; 0.700 ; uart:U2|rx_buffer[6]      ; uart:U2|rx_data[5]        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.993      ;
+; 0.705 ; uart:U2|rx_buffer[3]      ; uart:U2|rx_data[2]        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.998      ;
+; 0.709 ; uart:U2|rx_buffer[8]      ; uart:U2|rx_data[7]        ; clk          ; clk         ; 0.000        ; 0.081      ; 1.002      ;
+; 0.721 ; uart:U2|rx_buffer[4]      ; uart:U2|rx_data[3]        ; clk          ; clk         ; 0.000        ; 0.081      ; 1.014      ;
+; 0.725 ; uart:U2|tx_buffer[0]      ; uart:U2|tx                ; clk          ; clk         ; 0.000        ; 0.081      ; 1.018      ;
+; 0.725 ; uart:U2|rx_buffer[3]      ; uart:U2|rx_buffer[2]      ; clk          ; clk         ; 0.000        ; 0.080      ; 1.017      ;
+; 0.731 ; uart:U2|rx_buffer[2]      ; uart:U2|rx_data[1]        ; clk          ; clk         ; 0.000        ; 0.081      ; 1.024      ;
+; 0.734 ; uart:U2|rx_buffer[7]      ; uart:U2|rx_data[6]        ; clk          ; clk         ; 0.000        ; 0.081      ; 1.027      ;
+; 0.743 ; uart:U2|tx_buffer[7]      ; uart:U2|tx_buffer[6]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.036      ;
+; 0.744 ; uart:U2|tx_buffer[4]      ; uart:U2|tx_buffer[3]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.037      ;
+; 0.745 ; uart:U2|count_baud[3]     ; uart:U2|count_baud[3]     ; clk          ; clk         ; 0.000        ; 0.080      ; 1.037      ;
+; 0.746 ; uart:U2|count_baud[1]     ; uart:U2|count_baud[1]     ; clk          ; clk         ; 0.000        ; 0.080      ; 1.038      ;
+; 0.748 ; uart:U2|count_baud[2]     ; uart:U2|count_baud[2]     ; clk          ; clk         ; 0.000        ; 0.080      ; 1.040      ;
+; 0.748 ; uart:U2|count_baud[6]     ; uart:U2|baud_pulse        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.040      ;
+; 0.749 ; uart:U2|count_baud[4]     ; uart:U2|count_baud[4]     ; clk          ; clk         ; 0.000        ; 0.080      ; 1.041      ;
+; 0.759 ; adder:U1|i[4]             ; adder:U1|i[4]             ; clk          ; clk         ; 0.000        ; 0.081      ; 1.052      ;
+; 0.769 ; uart:U2|tx_state          ; uart:U2|tx_count[2]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.062      ;
+; 0.770 ; uart:U2|tx_state          ; uart:U2|tx_count[0]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.063      ;
+; 0.770 ; uart:U2|tx_busy           ; adder:U1|tx_ena           ; clk          ; clk         ; 0.000        ; 0.081      ; 1.063      ;
+; 0.771 ; uart:U2|count_baud[0]     ; uart:U2|count_baud[0]     ; clk          ; clk         ; 0.000        ; 0.080      ; 1.063      ;
+; 0.773 ; adder:U1|i[2]             ; adder:U1|i[2]             ; clk          ; clk         ; 0.000        ; 0.081      ; 1.066      ;
+; 0.773 ; uart:U2|os_count[0]       ; uart:U2|os_count[1]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.066      ;
+; 0.785 ; uart:U2|rx_state          ; uart:U2|rx_busy           ; clk          ; clk         ; 0.000        ; 0.080      ; 1.077      ;
+; 0.786 ; adder:U1|i[3]             ; adder:U1|i[3]             ; clk          ; clk         ; 0.000        ; 0.081      ; 1.079      ;
+; 0.795 ; adder:U1|i[1]             ; adder:U1|i[1]             ; clk          ; clk         ; 0.000        ; 0.081      ; 1.088      ;
+; 0.795 ; uart:U2|tx_busy           ; adder:U1|sig_state.S1     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.088      ;
+; 0.797 ; adder:U1|i[0]             ; adder:U1|i[0]             ; clk          ; clk         ; 0.000        ; 0.081      ; 1.090      ;
+; 0.800 ; uart:U2|tx_state          ; uart:U2|tx_count[3]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.093      ;
+; 0.830 ; adder:U1|i[0]             ; adder:U1|tx_data[0]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.123      ;
+; 0.836 ; uart:U2|count_os[1]       ; uart:U2|count_os[2]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.129      ;
+; 0.840 ; uart:U2|tx_busy           ; adder:U1|sig_state.S2     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.133      ;
+; 0.848 ; uart:U2|rx_buffer[4]      ; uart:U2|rx_buffer[3]      ; clk          ; clk         ; 0.000        ; 0.080      ; 1.140      ;
+; 0.850 ; uart:U2|rx_buffer[5]      ; uart:U2|rx_buffer[4]      ; clk          ; clk         ; 0.000        ; 0.080      ; 1.142      ;
+; 0.859 ; adder:U1|tx_ena           ; uart:U2|tx_busy           ; clk          ; clk         ; 0.000        ; 0.081      ; 1.152      ;
+; 0.875 ; uart:U2|rx_buffer[2]      ; uart:U2|rx_buffer[1]      ; clk          ; clk         ; 0.000        ; 0.080      ; 1.167      ;
+; 0.876 ; uart:U2|count_os[2]       ; uart:U2|count_os[0]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.169      ;
+; 0.881 ; uart:U2|tx_busy           ; adder:U1|sig_state.S0     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.174      ;
+; 0.882 ; uart:U2|count_os[1]       ; uart:U2|count_os[0]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.175      ;
+; 0.890 ; adder:U1|sig_state.S2     ; adder:U1|sig_state.S0     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.183      ;
+; 0.894 ; uart:U2|rx_count[1]       ; uart:U2|rx_count[3]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.187      ;
+; 0.908 ; uart:U2|count_baud[0]     ; uart:U2|baud_pulse        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.200      ;
+; 0.936 ; adder:U1|tx_ena           ; uart:U2|tx_state          ; clk          ; clk         ; 0.000        ; 0.081      ; 1.229      ;
+; 0.954 ; uart:U2|count_baud[5]     ; uart:U2|count_baud[5]     ; clk          ; clk         ; 0.000        ; 0.080      ; 1.246      ;
+; 0.956 ; uart:U2|count_baud[5]     ; uart:U2|baud_pulse        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.248      ;
+; 0.978 ; uart:U2|rx_data[0]        ; adder:U1|tx_data[0]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.271      ;
+; 0.987 ; adder:U1|tx_data[3]       ; uart:U2|tx_buffer[10]     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.280      ;
+; 1.009 ; uart:U2|rx_data[4]        ; adder:U1|tx_data[4]       ; clk          ; clk         ; 0.000        ; 0.084      ; 1.305      ;
+; 1.020 ; uart:U2|count_os[0]       ; uart:U2|count_os[2]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.313      ;
+; 1.021 ; uart:U2|rx_data[1]        ; adder:U1|tx_data[1]       ; clk          ; clk         ; 0.000        ; 0.084      ; 1.317      ;
+; 1.025 ; uart:U2|rx_data[6]        ; adder:U1|secret[6]        ; clk          ; clk         ; 0.000        ; 0.084      ; 1.321      ;
+; 1.026 ; adder:U1|tx_data[4]       ; uart:U2|tx_buffer[6]      ; clk          ; clk         ; 0.000        ; 0.083      ; 1.321      ;
+; 1.033 ; uart:U2|tx_state          ; uart:U2|tx_count[1]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.326      ;
+; 1.033 ; uart:U2|count_os[0]       ; uart:U2|count_os[1]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.326      ;
+; 1.037 ; uart:U2|tx_state          ; uart:U2|tx_state          ; clk          ; clk         ; 0.000        ; 0.081      ; 1.330      ;
+; 1.045 ; uart:U2|rx_data[1]        ; adder:U1|secret[1]        ; clk          ; clk         ; 0.000        ; 0.084      ; 1.341      ;
+; 1.046 ; uart:U2|rx_data[2]        ; adder:U1|secret[2]        ; clk          ; clk         ; 0.000        ; 0.084      ; 1.342      ;
+; 1.046 ; uart:U2|count_os[2]       ; uart:U2|count_os[1]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.339      ;
+; 1.048 ; adder:U1|i[3]             ; adder:U1|tx_data[0]       ; clk          ; clk         ; 0.000        ; 0.081      ; 1.341      ;
+; 1.048 ; uart:U2|count_baud[2]     ; uart:U2|baud_pulse        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.340      ;
+; 1.054 ; adder:U1|tx_data[1]       ; uart:U2|tx_buffer[3]      ; clk          ; clk         ; 0.000        ; 0.083      ; 1.349      ;
+; 1.064 ; uart:U2|rx_data[6]        ; adder:U1|tx_data[6]       ; clk          ; clk         ; 0.000        ; 0.084      ; 1.360      ;
+; 1.070 ; uart:U2|rx_state          ; uart:U2|rx_count[0]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.362      ;
+; 1.075 ; uart:U2|rx_state          ; uart:U2|rx_count[2]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.367      ;
 +-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -395,13 +394,13 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 
 
 
-+--------------------------------------------------+
-; Slow 1200mV 0C Model Fmax Summary                ;
-+------------+-----------------+------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
-+------------+-----------------+------------+------+
-; 246.31 MHz ; 246.31 MHz      ; clk        ;      ;
-+------------+-----------------+------------+------+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                         ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 286.78 MHz ; 250.0 MHz       ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -410,7 +409,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+-------------------+
 ; Clock ; Slack  ; End Point TNS     ;
 +-------+--------+-------------------+
-; clk   ; -3.060 ; -215.325          ;
+; clk   ; -2.487 ; -136.069          ;
 +-------+--------+-------------------+
 
 
@@ -419,7 +418,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+-------+-------------------+
 ; Clock ; Slack ; End Point TNS     ;
 +-------+-------+-------------------+
-; clk   ; 0.401 ; 0.000             ;
+; clk   ; 0.402 ; 0.000             ;
 +-------+-------+-------------------+
 
 
@@ -440,116 +439,116 @@ No paths to report.
 +-------+--------+---------------------------------+
 ; Clock ; Slack  ; End Point TNS                   ;
 +-------+--------+---------------------------------+
-; clk   ; -3.000 ; -156.161                        ;
+; clk   ; -3.000 ; -126.421                        ;
 +-------+--------+---------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Setup: 'clk'                                                                                            ;
-+--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
-; -3.060 ; uart:U2|count_baud[3] ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; 0.376      ; 4.438      ;
-; -2.989 ; uart:U2|count_baud[0] ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; 0.376      ; 4.367      ;
-; -2.935 ; uart:U2|count_baud[3] ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; 0.376      ; 4.313      ;
-; -2.934 ; uart:U2|count_baud[3] ; uart:U2|count_os[6]   ; clk          ; clk         ; 1.000        ; 0.376      ; 4.312      ;
-; -2.883 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[1]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.812      ;
-; -2.883 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[3]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.812      ;
-; -2.863 ; uart:U2|count_baud[0] ; uart:U2|count_os[6]   ; clk          ; clk         ; 1.000        ; 0.376      ; 4.241      ;
-; -2.852 ; uart:U2|count_baud[0] ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; 0.376      ; 4.230      ;
-; -2.847 ; uart:U2|count_baud[2] ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; 0.376      ; 4.225      ;
-; -2.846 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[1]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.775      ;
-; -2.846 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[3]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.775      ;
-; -2.809 ; uart:U2|count_baud[3] ; uart:U2|count_os[5]   ; clk          ; clk         ; 1.000        ; 0.376      ; 4.187      ;
-; -2.808 ; uart:U2|count_baud[3] ; uart:U2|count_os[4]   ; clk          ; clk         ; 1.000        ; 0.376      ; 4.186      ;
-; -2.737 ; uart:U2|count_baud[0] ; uart:U2|count_os[4]   ; clk          ; clk         ; 1.000        ; 0.376      ; 4.115      ;
-; -2.734 ; uart:U2|count_baud[2] ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; 0.376      ; 4.112      ;
-; -2.726 ; uart:U2|count_baud[0] ; uart:U2|count_os[5]   ; clk          ; clk         ; 1.000        ; 0.376      ; 4.104      ;
-; -2.721 ; uart:U2|count_baud[2] ; uart:U2|count_os[6]   ; clk          ; clk         ; 1.000        ; 0.376      ; 4.099      ;
-; -2.719 ; uart:U2|count_baud[5] ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; 0.376      ; 4.097      ;
-; -2.717 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[1]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.646      ;
-; -2.717 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[2]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.646      ;
-; -2.717 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[3]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.646      ;
-; -2.717 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[4]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.646      ;
-; -2.717 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[5]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.646      ;
-; -2.717 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[6]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.646      ;
-; -2.717 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[7]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.646      ;
-; -2.717 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[8]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.646      ;
-; -2.717 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[9]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.646      ;
-; -2.710 ; uart:U2|count_baud[1] ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; 0.376      ; 4.088      ;
-; -2.709 ; uart:U2|os_count[2]   ; uart:U2|rx_data[1]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.638      ;
-; -2.709 ; uart:U2|os_count[2]   ; uart:U2|rx_data[3]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.638      ;
-; -2.704 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[0]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.633      ;
-; -2.704 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[2]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.633      ;
-; -2.704 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[4]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.633      ;
-; -2.704 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[5]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.633      ;
-; -2.704 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[6]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.633      ;
-; -2.704 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[7]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.633      ;
-; -2.691 ; uart:U2|count_baud[3] ; uart:U2|count_baud[4] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.621      ;
-; -2.691 ; uart:U2|count_baud[3] ; uart:U2|count_baud[0] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.621      ;
-; -2.691 ; uart:U2|count_baud[3] ; uart:U2|count_baud[1] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.621      ;
-; -2.691 ; uart:U2|count_baud[3] ; uart:U2|count_baud[2] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.621      ;
-; -2.691 ; uart:U2|count_baud[3] ; uart:U2|count_baud[3] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.621      ;
-; -2.691 ; uart:U2|count_baud[3] ; uart:U2|count_baud[5] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.621      ;
-; -2.691 ; uart:U2|count_baud[3] ; uart:U2|count_baud[6] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.621      ;
-; -2.691 ; uart:U2|count_baud[3] ; uart:U2|count_baud[7] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.621      ;
-; -2.691 ; uart:U2|count_baud[3] ; uart:U2|count_baud[9] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.621      ;
-; -2.683 ; uart:U2|count_baud[3] ; uart:U2|count_os[3]   ; clk          ; clk         ; 1.000        ; 0.376      ; 4.061      ;
-; -2.682 ; uart:U2|count_baud[3] ; uart:U2|count_os[2]   ; clk          ; clk         ; 1.000        ; 0.376      ; 4.060      ;
-; -2.680 ; uart:U2|rx_count[3]   ; uart:U2|rx_buffer[1]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.609      ;
-; -2.680 ; uart:U2|rx_count[3]   ; uart:U2|rx_buffer[2]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.609      ;
-; -2.680 ; uart:U2|rx_count[3]   ; uart:U2|rx_buffer[3]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.609      ;
-; -2.680 ; uart:U2|rx_count[3]   ; uart:U2|rx_buffer[4]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.609      ;
-; -2.680 ; uart:U2|rx_count[3]   ; uart:U2|rx_buffer[5]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.609      ;
-; -2.680 ; uart:U2|rx_count[3]   ; uart:U2|rx_buffer[6]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.609      ;
-; -2.680 ; uart:U2|rx_count[3]   ; uart:U2|rx_buffer[7]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.609      ;
-; -2.680 ; uart:U2|rx_count[3]   ; uart:U2|rx_buffer[8]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.609      ;
-; -2.680 ; uart:U2|rx_count[3]   ; uart:U2|rx_buffer[9]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.609      ;
-; -2.677 ; adder:U1|i[1]         ; adder:U1|tmp[0]       ; clk          ; clk         ; 1.000        ; -0.072     ; 3.607      ;
-; -2.667 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[0]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.596      ;
-; -2.667 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[2]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.596      ;
-; -2.667 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[4]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.596      ;
-; -2.667 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[5]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.596      ;
-; -2.667 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[6]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.596      ;
-; -2.667 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[7]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.596      ;
-; -2.644 ; uart:U2|rx_count[2]   ; uart:U2|rx_data[1]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.573      ;
-; -2.644 ; uart:U2|rx_count[2]   ; uart:U2|rx_data[3]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.573      ;
-; -2.620 ; uart:U2|count_baud[0] ; uart:U2|count_baud[4] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.550      ;
-; -2.620 ; uart:U2|count_baud[0] ; uart:U2|count_baud[0] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.550      ;
-; -2.620 ; uart:U2|count_baud[0] ; uart:U2|count_baud[1] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.550      ;
-; -2.620 ; uart:U2|count_baud[0] ; uart:U2|count_baud[2] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.550      ;
-; -2.620 ; uart:U2|count_baud[0] ; uart:U2|count_baud[3] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.550      ;
-; -2.620 ; uart:U2|count_baud[0] ; uart:U2|count_baud[5] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.550      ;
-; -2.620 ; uart:U2|count_baud[0] ; uart:U2|count_baud[6] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.550      ;
-; -2.620 ; uart:U2|count_baud[0] ; uart:U2|count_baud[7] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.550      ;
-; -2.620 ; uart:U2|count_baud[0] ; uart:U2|count_baud[9] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.550      ;
-; -2.618 ; adder:U1|i[2]         ; adder:U1|tmp[0]       ; clk          ; clk         ; 1.000        ; -0.072     ; 3.548      ;
-; -2.611 ; uart:U2|count_baud[1] ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; 0.376      ; 3.989      ;
-; -2.611 ; uart:U2|count_baud[0] ; uart:U2|count_os[2]   ; clk          ; clk         ; 1.000        ; 0.376      ; 3.989      ;
-; -2.608 ; uart:U2|count_baud[2] ; uart:U2|count_os[5]   ; clk          ; clk         ; 1.000        ; 0.376      ; 3.986      ;
-; -2.600 ; uart:U2|count_baud[0] ; uart:U2|count_os[3]   ; clk          ; clk         ; 1.000        ; 0.376      ; 3.978      ;
-; -2.599 ; uart:U2|count_baud[3] ; uart:U2|count_os[0]   ; clk          ; clk         ; 1.000        ; 0.376      ; 3.977      ;
-; -2.599 ; uart:U2|count_baud[3] ; uart:U2|count_os[1]   ; clk          ; clk         ; 1.000        ; 0.376      ; 3.977      ;
-; -2.598 ; uart:U2|count_baud[8] ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; -0.091     ; 3.509      ;
-; -2.597 ; uart:U2|os_count[0]   ; uart:U2|rx_data[1]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.526      ;
-; -2.597 ; uart:U2|os_count[0]   ; uart:U2|rx_data[3]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.526      ;
-; -2.595 ; uart:U2|count_baud[2] ; uart:U2|count_os[4]   ; clk          ; clk         ; 1.000        ; 0.376      ; 3.973      ;
-; -2.593 ; uart:U2|count_baud[5] ; uart:U2|count_os[6]   ; clk          ; clk         ; 1.000        ; 0.376      ; 3.971      ;
-; -2.584 ; uart:U2|count_baud[1] ; uart:U2|count_os[6]   ; clk          ; clk         ; 1.000        ; 0.376      ; 3.962      ;
-; -2.554 ; uart:U2|count_baud[5] ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; 0.376      ; 3.932      ;
-; -2.531 ; uart:U2|rx_count[1]   ; uart:U2|rx_data[1]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.460      ;
-; -2.531 ; uart:U2|rx_count[1]   ; uart:U2|rx_data[3]    ; clk          ; clk         ; 1.000        ; -0.073     ; 3.460      ;
-; -2.516 ; uart:U2|count_baud[0] ; uart:U2|count_os[0]   ; clk          ; clk         ; 1.000        ; 0.376      ; 3.894      ;
-; -2.516 ; uart:U2|count_baud[0] ; uart:U2|count_os[1]   ; clk          ; clk         ; 1.000        ; 0.376      ; 3.894      ;
-; -2.502 ; uart:U2|count_baud[8] ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; -0.091     ; 3.413      ;
-; -2.497 ; uart:U2|count_baud[6] ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; 0.376      ; 3.875      ;
-; -2.485 ; uart:U2|count_baud[1] ; uart:U2|count_os[5]   ; clk          ; clk         ; 1.000        ; 0.376      ; 3.863      ;
-; -2.482 ; uart:U2|count_baud[2] ; uart:U2|count_os[3]   ; clk          ; clk         ; 1.000        ; 0.376      ; 3.860      ;
-; -2.478 ; uart:U2|rx_count[2]   ; uart:U2|rx_buffer[1]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.407      ;
-; -2.478 ; uart:U2|rx_count[2]   ; uart:U2|rx_buffer[2]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.407      ;
-; -2.478 ; uart:U2|rx_count[2]   ; uart:U2|rx_buffer[3]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.407      ;
-; -2.478 ; uart:U2|rx_count[2]   ; uart:U2|rx_buffer[4]  ; clk          ; clk         ; 1.000        ; -0.073     ; 3.407      ;
-+--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'clk'                                                                                         ;
++--------+---------------------+----------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node           ; To Node              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------+----------------------+--------------+-------------+--------------+------------+------------+
+; -2.487 ; uart:U2|rx_count[0] ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.066     ; 3.423      ;
+; -2.465 ; uart:U2|rx_count[1] ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.066     ; 3.401      ;
+; -2.305 ; uart:U2|rx_count[2] ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.066     ; 3.241      ;
+; -2.213 ; uart:U2|os_count[1] ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.066     ; 3.149      ;
+; -2.208 ; uart:U2|os_count[3] ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.066     ; 3.144      ;
+; -2.181 ; uart:U2|rx_count[0] ; uart:U2|rx_data[1]   ; clk          ; clk         ; 1.000        ; -0.070     ; 3.113      ;
+; -2.181 ; uart:U2|rx_count[0] ; uart:U2|rx_data[2]   ; clk          ; clk         ; 1.000        ; -0.070     ; 3.113      ;
+; -2.181 ; uart:U2|rx_count[0] ; uart:U2|rx_data[3]   ; clk          ; clk         ; 1.000        ; -0.070     ; 3.113      ;
+; -2.181 ; uart:U2|rx_count[0] ; uart:U2|rx_data[4]   ; clk          ; clk         ; 1.000        ; -0.070     ; 3.113      ;
+; -2.181 ; uart:U2|rx_count[0] ; uart:U2|rx_data[5]   ; clk          ; clk         ; 1.000        ; -0.070     ; 3.113      ;
+; -2.181 ; uart:U2|rx_count[0] ; uart:U2|rx_data[6]   ; clk          ; clk         ; 1.000        ; -0.070     ; 3.113      ;
+; -2.181 ; uart:U2|rx_count[0] ; uart:U2|rx_data[7]   ; clk          ; clk         ; 1.000        ; -0.070     ; 3.113      ;
+; -2.180 ; uart:U2|rx_count[3] ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.066     ; 3.116      ;
+; -2.153 ; uart:U2|rx_count[1] ; uart:U2|rx_data[1]   ; clk          ; clk         ; 1.000        ; -0.070     ; 3.085      ;
+; -2.153 ; uart:U2|rx_count[1] ; uart:U2|rx_data[2]   ; clk          ; clk         ; 1.000        ; -0.070     ; 3.085      ;
+; -2.153 ; uart:U2|rx_count[1] ; uart:U2|rx_data[3]   ; clk          ; clk         ; 1.000        ; -0.070     ; 3.085      ;
+; -2.153 ; uart:U2|rx_count[1] ; uart:U2|rx_data[4]   ; clk          ; clk         ; 1.000        ; -0.070     ; 3.085      ;
+; -2.153 ; uart:U2|rx_count[1] ; uart:U2|rx_data[5]   ; clk          ; clk         ; 1.000        ; -0.070     ; 3.085      ;
+; -2.153 ; uart:U2|rx_count[1] ; uart:U2|rx_data[6]   ; clk          ; clk         ; 1.000        ; -0.070     ; 3.085      ;
+; -2.153 ; uart:U2|rx_count[1] ; uart:U2|rx_data[7]   ; clk          ; clk         ; 1.000        ; -0.070     ; 3.085      ;
+; -2.076 ; uart:U2|os_count[1] ; uart:U2|rx_buffer[1] ; clk          ; clk         ; 1.000        ; -0.071     ; 3.007      ;
+; -2.076 ; uart:U2|os_count[1] ; uart:U2|rx_buffer[2] ; clk          ; clk         ; 1.000        ; -0.071     ; 3.007      ;
+; -2.076 ; uart:U2|os_count[1] ; uart:U2|rx_buffer[3] ; clk          ; clk         ; 1.000        ; -0.071     ; 3.007      ;
+; -2.076 ; uart:U2|os_count[1] ; uart:U2|rx_buffer[4] ; clk          ; clk         ; 1.000        ; -0.071     ; 3.007      ;
+; -2.076 ; uart:U2|os_count[1] ; uart:U2|rx_buffer[5] ; clk          ; clk         ; 1.000        ; -0.071     ; 3.007      ;
+; -2.076 ; uart:U2|os_count[1] ; uart:U2|rx_buffer[6] ; clk          ; clk         ; 1.000        ; -0.071     ; 3.007      ;
+; -2.076 ; uart:U2|os_count[1] ; uart:U2|rx_buffer[7] ; clk          ; clk         ; 1.000        ; -0.071     ; 3.007      ;
+; -2.076 ; uart:U2|os_count[1] ; uart:U2|rx_buffer[8] ; clk          ; clk         ; 1.000        ; -0.071     ; 3.007      ;
+; -2.076 ; uart:U2|os_count[1] ; uart:U2|rx_buffer[9] ; clk          ; clk         ; 1.000        ; -0.071     ; 3.007      ;
+; -2.067 ; uart:U2|os_count[3] ; uart:U2|rx_buffer[1] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.998      ;
+; -2.067 ; uart:U2|os_count[3] ; uart:U2|rx_buffer[2] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.998      ;
+; -2.067 ; uart:U2|os_count[3] ; uart:U2|rx_buffer[3] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.998      ;
+; -2.067 ; uart:U2|os_count[3] ; uart:U2|rx_buffer[4] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.998      ;
+; -2.067 ; uart:U2|os_count[3] ; uart:U2|rx_buffer[5] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.998      ;
+; -2.067 ; uart:U2|os_count[3] ; uart:U2|rx_buffer[6] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.998      ;
+; -2.067 ; uart:U2|os_count[3] ; uart:U2|rx_buffer[7] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.998      ;
+; -2.067 ; uart:U2|os_count[3] ; uart:U2|rx_buffer[8] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.998      ;
+; -2.067 ; uart:U2|os_count[3] ; uart:U2|rx_buffer[9] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.998      ;
+; -2.059 ; uart:U2|os_count[1] ; uart:U2|rx_count[1]  ; clk          ; clk         ; 1.000        ; -0.072     ; 2.989      ;
+; -2.059 ; uart:U2|os_count[1] ; uart:U2|rx_count[0]  ; clk          ; clk         ; 1.000        ; -0.072     ; 2.989      ;
+; -2.059 ; uart:U2|os_count[1] ; uart:U2|rx_count[2]  ; clk          ; clk         ; 1.000        ; -0.072     ; 2.989      ;
+; -2.058 ; uart:U2|tx_busy     ; adder:U1|i[3]        ; clk          ; clk         ; 1.000        ; -0.073     ; 2.987      ;
+; -2.058 ; uart:U2|tx_busy     ; adder:U1|i[4]        ; clk          ; clk         ; 1.000        ; -0.073     ; 2.987      ;
+; -2.058 ; uart:U2|tx_busy     ; adder:U1|i[2]        ; clk          ; clk         ; 1.000        ; -0.073     ; 2.987      ;
+; -2.058 ; uart:U2|tx_busy     ; adder:U1|i[1]        ; clk          ; clk         ; 1.000        ; -0.073     ; 2.987      ;
+; -2.058 ; uart:U2|tx_busy     ; adder:U1|i[0]        ; clk          ; clk         ; 1.000        ; -0.073     ; 2.987      ;
+; -2.054 ; uart:U2|os_count[3] ; uart:U2|rx_count[1]  ; clk          ; clk         ; 1.000        ; -0.072     ; 2.984      ;
+; -2.054 ; uart:U2|os_count[3] ; uart:U2|rx_count[0]  ; clk          ; clk         ; 1.000        ; -0.072     ; 2.984      ;
+; -2.054 ; uart:U2|os_count[3] ; uart:U2|rx_count[2]  ; clk          ; clk         ; 1.000        ; -0.072     ; 2.984      ;
+; -2.047 ; uart:U2|os_count[2] ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.066     ; 2.983      ;
+; -2.019 ; uart:U2|rx_count[2] ; uart:U2|rx_data[1]   ; clk          ; clk         ; 1.000        ; -0.070     ; 2.951      ;
+; -2.019 ; uart:U2|rx_count[2] ; uart:U2|rx_data[2]   ; clk          ; clk         ; 1.000        ; -0.070     ; 2.951      ;
+; -2.019 ; uart:U2|rx_count[2] ; uart:U2|rx_data[3]   ; clk          ; clk         ; 1.000        ; -0.070     ; 2.951      ;
+; -2.019 ; uart:U2|rx_count[2] ; uart:U2|rx_data[4]   ; clk          ; clk         ; 1.000        ; -0.070     ; 2.951      ;
+; -2.019 ; uart:U2|rx_count[2] ; uart:U2|rx_data[5]   ; clk          ; clk         ; 1.000        ; -0.070     ; 2.951      ;
+; -2.019 ; uart:U2|rx_count[2] ; uart:U2|rx_data[6]   ; clk          ; clk         ; 1.000        ; -0.070     ; 2.951      ;
+; -2.019 ; uart:U2|rx_count[2] ; uart:U2|rx_data[7]   ; clk          ; clk         ; 1.000        ; -0.070     ; 2.951      ;
+; -2.018 ; uart:U2|rx_count[0] ; uart:U2|rx_buffer[1] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.949      ;
+; -2.018 ; uart:U2|rx_count[0] ; uart:U2|rx_buffer[2] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.949      ;
+; -2.018 ; uart:U2|rx_count[0] ; uart:U2|rx_buffer[3] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.949      ;
+; -2.018 ; uart:U2|rx_count[0] ; uart:U2|rx_buffer[4] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.949      ;
+; -2.018 ; uart:U2|rx_count[0] ; uart:U2|rx_buffer[5] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.949      ;
+; -2.018 ; uart:U2|rx_count[0] ; uart:U2|rx_buffer[6] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.949      ;
+; -2.018 ; uart:U2|rx_count[0] ; uart:U2|rx_buffer[7] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.949      ;
+; -2.018 ; uart:U2|rx_count[0] ; uart:U2|rx_buffer[8] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.949      ;
+; -2.018 ; uart:U2|rx_count[0] ; uart:U2|rx_buffer[9] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.949      ;
+; -1.990 ; uart:U2|rx_count[1] ; uart:U2|rx_buffer[1] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.921      ;
+; -1.990 ; uart:U2|rx_count[1] ; uart:U2|rx_buffer[2] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.921      ;
+; -1.990 ; uart:U2|rx_count[1] ; uart:U2|rx_buffer[3] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.921      ;
+; -1.990 ; uart:U2|rx_count[1] ; uart:U2|rx_buffer[4] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.921      ;
+; -1.990 ; uart:U2|rx_count[1] ; uart:U2|rx_buffer[5] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.921      ;
+; -1.990 ; uart:U2|rx_count[1] ; uart:U2|rx_buffer[6] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.921      ;
+; -1.990 ; uart:U2|rx_count[1] ; uart:U2|rx_buffer[7] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.921      ;
+; -1.990 ; uart:U2|rx_count[1] ; uart:U2|rx_buffer[8] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.921      ;
+; -1.990 ; uart:U2|rx_count[1] ; uart:U2|rx_buffer[9] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.921      ;
+; -1.939 ; uart:U2|os_pulse    ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.069     ; 2.872      ;
+; -1.919 ; uart:U2|os_count[0] ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.066     ; 2.855      ;
+; -1.913 ; uart:U2|os_count[2] ; uart:U2|rx_buffer[1] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.844      ;
+; -1.913 ; uart:U2|os_count[2] ; uart:U2|rx_buffer[2] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.844      ;
+; -1.913 ; uart:U2|os_count[2] ; uart:U2|rx_buffer[3] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.844      ;
+; -1.913 ; uart:U2|os_count[2] ; uart:U2|rx_buffer[4] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.844      ;
+; -1.913 ; uart:U2|os_count[2] ; uart:U2|rx_buffer[5] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.844      ;
+; -1.913 ; uart:U2|os_count[2] ; uart:U2|rx_buffer[6] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.844      ;
+; -1.913 ; uart:U2|os_count[2] ; uart:U2|rx_buffer[7] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.844      ;
+; -1.913 ; uart:U2|os_count[2] ; uart:U2|rx_buffer[8] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.844      ;
+; -1.913 ; uart:U2|os_count[2] ; uart:U2|rx_buffer[9] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.844      ;
+; -1.904 ; uart:U2|rx_count[3] ; uart:U2|rx_data[1]   ; clk          ; clk         ; 1.000        ; -0.070     ; 2.836      ;
+; -1.904 ; uart:U2|rx_count[3] ; uart:U2|rx_data[2]   ; clk          ; clk         ; 1.000        ; -0.070     ; 2.836      ;
+; -1.904 ; uart:U2|rx_count[3] ; uart:U2|rx_data[3]   ; clk          ; clk         ; 1.000        ; -0.070     ; 2.836      ;
+; -1.904 ; uart:U2|rx_count[3] ; uart:U2|rx_data[4]   ; clk          ; clk         ; 1.000        ; -0.070     ; 2.836      ;
+; -1.904 ; uart:U2|rx_count[3] ; uart:U2|rx_data[5]   ; clk          ; clk         ; 1.000        ; -0.070     ; 2.836      ;
+; -1.904 ; uart:U2|rx_count[3] ; uart:U2|rx_data[6]   ; clk          ; clk         ; 1.000        ; -0.070     ; 2.836      ;
+; -1.904 ; uart:U2|rx_count[3] ; uart:U2|rx_data[7]   ; clk          ; clk         ; 1.000        ; -0.070     ; 2.836      ;
+; -1.893 ; uart:U2|os_count[2] ; uart:U2|rx_count[1]  ; clk          ; clk         ; 1.000        ; -0.072     ; 2.823      ;
+; -1.893 ; uart:U2|os_count[2] ; uart:U2|rx_count[0]  ; clk          ; clk         ; 1.000        ; -0.072     ; 2.823      ;
+; -1.893 ; uart:U2|os_count[2] ; uart:U2|rx_count[2]  ; clk          ; clk         ; 1.000        ; -0.072     ; 2.823      ;
+; -1.892 ; uart:U2|os_count[1] ; uart:U2|rx_data[1]   ; clk          ; clk         ; 1.000        ; -0.070     ; 2.824      ;
+; -1.892 ; uart:U2|os_count[1] ; uart:U2|rx_data[2]   ; clk          ; clk         ; 1.000        ; -0.070     ; 2.824      ;
+; -1.892 ; uart:U2|os_count[1] ; uart:U2|rx_data[3]   ; clk          ; clk         ; 1.000        ; -0.070     ; 2.824      ;
+; -1.892 ; uart:U2|os_count[1] ; uart:U2|rx_data[4]   ; clk          ; clk         ; 1.000        ; -0.070     ; 2.824      ;
++--------+---------------------+----------------------+--------------+-------------+--------------+------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
@@ -557,106 +556,106 @@ No paths to report.
 +-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
-; 0.401 ; uart:U2|tx_busy           ; uart:U2|tx_busy           ; clk          ; clk         ; 0.000        ; 0.073      ; 0.669      ;
-; 0.401 ; uart:U2|rx_count[1]       ; uart:U2|rx_count[1]       ; clk          ; clk         ; 0.000        ; 0.073      ; 0.669      ;
-; 0.401 ; uart:U2|rx_count[2]       ; uart:U2|rx_count[2]       ; clk          ; clk         ; 0.000        ; 0.073      ; 0.669      ;
-; 0.401 ; uart:U2|rx_count[3]       ; uart:U2|rx_count[3]       ; clk          ; clk         ; 0.000        ; 0.073      ; 0.669      ;
-; 0.402 ; adder:U1|tmp[0]           ; adder:U1|tmp[0]           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
-; 0.402 ; adder:U1|sig_state.S0     ; adder:U1|sig_state.S0     ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
-; 0.402 ; adder:U1|tx_ena           ; adder:U1|tx_ena           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
 ; 0.402 ; adder:U1|sig_state.S2     ; adder:U1|sig_state.S2     ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
 ; 0.402 ; adder:U1|state_of_rx_busy ; adder:U1|state_of_rx_busy ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
-; 0.402 ; uart:U2|rx_busy           ; uart:U2|rx_busy           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
-; 0.402 ; uart:U2|os_count[2]       ; uart:U2|os_count[2]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; adder:U1|tx_ena           ; adder:U1|tx_ena           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; uart:U2|tx_busy           ; uart:U2|tx_busy           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; uart:U2|rx_count[3]       ; uart:U2|rx_count[3]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
 ; 0.402 ; uart:U2|rx_state          ; uart:U2|rx_state          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
-; 0.402 ; uart:U2|os_count[1]       ; uart:U2|os_count[1]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
-; 0.402 ; uart:U2|os_count[3]       ; uart:U2|os_count[3]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
 ; 0.402 ; uart:U2|os_count[0]       ; uart:U2|os_count[0]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
-; 0.416 ; uart:U2|rx_count[0]       ; uart:U2|rx_count[0]       ; clk          ; clk         ; 0.000        ; 0.073      ; 0.684      ;
-; 0.451 ; uart:U2|count_baud[12]    ; uart:U2|count_baud[12]    ; clk          ; clk         ; 0.000        ; 0.091      ; 0.737      ;
-; 0.455 ; adder:U1|tx_data[6]       ; uart:U2|tx_buffer[8]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.723      ;
-; 0.463 ; uart:U2|rx_count[1]       ; uart:U2|rx_count[2]       ; clk          ; clk         ; 0.000        ; 0.073      ; 0.731      ;
-; 0.471 ; uart:U2|tx_buffer[0]      ; uart:U2|tx                ; clk          ; clk         ; 0.000        ; 0.073      ; 0.739      ;
-; 0.471 ; uart:U2|tx_buffer[6]      ; uart:U2|tx_buffer[5]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.739      ;
-; 0.475 ; uart:U2|rx_buffer[3]      ; uart:U2|rx_data[2]        ; clk          ; clk         ; 0.000        ; 0.073      ; 0.743      ;
-; 0.476 ; uart:U2|rx_buffer[6]      ; uart:U2|rx_buffer[5]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.744      ;
-; 0.476 ; uart:U2|rx_buffer[8]      ; uart:U2|rx_data[7]        ; clk          ; clk         ; 0.000        ; 0.073      ; 0.744      ;
-; 0.477 ; uart:U2|rx_buffer[3]      ; uart:U2|rx_buffer[2]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.745      ;
-; 0.478 ; uart:U2|rx_buffer[5]      ; uart:U2|rx_buffer[4]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.746      ;
-; 0.478 ; uart:U2|rx_buffer[5]      ; uart:U2|rx_data[4]        ; clk          ; clk         ; 0.000        ; 0.073      ; 0.746      ;
-; 0.478 ; uart:U2|rx_buffer[7]      ; uart:U2|rx_data[6]        ; clk          ; clk         ; 0.000        ; 0.073      ; 0.746      ;
-; 0.478 ; uart:U2|rx_buffer[8]      ; uart:U2|rx_buffer[7]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.746      ;
-; 0.479 ; uart:U2|rx_buffer[7]      ; uart:U2|rx_buffer[6]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.747      ;
-; 0.480 ; uart:U2|rx_buffer[6]      ; uart:U2|rx_data[5]        ; clk          ; clk         ; 0.000        ; 0.073      ; 0.748      ;
-; 0.484 ; uart:U2|rx_count[0]       ; uart:U2|rx_count[1]       ; clk          ; clk         ; 0.000        ; 0.073      ; 0.752      ;
-; 0.491 ; uart:U2|rx_buffer[4]      ; uart:U2|rx_buffer[3]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.759      ;
-; 0.511 ; uart:U2|tx_state          ; uart:U2|tx_busy           ; clk          ; clk         ; 0.000        ; 0.073      ; 0.779      ;
-; 0.539 ; uart:U2|tx_state          ; uart:U2|tx_count[2]       ; clk          ; clk         ; 0.000        ; 0.073      ; 0.807      ;
-; 0.553 ; uart:U2|count_baud[7]     ; uart:U2|count_baud[8]     ; clk          ; clk         ; 0.000        ; 0.539      ; 1.287      ;
-; 0.563 ; uart:U2|count_baud[6]     ; uart:U2|count_baud[8]     ; clk          ; clk         ; 0.000        ; 0.539      ; 1.297      ;
-; 0.597 ; uart:U2|tx_buffer[10]     ; uart:U2|tx_buffer[9]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.865      ;
-; 0.598 ; uart:U2|tx_buffer[5]      ; uart:U2|tx_buffer[4]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.866      ;
-; 0.598 ; uart:U2|tx_buffer[8]      ; uart:U2|tx_buffer[7]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.866      ;
-; 0.599 ; uart:U2|tx_buffer[9]      ; uart:U2|tx_buffer[8]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.867      ;
-; 0.607 ; adder:U1|sig_state.S0     ; adder:U1|sig_state.S1     ; clk          ; clk         ; 0.000        ; 0.072      ; 0.874      ;
-; 0.620 ; uart:U2|rx_buffer[2]      ; uart:U2|rx_buffer[1]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.888      ;
-; 0.629 ; uart:U2|rx_buffer[2]      ; uart:U2|rx_data[1]        ; clk          ; clk         ; 0.000        ; 0.073      ; 0.897      ;
-; 0.645 ; adder:U1|tmp[6]           ; adder:U1|tx_data[6]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.912      ;
-; 0.646 ; uart:U2|rx_buffer[1]      ; uart:U2|rx_data[0]        ; clk          ; clk         ; 0.000        ; 0.073      ; 0.914      ;
-; 0.648 ; uart:U2|rx_buffer[4]      ; uart:U2|rx_data[3]        ; clk          ; clk         ; 0.000        ; 0.073      ; 0.916      ;
-; 0.660 ; adder:U1|tx_data[1]       ; uart:U2|tx_buffer[3]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.928      ;
-; 0.668 ; adder:U1|tx_data[0]       ; uart:U2|tx_buffer[2]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.936      ;
-; 0.668 ; uart:U2|count_os[1]       ; uart:U2|count_os[1]       ; clk          ; clk         ; 0.000        ; 0.091      ; 0.954      ;
-; 0.670 ; uart:U2|tx_busy           ; adder:U1|sig_state.S2     ; clk          ; clk         ; 0.000        ; 0.073      ; 0.938      ;
-; 0.675 ; uart:U2|count_baud[7]     ; uart:U2|count_baud[10]    ; clk          ; clk         ; 0.000        ; 0.539      ; 1.409      ;
-; 0.676 ; uart:U2|count_os[3]       ; uart:U2|count_os[3]       ; clk          ; clk         ; 0.000        ; 0.091      ; 0.962      ;
-; 0.681 ; uart:U2|count_os[6]       ; uart:U2|count_os[6]       ; clk          ; clk         ; 0.000        ; 0.091      ; 0.967      ;
-; 0.681 ; uart:U2|rx_busy           ; adder:U1|state_of_rx_busy ; clk          ; clk         ; 0.000        ; 0.072      ; 0.948      ;
-; 0.681 ; uart:U2|count_baud[8]     ; uart:U2|count_baud[8]     ; clk          ; clk         ; 0.000        ; 0.091      ; 0.967      ;
-; 0.685 ; uart:U2|count_baud[6]     ; uart:U2|count_baud[10]    ; clk          ; clk         ; 0.000        ; 0.539      ; 1.419      ;
-; 0.688 ; uart:U2|count_baud[11]    ; uart:U2|count_baud[11]    ; clk          ; clk         ; 0.000        ; 0.091      ; 0.974      ;
-; 0.689 ; uart:U2|tx_buffer[1]      ; uart:U2|tx_buffer[0]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.957      ;
-; 0.689 ; uart:U2|tx_buffer[2]      ; uart:U2|tx_buffer[1]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.957      ;
-; 0.689 ; uart:U2|tx_buffer[7]      ; uart:U2|tx_buffer[6]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.957      ;
-; 0.691 ; uart:U2|count_os[7]       ; uart:U2|count_os[7]       ; clk          ; clk         ; 0.000        ; 0.091      ; 0.977      ;
-; 0.694 ; uart:U2|tx_buffer[3]      ; uart:U2|tx_buffer[2]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.962      ;
-; 0.694 ; uart:U2|count_baud[10]    ; uart:U2|count_baud[10]    ; clk          ; clk         ; 0.000        ; 0.091      ; 0.980      ;
-; 0.696 ; uart:U2|count_baud[6]     ; uart:U2|count_baud[6]     ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
-; 0.696 ; uart:U2|count_baud[7]     ; uart:U2|count_baud[7]     ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
-; 0.701 ; uart:U2|count_os[0]       ; uart:U2|count_os[0]       ; clk          ; clk         ; 0.000        ; 0.091      ; 0.987      ;
-; 0.701 ; uart:U2|count_baud[4]     ; uart:U2|count_baud[8]     ; clk          ; clk         ; 0.000        ; 0.539      ; 1.435      ;
-; 0.702 ; uart:U2|os_count[0]       ; uart:U2|os_count[1]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.969      ;
-; 0.712 ; uart:U2|count_baud[4]     ; uart:U2|count_baud[4]     ; clk          ; clk         ; 0.000        ; 0.072      ; 0.979      ;
-; 0.714 ; adder:U1|i[3]             ; adder:U1|i[3]             ; clk          ; clk         ; 0.000        ; 0.072      ; 0.981      ;
-; 0.717 ; adder:U1|i[1]             ; adder:U1|i[1]             ; clk          ; clk         ; 0.000        ; 0.072      ; 0.984      ;
-; 0.718 ; adder:U1|i[2]             ; adder:U1|i[2]             ; clk          ; clk         ; 0.000        ; 0.072      ; 0.985      ;
-; 0.730 ; uart:U2|tx_state          ; uart:U2|tx_buffer[4]      ; clk          ; clk         ; 0.000        ; 0.073      ; 0.998      ;
-; 0.731 ; adder:U1|i[4]             ; adder:U1|i[4]             ; clk          ; clk         ; 0.000        ; 0.072      ; 0.998      ;
-; 0.744 ; adder:U1|tx_data[5]       ; uart:U2|tx_buffer[10]     ; clk          ; clk         ; 0.000        ; 0.073      ; 1.012      ;
-; 0.746 ; adder:U1|i[0]             ; adder:U1|i[0]             ; clk          ; clk         ; 0.000        ; 0.072      ; 1.013      ;
-; 0.746 ; uart:U2|os_count[3]       ; uart:U2|rx_state          ; clk          ; clk         ; 0.000        ; 0.072      ; 1.013      ;
-; 0.753 ; uart:U2|count_baud[9]     ; uart:U2|count_baud[10]    ; clk          ; clk         ; 0.000        ; 0.539      ; 1.487      ;
-; 0.763 ; uart:U2|tx_state          ; uart:U2|tx_count[1]       ; clk          ; clk         ; 0.000        ; 0.073      ; 1.031      ;
-; 0.764 ; uart:U2|tx_state          ; uart:U2|tx_count[0]       ; clk          ; clk         ; 0.000        ; 0.073      ; 1.032      ;
-; 0.765 ; uart:U2|tx_state          ; uart:U2|tx_count[3]       ; clk          ; clk         ; 0.000        ; 0.073      ; 1.033      ;
-; 0.771 ; adder:U1|tx_data[4]       ; uart:U2|tx_buffer[6]      ; clk          ; clk         ; 0.000        ; 0.073      ; 1.039      ;
-; 0.772 ; uart:U2|rx_buffer[9]      ; uart:U2|rx_buffer[8]      ; clk          ; clk         ; 0.000        ; 0.073      ; 1.040      ;
-; 0.772 ; uart:U2|count_baud[7]     ; uart:U2|count_baud[11]    ; clk          ; clk         ; 0.000        ; 0.539      ; 1.506      ;
-; 0.775 ; adder:U1|tx_data[2]       ; uart:U2|tx_buffer[4]      ; clk          ; clk         ; 0.000        ; 0.073      ; 1.043      ;
-; 0.780 ; uart:U2|count_baud[9]     ; uart:U2|count_baud[11]    ; clk          ; clk         ; 0.000        ; 0.539      ; 1.514      ;
-; 0.792 ; uart:U2|count_baud[6]     ; uart:U2|count_baud[11]    ; clk          ; clk         ; 0.000        ; 0.539      ; 1.526      ;
-; 0.797 ; uart:U2|count_baud[7]     ; uart:U2|count_baud[12]    ; clk          ; clk         ; 0.000        ; 0.539      ; 1.531      ;
-; 0.798 ; adder:U1|tx_data[6]       ; uart:U2|tx_buffer[10]     ; clk          ; clk         ; 0.000        ; 0.073      ; 1.066      ;
-; 0.804 ; uart:U2|rx_count[1]       ; uart:U2|rx_count[3]       ; clk          ; clk         ; 0.000        ; 0.073      ; 1.072      ;
-; 0.807 ; uart:U2|count_baud[6]     ; uart:U2|count_baud[12]    ; clk          ; clk         ; 0.000        ; 0.539      ; 1.541      ;
-; 0.809 ; adder:U1|tmp[2]           ; adder:U1|tx_data[2]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.076      ;
-; 0.816 ; adder:U1|tmp[1]           ; adder:U1|tx_data[1]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.083      ;
-; 0.823 ; uart:U2|count_baud[4]     ; uart:U2|count_baud[10]    ; clk          ; clk         ; 0.000        ; 0.539      ; 1.557      ;
-; 0.835 ; adder:U1|tmp[7]           ; adder:U1|tx_data[7]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.102      ;
-; 0.836 ; uart:U2|tx_busy           ; adder:U1|tx_ena           ; clk          ; clk         ; 0.000        ; 0.073      ; 1.104      ;
-; 0.848 ; uart:U2|count_os[8]       ; uart:U2|count_os[8]       ; clk          ; clk         ; 0.000        ; 0.091      ; 1.134      ;
-; 0.859 ; uart:U2|count_baud[5]     ; uart:U2|count_baud[5]     ; clk          ; clk         ; 0.000        ; 0.072      ; 1.126      ;
-; 0.859 ; uart:U2|os_count[1]       ; uart:U2|os_count[3]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.126      ;
+; 0.402 ; uart:U2|os_count[3]       ; uart:U2|os_count[3]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; uart:U2|os_count[2]       ; uart:U2|os_count[2]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; uart:U2|os_count[1]       ; uart:U2|os_count[1]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; uart:U2|rx_count[2]       ; uart:U2|rx_count[2]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; uart:U2|count_os[1]       ; uart:U2|count_os[1]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; uart:U2|count_os[2]       ; uart:U2|count_os[2]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.417 ; uart:U2|rx_count[0]       ; uart:U2|rx_count[0]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.684      ;
+; 0.417 ; uart:U2|count_os[0]       ; uart:U2|count_os[0]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.684      ;
+; 0.457 ; uart:U2|count_baud[6]     ; uart:U2|count_baud[6]     ; clk          ; clk         ; 0.000        ; 0.072      ; 0.724      ;
+; 0.471 ; uart:U2|tx_buffer[2]      ; uart:U2|tx_buffer[1]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.738      ;
+; 0.471 ; uart:U2|tx_buffer[8]      ; uart:U2|tx_buffer[7]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.738      ;
+; 0.471 ; uart:U2|tx_buffer[9]      ; uart:U2|tx_buffer[8]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.738      ;
+; 0.471 ; uart:U2|tx_buffer[10]     ; uart:U2|tx_buffer[9]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.738      ;
+; 0.471 ; uart:U2|rx_buffer[9]      ; uart:U2|rx_buffer[8]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.738      ;
+; 0.472 ; uart:U2|tx_buffer[3]      ; uart:U2|tx_buffer[2]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.739      ;
+; 0.494 ; uart:U2|rx_buffer[7]      ; uart:U2|rx_buffer[6]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.761      ;
+; 0.503 ; uart:U2|tx_state          ; uart:U2|tx_busy           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.770      ;
+; 0.503 ; uart:U2|rx_count[0]       ; uart:U2|rx_count[2]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.770      ;
+; 0.532 ; adder:U1|sig_state.S2     ; adder:U1|state_of_rx_busy ; clk          ; clk         ; 0.000        ; 0.072      ; 0.799      ;
+; 0.532 ; adder:U1|sig_state.S2     ; adder:U1|tx_ena           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.799      ;
+; 0.580 ; adder:U1|tx_data[5]       ; uart:U2|tx_buffer[7]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.847      ;
+; 0.581 ; adder:U1|tx_data[3]       ; uart:U2|tx_buffer[5]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.848      ;
+; 0.609 ; uart:U2|count_baud[4]     ; uart:U2|baud_pulse        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.876      ;
+; 0.610 ; uart:U2|tx_buffer[1]      ; uart:U2|tx_buffer[0]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.877      ;
+; 0.611 ; uart:U2|tx_buffer[6]      ; uart:U2|tx_buffer[5]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.878      ;
+; 0.612 ; uart:U2|rx_buffer[5]      ; uart:U2|rx_data[4]        ; clk          ; clk         ; 0.000        ; 0.074      ; 0.881      ;
+; 0.615 ; uart:U2|tx_buffer[5]      ; uart:U2|tx_buffer[4]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.882      ;
+; 0.620 ; uart:U2|rx_buffer[6]      ; uart:U2|rx_data[5]        ; clk          ; clk         ; 0.000        ; 0.074      ; 0.889      ;
+; 0.620 ; uart:U2|rx_buffer[6]      ; uart:U2|rx_buffer[5]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.887      ;
+; 0.621 ; uart:U2|rx_buffer[8]      ; uart:U2|rx_buffer[7]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.888      ;
+; 0.624 ; uart:U2|rx_buffer[3]      ; uart:U2|rx_data[2]        ; clk          ; clk         ; 0.000        ; 0.074      ; 0.893      ;
+; 0.628 ; uart:U2|rx_buffer[8]      ; uart:U2|rx_data[7]        ; clk          ; clk         ; 0.000        ; 0.074      ; 0.897      ;
+; 0.635 ; uart:U2|rx_buffer[4]      ; uart:U2|rx_data[3]        ; clk          ; clk         ; 0.000        ; 0.074      ; 0.904      ;
+; 0.646 ; uart:U2|tx_buffer[0]      ; uart:U2|tx                ; clk          ; clk         ; 0.000        ; 0.072      ; 0.913      ;
+; 0.646 ; uart:U2|rx_buffer[2]      ; uart:U2|rx_data[1]        ; clk          ; clk         ; 0.000        ; 0.074      ; 0.915      ;
+; 0.647 ; uart:U2|rx_data[0]        ; adder:U1|secret[0]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.914      ;
+; 0.647 ; uart:U2|rx_buffer[7]      ; uart:U2|rx_data[6]        ; clk          ; clk         ; 0.000        ; 0.074      ; 0.916      ;
+; 0.667 ; uart:U2|rx_buffer[3]      ; uart:U2|rx_buffer[2]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.934      ;
+; 0.680 ; uart:U2|tx_state          ; uart:U2|tx_count[2]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.947      ;
+; 0.680 ; uart:U2|tx_state          ; uart:U2|tx_count[0]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.947      ;
+; 0.691 ; uart:U2|tx_buffer[7]      ; uart:U2|tx_buffer[6]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.958      ;
+; 0.693 ; uart:U2|count_baud[3]     ; uart:U2|count_baud[3]     ; clk          ; clk         ; 0.000        ; 0.072      ; 0.960      ;
+; 0.694 ; uart:U2|count_baud[1]     ; uart:U2|count_baud[1]     ; clk          ; clk         ; 0.000        ; 0.072      ; 0.961      ;
+; 0.694 ; uart:U2|count_baud[6]     ; uart:U2|baud_pulse        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.961      ;
+; 0.695 ; uart:U2|tx_buffer[4]      ; uart:U2|tx_buffer[3]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.962      ;
+; 0.698 ; uart:U2|count_baud[2]     ; uart:U2|count_baud[2]     ; clk          ; clk         ; 0.000        ; 0.072      ; 0.965      ;
+; 0.699 ; uart:U2|count_baud[4]     ; uart:U2|count_baud[4]     ; clk          ; clk         ; 0.000        ; 0.072      ; 0.966      ;
+; 0.709 ; adder:U1|i[4]             ; adder:U1|i[4]             ; clk          ; clk         ; 0.000        ; 0.073      ; 0.977      ;
+; 0.715 ; uart:U2|os_count[0]       ; uart:U2|os_count[1]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.982      ;
+; 0.717 ; adder:U1|i[2]             ; adder:U1|i[2]             ; clk          ; clk         ; 0.000        ; 0.073      ; 0.985      ;
+; 0.720 ; uart:U2|count_baud[0]     ; uart:U2|count_baud[0]     ; clk          ; clk         ; 0.000        ; 0.072      ; 0.987      ;
+; 0.722 ; uart:U2|tx_busy           ; adder:U1|tx_ena           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.989      ;
+; 0.728 ; adder:U1|i[3]             ; adder:U1|i[3]             ; clk          ; clk         ; 0.000        ; 0.073      ; 0.996      ;
+; 0.731 ; uart:U2|rx_state          ; uart:U2|rx_busy           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.998      ;
+; 0.739 ; adder:U1|i[1]             ; adder:U1|i[1]             ; clk          ; clk         ; 0.000        ; 0.073      ; 1.007      ;
+; 0.741 ; uart:U2|tx_state          ; uart:U2|tx_count[3]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.008      ;
+; 0.744 ; adder:U1|i[0]             ; adder:U1|i[0]             ; clk          ; clk         ; 0.000        ; 0.073      ; 1.012      ;
+; 0.752 ; uart:U2|tx_busy           ; adder:U1|sig_state.S1     ; clk          ; clk         ; 0.000        ; 0.072      ; 1.019      ;
+; 0.770 ; adder:U1|i[0]             ; adder:U1|tx_data[0]       ; clk          ; clk         ; 0.000        ; 0.073      ; 1.038      ;
+; 0.774 ; uart:U2|count_os[1]       ; uart:U2|count_os[2]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.041      ;
+; 0.786 ; uart:U2|rx_buffer[5]      ; uart:U2|rx_buffer[4]      ; clk          ; clk         ; 0.000        ; 0.072      ; 1.053      ;
+; 0.787 ; uart:U2|rx_buffer[4]      ; uart:U2|rx_buffer[3]      ; clk          ; clk         ; 0.000        ; 0.072      ; 1.054      ;
+; 0.794 ; uart:U2|tx_busy           ; adder:U1|sig_state.S2     ; clk          ; clk         ; 0.000        ; 0.072      ; 1.061      ;
+; 0.801 ; uart:U2|rx_buffer[2]      ; uart:U2|rx_buffer[1]      ; clk          ; clk         ; 0.000        ; 0.072      ; 1.068      ;
+; 0.804 ; adder:U1|tx_ena           ; uart:U2|tx_busy           ; clk          ; clk         ; 0.000        ; 0.072      ; 1.071      ;
+; 0.811 ; uart:U2|count_os[2]       ; uart:U2|count_os[0]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.078      ;
+; 0.817 ; uart:U2|count_os[1]       ; uart:U2|count_os[0]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.084      ;
+; 0.818 ; uart:U2|rx_count[1]       ; uart:U2|rx_count[3]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.085      ;
+; 0.824 ; uart:U2|tx_busy           ; adder:U1|sig_state.S0     ; clk          ; clk         ; 0.000        ; 0.072      ; 1.091      ;
+; 0.830 ; adder:U1|sig_state.S2     ; adder:U1|sig_state.S0     ; clk          ; clk         ; 0.000        ; 0.072      ; 1.097      ;
+; 0.833 ; uart:U2|count_baud[0]     ; uart:U2|baud_pulse        ; clk          ; clk         ; 0.000        ; 0.072      ; 1.100      ;
+; 0.860 ; uart:U2|count_baud[5]     ; uart:U2|count_baud[5]     ; clk          ; clk         ; 0.000        ; 0.072      ; 1.127      ;
+; 0.862 ; adder:U1|tx_ena           ; uart:U2|tx_state          ; clk          ; clk         ; 0.000        ; 0.072      ; 1.129      ;
+; 0.864 ; uart:U2|rx_data[0]        ; adder:U1|tx_data[0]       ; clk          ; clk         ; 0.000        ; 0.073      ; 1.132      ;
+; 0.876 ; adder:U1|tx_data[3]       ; uart:U2|tx_buffer[10]     ; clk          ; clk         ; 0.000        ; 0.072      ; 1.143      ;
+; 0.876 ; uart:U2|count_baud[5]     ; uart:U2|baud_pulse        ; clk          ; clk         ; 0.000        ; 0.072      ; 1.143      ;
+; 0.900 ; uart:U2|rx_data[4]        ; adder:U1|tx_data[4]       ; clk          ; clk         ; 0.000        ; 0.077      ; 1.172      ;
+; 0.907 ; uart:U2|rx_data[1]        ; adder:U1|tx_data[1]       ; clk          ; clk         ; 0.000        ; 0.077      ; 1.179      ;
+; 0.911 ; uart:U2|rx_data[6]        ; adder:U1|secret[6]        ; clk          ; clk         ; 0.000        ; 0.076      ; 1.182      ;
+; 0.915 ; uart:U2|tx_state          ; uart:U2|tx_count[1]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.182      ;
+; 0.922 ; adder:U1|tx_data[4]       ; uart:U2|tx_buffer[6]      ; clk          ; clk         ; 0.000        ; 0.076      ; 1.193      ;
+; 0.928 ; uart:U2|rx_data[1]        ; adder:U1|secret[1]        ; clk          ; clk         ; 0.000        ; 0.076      ; 1.199      ;
+; 0.931 ; uart:U2|count_os[0]       ; uart:U2|count_os[2]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.198      ;
+; 0.933 ; uart:U2|rx_data[2]        ; adder:U1|secret[2]        ; clk          ; clk         ; 0.000        ; 0.076      ; 1.204      ;
+; 0.933 ; uart:U2|count_os[0]       ; uart:U2|count_os[1]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.200      ;
+; 0.939 ; adder:U1|tx_data[1]       ; uart:U2|tx_buffer[3]      ; clk          ; clk         ; 0.000        ; 0.076      ; 1.210      ;
+; 0.945 ; uart:U2|rx_data[6]        ; adder:U1|tx_data[6]       ; clk          ; clk         ; 0.000        ; 0.077      ; 1.217      ;
+; 0.946 ; uart:U2|count_os[2]       ; uart:U2|count_os[1]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.213      ;
+; 0.959 ; uart:U2|tx_state          ; uart:U2|tx_state          ; clk          ; clk         ; 0.000        ; 0.072      ; 1.226      ;
+; 0.965 ; uart:U2|rx_state          ; uart:U2|rx_count[2]       ; clk          ; clk         ; 0.000        ; 0.071      ; 1.231      ;
+; 0.966 ; uart:U2|rx_state          ; uart:U2|rx_count[0]       ; clk          ; clk         ; 0.000        ; 0.071      ; 1.232      ;
+; 0.967 ; adder:U1|i[3]             ; adder:U1|tx_data[0]       ; clk          ; clk         ; 0.000        ; 0.073      ; 1.235      ;
+; 0.985 ; uart:U2|count_baud[2]     ; uart:U2|baud_pulse        ; clk          ; clk         ; 0.000        ; 0.072      ; 1.252      ;
 +-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -672,7 +671,7 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------+--------+-------------------+
 ; Clock ; Slack  ; End Point TNS     ;
 +-------+--------+-------------------+
-; clk   ; -0.899 ; -44.344           ;
+; clk   ; -0.623 ; -20.040           ;
 +-------+--------+-------------------+
 
 
@@ -702,116 +701,116 @@ No paths to report.
 +-------+--------+---------------------------------+
 ; Clock ; Slack  ; End Point TNS                   ;
 +-------+--------+---------------------------------+
-; clk   ; -3.000 ; -113.105                        ;
+; clk   ; -3.000 ; -91.323                         ;
 +-------+--------+---------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Setup: 'clk'                                                                                            ;
-+--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
-; -0.899 ; uart:U2|count_baud[3] ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; 0.155      ; 2.041      ;
-; -0.895 ; uart:U2|count_baud[3] ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; 0.155      ; 2.037      ;
-; -0.852 ; uart:U2|count_baud[0] ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.994      ;
-; -0.848 ; uart:U2|count_baud[0] ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.990      ;
-; -0.831 ; uart:U2|count_baud[3] ; uart:U2|count_os[6]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.973      ;
-; -0.827 ; uart:U2|count_baud[3] ; uart:U2|count_os[5]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.969      ;
-; -0.785 ; uart:U2|count_baud[2] ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.927      ;
-; -0.784 ; uart:U2|count_baud[0] ; uart:U2|count_os[6]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.926      ;
-; -0.780 ; uart:U2|count_baud[0] ; uart:U2|count_os[5]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.922      ;
-; -0.777 ; uart:U2|count_baud[2] ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.919      ;
-; -0.771 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[1]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.722      ;
-; -0.771 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[3]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.722      ;
-; -0.763 ; uart:U2|count_baud[3] ; uart:U2|count_os[4]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.905      ;
-; -0.759 ; uart:U2|count_baud[3] ; uart:U2|count_os[3]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.901      ;
-; -0.746 ; uart:U2|count_baud[5] ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.888      ;
-; -0.746 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[1]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.697      ;
-; -0.746 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[3]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.697      ;
-; -0.742 ; uart:U2|count_baud[5] ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.884      ;
-; -0.731 ; uart:U2|count_baud[1] ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.873      ;
-; -0.727 ; uart:U2|count_baud[1] ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.869      ;
-; -0.717 ; uart:U2|count_baud[2] ; uart:U2|count_os[6]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.859      ;
-; -0.716 ; uart:U2|count_baud[0] ; uart:U2|count_os[4]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.858      ;
-; -0.713 ; uart:U2|os_count[2]   ; uart:U2|rx_data[1]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.664      ;
-; -0.713 ; uart:U2|os_count[2]   ; uart:U2|rx_data[3]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.664      ;
-; -0.712 ; uart:U2|count_baud[0] ; uart:U2|count_os[3]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.854      ;
-; -0.710 ; adder:U1|i[1]         ; adder:U1|tmp[0]       ; clk          ; clk         ; 1.000        ; -0.037     ; 1.660      ;
-; -0.709 ; uart:U2|count_baud[2] ; uart:U2|count_os[5]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.851      ;
-; -0.695 ; uart:U2|count_baud[3] ; uart:U2|count_os[2]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.837      ;
-; -0.691 ; uart:U2|count_baud[3] ; uart:U2|count_os[1]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.833      ;
-; -0.682 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[1]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.633      ;
-; -0.682 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[2]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.633      ;
-; -0.682 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[3]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.633      ;
-; -0.682 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[4]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.633      ;
-; -0.682 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[5]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.633      ;
-; -0.682 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[6]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.633      ;
-; -0.682 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[7]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.633      ;
-; -0.682 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[8]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.633      ;
-; -0.682 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[9]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.633      ;
-; -0.682 ; uart:U2|count_baud[8] ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; -0.044     ; 1.625      ;
-; -0.678 ; uart:U2|count_baud[8] ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; -0.044     ; 1.621      ;
-; -0.678 ; uart:U2|count_baud[5] ; uart:U2|count_os[6]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.820      ;
-; -0.677 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[0]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.628      ;
-; -0.677 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[2]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.628      ;
-; -0.677 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[4]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.628      ;
-; -0.677 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[5]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.628      ;
-; -0.677 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[6]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.628      ;
-; -0.677 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[7]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.628      ;
-; -0.674 ; uart:U2|count_baud[5] ; uart:U2|count_os[5]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.816      ;
-; -0.670 ; uart:U2|count_baud[6] ; uart:U2|count_os[8]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.812      ;
-; -0.666 ; uart:U2|count_baud[6] ; uart:U2|count_os[7]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.808      ;
-; -0.663 ; uart:U2|count_baud[1] ; uart:U2|count_os[6]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.805      ;
-; -0.662 ; uart:U2|rx_count[3]   ; uart:U2|rx_buffer[1]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.613      ;
-; -0.662 ; uart:U2|rx_count[3]   ; uart:U2|rx_buffer[2]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.613      ;
-; -0.662 ; uart:U2|rx_count[3]   ; uart:U2|rx_buffer[3]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.613      ;
-; -0.662 ; uart:U2|rx_count[3]   ; uart:U2|rx_buffer[4]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.613      ;
-; -0.662 ; uart:U2|rx_count[3]   ; uart:U2|rx_buffer[5]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.613      ;
-; -0.662 ; uart:U2|rx_count[3]   ; uart:U2|rx_buffer[6]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.613      ;
-; -0.662 ; uart:U2|rx_count[3]   ; uart:U2|rx_buffer[7]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.613      ;
-; -0.662 ; uart:U2|rx_count[3]   ; uart:U2|rx_buffer[8]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.613      ;
-; -0.662 ; uart:U2|rx_count[3]   ; uart:U2|rx_buffer[9]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.613      ;
-; -0.660 ; uart:U2|os_count[0]   ; uart:U2|rx_data[1]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.611      ;
-; -0.660 ; uart:U2|os_count[0]   ; uart:U2|rx_data[3]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.611      ;
-; -0.659 ; uart:U2|count_baud[1] ; uart:U2|count_os[5]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.801      ;
-; -0.659 ; adder:U1|i[2]         ; adder:U1|tmp[0]       ; clk          ; clk         ; 1.000        ; -0.037     ; 1.609      ;
-; -0.657 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[0]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.608      ;
-; -0.657 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[2]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.608      ;
-; -0.657 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[4]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.608      ;
-; -0.657 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[5]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.608      ;
-; -0.657 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[6]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.608      ;
-; -0.657 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[7]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.608      ;
-; -0.649 ; uart:U2|count_baud[2] ; uart:U2|count_os[4]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.791      ;
-; -0.648 ; uart:U2|count_baud[0] ; uart:U2|count_os[2]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.790      ;
-; -0.646 ; uart:U2|rx_count[2]   ; uart:U2|rx_data[1]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.597      ;
-; -0.646 ; uart:U2|rx_count[2]   ; uart:U2|rx_data[3]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.597      ;
-; -0.644 ; uart:U2|count_baud[0] ; uart:U2|count_os[1]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.786      ;
-; -0.641 ; uart:U2|count_baud[2] ; uart:U2|count_os[3]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.783      ;
-; -0.629 ; uart:U2|count_baud[3] ; uart:U2|count_os[0]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.771      ;
-; -0.627 ; uart:U2|os_count[2]   ; uart:U2|rx_buffer[1]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.578      ;
-; -0.627 ; uart:U2|os_count[2]   ; uart:U2|rx_buffer[2]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.578      ;
-; -0.627 ; uart:U2|os_count[2]   ; uart:U2|rx_buffer[3]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.578      ;
-; -0.627 ; uart:U2|os_count[2]   ; uart:U2|rx_buffer[4]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.578      ;
-; -0.627 ; uart:U2|os_count[2]   ; uart:U2|rx_buffer[5]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.578      ;
-; -0.627 ; uart:U2|os_count[2]   ; uart:U2|rx_buffer[6]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.578      ;
-; -0.627 ; uart:U2|os_count[2]   ; uart:U2|rx_buffer[7]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.578      ;
-; -0.627 ; uart:U2|os_count[2]   ; uart:U2|rx_buffer[8]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.578      ;
-; -0.627 ; uart:U2|os_count[2]   ; uart:U2|rx_buffer[9]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.578      ;
-; -0.625 ; uart:U2|count_baud[3] ; uart:U2|count_baud[4] ; clk          ; clk         ; 1.000        ; -0.037     ; 1.575      ;
-; -0.625 ; uart:U2|count_baud[3] ; uart:U2|count_baud[0] ; clk          ; clk         ; 1.000        ; -0.037     ; 1.575      ;
-; -0.625 ; uart:U2|count_baud[3] ; uart:U2|count_baud[1] ; clk          ; clk         ; 1.000        ; -0.037     ; 1.575      ;
-; -0.625 ; uart:U2|count_baud[3] ; uart:U2|count_baud[2] ; clk          ; clk         ; 1.000        ; -0.037     ; 1.575      ;
-; -0.625 ; uart:U2|count_baud[3] ; uart:U2|count_baud[3] ; clk          ; clk         ; 1.000        ; -0.037     ; 1.575      ;
-; -0.625 ; uart:U2|count_baud[3] ; uart:U2|count_baud[5] ; clk          ; clk         ; 1.000        ; -0.037     ; 1.575      ;
-; -0.625 ; uart:U2|count_baud[3] ; uart:U2|count_baud[6] ; clk          ; clk         ; 1.000        ; -0.037     ; 1.575      ;
-; -0.625 ; uart:U2|count_baud[3] ; uart:U2|count_baud[7] ; clk          ; clk         ; 1.000        ; -0.037     ; 1.575      ;
-; -0.625 ; uart:U2|count_baud[3] ; uart:U2|count_baud[9] ; clk          ; clk         ; 1.000        ; -0.037     ; 1.575      ;
-; -0.614 ; uart:U2|count_baud[8] ; uart:U2|count_os[6]   ; clk          ; clk         ; 1.000        ; -0.044     ; 1.557      ;
-; -0.610 ; uart:U2|count_baud[8] ; uart:U2|count_os[5]   ; clk          ; clk         ; 1.000        ; -0.044     ; 1.553      ;
-; -0.610 ; uart:U2|count_baud[5] ; uart:U2|count_os[4]   ; clk          ; clk         ; 1.000        ; 0.155      ; 1.752      ;
-; -0.610 ; uart:U2|os_count[2]   ; uart:U2|rx_data[0]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.561      ;
-; -0.610 ; uart:U2|os_count[2]   ; uart:U2|rx_data[2]    ; clk          ; clk         ; 1.000        ; -0.036     ; 1.561      ;
-+--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'clk'                                                                                           ;
++--------+-----------------------+----------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+----------------------+--------------+-------------+--------------+------------+------------+
+; -0.623 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.031     ; 1.579      ;
+; -0.607 ; uart:U2|rx_count[1]   ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.031     ; 1.563      ;
+; -0.528 ; uart:U2|rx_count[2]   ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.031     ; 1.484      ;
+; -0.495 ; uart:U2|os_count[1]   ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.031     ; 1.451      ;
+; -0.491 ; uart:U2|os_count[3]   ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.031     ; 1.447      ;
+; -0.479 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.031     ; 1.435      ;
+; -0.475 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[1]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.427      ;
+; -0.475 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[2]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.427      ;
+; -0.475 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[3]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.427      ;
+; -0.475 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[4]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.427      ;
+; -0.475 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[5]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.427      ;
+; -0.475 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[6]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.427      ;
+; -0.475 ; uart:U2|rx_count[0]   ; uart:U2|rx_data[7]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.427      ;
+; -0.459 ; uart:U2|rx_count[1]   ; uart:U2|rx_data[1]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.411      ;
+; -0.459 ; uart:U2|rx_count[1]   ; uart:U2|rx_data[2]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.411      ;
+; -0.459 ; uart:U2|rx_count[1]   ; uart:U2|rx_data[3]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.411      ;
+; -0.459 ; uart:U2|rx_count[1]   ; uart:U2|rx_data[4]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.411      ;
+; -0.459 ; uart:U2|rx_count[1]   ; uart:U2|rx_data[5]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.411      ;
+; -0.459 ; uart:U2|rx_count[1]   ; uart:U2|rx_data[6]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.411      ;
+; -0.459 ; uart:U2|rx_count[1]   ; uart:U2|rx_data[7]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.411      ;
+; -0.443 ; uart:U2|os_count[1]   ; uart:U2|rx_count[1]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.394      ;
+; -0.443 ; uart:U2|os_count[1]   ; uart:U2|rx_count[0]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.394      ;
+; -0.443 ; uart:U2|os_count[1]   ; uart:U2|rx_count[2]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.394      ;
+; -0.439 ; uart:U2|os_count[3]   ; uart:U2|rx_count[1]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.390      ;
+; -0.439 ; uart:U2|os_count[3]   ; uart:U2|rx_count[0]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.390      ;
+; -0.439 ; uart:U2|os_count[3]   ; uart:U2|rx_count[2]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.390      ;
+; -0.403 ; uart:U2|os_count[1]   ; uart:U2|rx_buffer[1] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.355      ;
+; -0.403 ; uart:U2|os_count[1]   ; uart:U2|rx_buffer[2] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.355      ;
+; -0.403 ; uart:U2|os_count[1]   ; uart:U2|rx_buffer[3] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.355      ;
+; -0.403 ; uart:U2|os_count[1]   ; uart:U2|rx_buffer[4] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.355      ;
+; -0.403 ; uart:U2|os_count[1]   ; uart:U2|rx_buffer[5] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.355      ;
+; -0.403 ; uart:U2|os_count[1]   ; uart:U2|rx_buffer[6] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.355      ;
+; -0.403 ; uart:U2|os_count[1]   ; uart:U2|rx_buffer[7] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.355      ;
+; -0.403 ; uart:U2|os_count[1]   ; uart:U2|rx_buffer[8] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.355      ;
+; -0.403 ; uart:U2|os_count[1]   ; uart:U2|rx_buffer[9] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.355      ;
+; -0.399 ; uart:U2|os_count[3]   ; uart:U2|rx_buffer[1] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.351      ;
+; -0.399 ; uart:U2|os_count[3]   ; uart:U2|rx_buffer[2] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.351      ;
+; -0.399 ; uart:U2|os_count[3]   ; uart:U2|rx_buffer[3] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.351      ;
+; -0.399 ; uart:U2|os_count[3]   ; uart:U2|rx_buffer[4] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.351      ;
+; -0.399 ; uart:U2|os_count[3]   ; uart:U2|rx_buffer[5] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.351      ;
+; -0.399 ; uart:U2|os_count[3]   ; uart:U2|rx_buffer[6] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.351      ;
+; -0.399 ; uart:U2|os_count[3]   ; uart:U2|rx_buffer[7] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.351      ;
+; -0.399 ; uart:U2|os_count[3]   ; uart:U2|rx_buffer[8] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.351      ;
+; -0.399 ; uart:U2|os_count[3]   ; uart:U2|rx_buffer[9] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.351      ;
+; -0.394 ; uart:U2|os_count[2]   ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.031     ; 1.350      ;
+; -0.388 ; uart:U2|tx_busy       ; adder:U1|i[3]        ; clk          ; clk         ; 1.000        ; -0.037     ; 1.338      ;
+; -0.388 ; uart:U2|tx_busy       ; adder:U1|i[4]        ; clk          ; clk         ; 1.000        ; -0.037     ; 1.338      ;
+; -0.388 ; uart:U2|tx_busy       ; adder:U1|i[2]        ; clk          ; clk         ; 1.000        ; -0.037     ; 1.338      ;
+; -0.388 ; uart:U2|tx_busy       ; adder:U1|i[1]        ; clk          ; clk         ; 1.000        ; -0.037     ; 1.338      ;
+; -0.388 ; uart:U2|tx_busy       ; adder:U1|i[0]        ; clk          ; clk         ; 1.000        ; -0.037     ; 1.338      ;
+; -0.380 ; uart:U2|rx_count[2]   ; uart:U2|rx_data[1]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.332      ;
+; -0.380 ; uart:U2|rx_count[2]   ; uart:U2|rx_data[2]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.332      ;
+; -0.380 ; uart:U2|rx_count[2]   ; uart:U2|rx_data[3]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.332      ;
+; -0.380 ; uart:U2|rx_count[2]   ; uart:U2|rx_data[4]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.332      ;
+; -0.380 ; uart:U2|rx_count[2]   ; uart:U2|rx_data[5]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.332      ;
+; -0.380 ; uart:U2|rx_count[2]   ; uart:U2|rx_data[6]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.332      ;
+; -0.380 ; uart:U2|rx_count[2]   ; uart:U2|rx_data[7]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.332      ;
+; -0.368 ; uart:U2|os_count[1]   ; uart:U2|rx_count[3]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.319      ;
+; -0.364 ; uart:U2|os_count[3]   ; uart:U2|rx_count[3]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.315      ;
+; -0.353 ; uart:U2|os_count[0]   ; uart:U2|rx_data[0]   ; clk          ; clk         ; 1.000        ; -0.031     ; 1.309      ;
+; -0.349 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[1] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.301      ;
+; -0.349 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[2] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.301      ;
+; -0.349 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[3] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.301      ;
+; -0.349 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[4] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.301      ;
+; -0.349 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[5] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.301      ;
+; -0.349 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[6] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.301      ;
+; -0.349 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[7] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.301      ;
+; -0.349 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[8] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.301      ;
+; -0.349 ; uart:U2|rx_count[0]   ; uart:U2|rx_buffer[9] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.301      ;
+; -0.347 ; uart:U2|os_count[1]   ; uart:U2|rx_data[1]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.299      ;
+; -0.347 ; uart:U2|os_count[1]   ; uart:U2|rx_data[2]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.299      ;
+; -0.347 ; uart:U2|os_count[1]   ; uart:U2|rx_data[3]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.299      ;
+; -0.347 ; uart:U2|os_count[1]   ; uart:U2|rx_data[4]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.299      ;
+; -0.347 ; uart:U2|os_count[1]   ; uart:U2|rx_data[5]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.299      ;
+; -0.347 ; uart:U2|os_count[1]   ; uart:U2|rx_data[6]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.299      ;
+; -0.347 ; uart:U2|os_count[1]   ; uart:U2|rx_data[7]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.299      ;
+; -0.343 ; uart:U2|os_count[3]   ; uart:U2|rx_data[1]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.295      ;
+; -0.343 ; uart:U2|os_count[3]   ; uart:U2|rx_data[2]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.295      ;
+; -0.343 ; uart:U2|os_count[3]   ; uart:U2|rx_data[3]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.295      ;
+; -0.343 ; uart:U2|os_count[3]   ; uart:U2|rx_data[4]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.295      ;
+; -0.343 ; uart:U2|os_count[3]   ; uart:U2|rx_data[5]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.295      ;
+; -0.343 ; uart:U2|os_count[3]   ; uart:U2|rx_data[6]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.295      ;
+; -0.343 ; uart:U2|os_count[3]   ; uart:U2|rx_data[7]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.295      ;
+; -0.342 ; uart:U2|os_count[2]   ; uart:U2|rx_count[1]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.293      ;
+; -0.342 ; uart:U2|os_count[2]   ; uart:U2|rx_count[0]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.293      ;
+; -0.342 ; uart:U2|os_count[2]   ; uart:U2|rx_count[2]  ; clk          ; clk         ; 1.000        ; -0.036     ; 1.293      ;
+; -0.333 ; uart:U2|count_baud[3] ; uart:U2|os_pulse     ; clk          ; clk         ; 1.000        ; -0.041     ; 1.279      ;
+; -0.333 ; uart:U2|rx_count[1]   ; uart:U2|rx_buffer[1] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.285      ;
+; -0.333 ; uart:U2|rx_count[1]   ; uart:U2|rx_buffer[2] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.285      ;
+; -0.333 ; uart:U2|rx_count[1]   ; uart:U2|rx_buffer[3] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.285      ;
+; -0.333 ; uart:U2|rx_count[1]   ; uart:U2|rx_buffer[4] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.285      ;
+; -0.333 ; uart:U2|rx_count[1]   ; uart:U2|rx_buffer[5] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.285      ;
+; -0.333 ; uart:U2|rx_count[1]   ; uart:U2|rx_buffer[6] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.285      ;
+; -0.333 ; uart:U2|rx_count[1]   ; uart:U2|rx_buffer[7] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.285      ;
+; -0.333 ; uart:U2|rx_count[1]   ; uart:U2|rx_buffer[8] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.285      ;
+; -0.333 ; uart:U2|rx_count[1]   ; uart:U2|rx_buffer[9] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.285      ;
+; -0.331 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[1]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.283      ;
+; -0.331 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[2]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.283      ;
+; -0.331 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[3]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.283      ;
+; -0.331 ; uart:U2|rx_count[3]   ; uart:U2|rx_data[4]   ; clk          ; clk         ; 1.000        ; -0.035     ; 1.283      ;
++--------+-----------------------+----------------------+--------------+-------------+--------------+------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
@@ -819,106 +818,106 @@ No paths to report.
 +-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
-; 0.186 ; adder:U1|sig_state.S0     ; adder:U1|sig_state.S0     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.307      ;
-; 0.186 ; adder:U1|tx_ena           ; adder:U1|tx_ena           ; clk          ; clk         ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; adder:U1|sig_state.S2     ; adder:U1|sig_state.S2     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.307      ;
 ; 0.186 ; adder:U1|state_of_rx_busy ; adder:U1|state_of_rx_busy ; clk          ; clk         ; 0.000        ; 0.037      ; 0.307      ;
-; 0.186 ; uart:U2|rx_busy           ; uart:U2|rx_busy           ; clk          ; clk         ; 0.000        ; 0.037      ; 0.307      ;
-; 0.187 ; adder:U1|tmp[0]           ; adder:U1|tmp[0]           ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
-; 0.187 ; uart:U2|tx_busy           ; uart:U2|tx_busy           ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
-; 0.187 ; adder:U1|sig_state.S2     ; adder:U1|sig_state.S2     ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
-; 0.187 ; uart:U2|os_count[2]       ; uart:U2|os_count[2]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
-; 0.187 ; uart:U2|rx_state          ; uart:U2|rx_state          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
-; 0.187 ; uart:U2|os_count[1]       ; uart:U2|os_count[1]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
-; 0.187 ; uart:U2|os_count[3]       ; uart:U2|os_count[3]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
-; 0.187 ; uart:U2|os_count[0]       ; uart:U2|os_count[0]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
-; 0.187 ; uart:U2|rx_count[1]       ; uart:U2|rx_count[1]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
-; 0.187 ; uart:U2|rx_count[2]       ; uart:U2|rx_count[2]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.186 ; adder:U1|tx_ena           ; adder:U1|tx_ena           ; clk          ; clk         ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; uart:U2|tx_busy           ; uart:U2|tx_busy           ; clk          ; clk         ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; uart:U2|count_os[1]       ; uart:U2|count_os[1]       ; clk          ; clk         ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; uart:U2|count_os[2]       ; uart:U2|count_os[2]       ; clk          ; clk         ; 0.000        ; 0.037      ; 0.307      ;
 ; 0.187 ; uart:U2|rx_count[3]       ; uart:U2|rx_count[3]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; uart:U2|rx_state          ; uart:U2|rx_state          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; uart:U2|os_count[0]       ; uart:U2|os_count[0]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; uart:U2|os_count[3]       ; uart:U2|os_count[3]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; uart:U2|os_count[2]       ; uart:U2|os_count[2]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; uart:U2|os_count[1]       ; uart:U2|os_count[1]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; uart:U2|rx_count[2]       ; uart:U2|rx_count[2]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.193 ; uart:U2|count_os[0]       ; uart:U2|count_os[0]       ; clk          ; clk         ; 0.000        ; 0.037      ; 0.314      ;
+; 0.194 ; uart:U2|tx_buffer[8]      ; uart:U2|tx_buffer[7]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.314      ;
+; 0.194 ; uart:U2|tx_buffer[9]      ; uart:U2|tx_buffer[8]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.314      ;
+; 0.194 ; uart:U2|tx_buffer[10]     ; uart:U2|tx_buffer[9]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.314      ;
 ; 0.194 ; uart:U2|rx_count[0]       ; uart:U2|rx_count[0]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.314      ;
-; 0.196 ; uart:U2|tx_buffer[0]      ; uart:U2|tx                ; clk          ; clk         ; 0.000        ; 0.036      ; 0.316      ;
-; 0.196 ; uart:U2|tx_buffer[6]      ; uart:U2|tx_buffer[5]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.316      ;
-; 0.196 ; uart:U2|rx_buffer[3]      ; uart:U2|rx_data[2]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.316      ;
-; 0.197 ; uart:U2|rx_buffer[6]      ; uart:U2|rx_buffer[5]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.317      ;
-; 0.197 ; uart:U2|count_baud[12]    ; uart:U2|count_baud[12]    ; clk          ; clk         ; 0.000        ; 0.044      ; 0.325      ;
-; 0.198 ; uart:U2|rx_buffer[8]      ; uart:U2|rx_data[7]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.318      ;
-; 0.199 ; uart:U2|rx_buffer[3]      ; uart:U2|rx_buffer[2]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.319      ;
-; 0.199 ; uart:U2|rx_buffer[5]      ; uart:U2|rx_buffer[4]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.319      ;
-; 0.199 ; uart:U2|rx_buffer[5]      ; uart:U2|rx_data[4]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.319      ;
-; 0.199 ; uart:U2|rx_buffer[7]      ; uart:U2|rx_data[6]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.319      ;
-; 0.200 ; uart:U2|rx_buffer[7]      ; uart:U2|rx_buffer[6]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.320      ;
-; 0.200 ; uart:U2|rx_buffer[8]      ; uart:U2|rx_buffer[7]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.320      ;
-; 0.201 ; adder:U1|tx_data[6]       ; uart:U2|tx_buffer[8]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.321      ;
-; 0.201 ; uart:U2|rx_buffer[6]      ; uart:U2|rx_data[5]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.321      ;
-; 0.203 ; uart:U2|rx_count[1]       ; uart:U2|rx_count[2]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.323      ;
-; 0.205 ; uart:U2|rx_buffer[4]      ; uart:U2|rx_buffer[3]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.325      ;
-; 0.214 ; uart:U2|rx_count[0]       ; uart:U2|rx_count[1]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.334      ;
-; 0.226 ; uart:U2|tx_state          ; uart:U2|tx_busy           ; clk          ; clk         ; 0.000        ; 0.036      ; 0.346      ;
-; 0.234 ; uart:U2|tx_state          ; uart:U2|tx_count[2]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.354      ;
-; 0.248 ; uart:U2|count_baud[7]     ; uart:U2|count_baud[8]     ; clk          ; clk         ; 0.000        ; 0.236      ; 0.568      ;
-; 0.252 ; uart:U2|tx_buffer[10]     ; uart:U2|tx_buffer[9]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.372      ;
-; 0.253 ; uart:U2|tx_buffer[5]      ; uart:U2|tx_buffer[4]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.373      ;
-; 0.253 ; uart:U2|tx_buffer[8]      ; uart:U2|tx_buffer[7]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.373      ;
-; 0.255 ; uart:U2|tx_buffer[9]      ; uart:U2|tx_buffer[8]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.375      ;
-; 0.261 ; uart:U2|count_baud[6]     ; uart:U2|count_baud[8]     ; clk          ; clk         ; 0.000        ; 0.236      ; 0.581      ;
-; 0.265 ; uart:U2|rx_buffer[2]      ; uart:U2|rx_buffer[1]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.385      ;
-; 0.266 ; adder:U1|sig_state.S0     ; adder:U1|sig_state.S1     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.387      ;
-; 0.268 ; uart:U2|rx_buffer[1]      ; uart:U2|rx_data[0]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.388      ;
-; 0.273 ; adder:U1|tmp[6]           ; adder:U1|tx_data[6]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.393      ;
-; 0.273 ; uart:U2|rx_buffer[2]      ; uart:U2|rx_data[1]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.393      ;
-; 0.274 ; adder:U1|tx_data[1]       ; uart:U2|tx_buffer[3]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.394      ;
-; 0.278 ; adder:U1|tx_data[0]       ; uart:U2|tx_buffer[2]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.398      ;
-; 0.278 ; uart:U2|tx_busy           ; adder:U1|sig_state.S2     ; clk          ; clk         ; 0.000        ; 0.036      ; 0.398      ;
-; 0.279 ; uart:U2|rx_buffer[4]      ; uart:U2|rx_data[3]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.399      ;
-; 0.287 ; uart:U2|count_os[1]       ; uart:U2|count_os[1]       ; clk          ; clk         ; 0.000        ; 0.044      ; 0.415      ;
-; 0.288 ; uart:U2|rx_busy           ; adder:U1|state_of_rx_busy ; clk          ; clk         ; 0.000        ; 0.037      ; 0.409      ;
-; 0.292 ; uart:U2|count_os[3]       ; uart:U2|count_os[3]       ; clk          ; clk         ; 0.000        ; 0.044      ; 0.420      ;
-; 0.293 ; uart:U2|count_os[6]       ; uart:U2|count_os[6]       ; clk          ; clk         ; 0.000        ; 0.044      ; 0.421      ;
-; 0.293 ; uart:U2|count_baud[8]     ; uart:U2|count_baud[8]     ; clk          ; clk         ; 0.000        ; 0.044      ; 0.421      ;
-; 0.295 ; uart:U2|tx_buffer[1]      ; uart:U2|tx_buffer[0]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.415      ;
-; 0.295 ; uart:U2|tx_buffer[2]      ; uart:U2|tx_buffer[1]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.415      ;
+; 0.195 ; uart:U2|tx_buffer[2]      ; uart:U2|tx_buffer[1]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.315      ;
+; 0.195 ; uart:U2|rx_buffer[9]      ; uart:U2|rx_buffer[8]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.315      ;
+; 0.196 ; uart:U2|tx_buffer[3]      ; uart:U2|tx_buffer[2]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.316      ;
+; 0.197 ; uart:U2|count_baud[6]     ; uart:U2|count_baud[6]     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.318      ;
+; 0.207 ; uart:U2|rx_buffer[7]      ; uart:U2|rx_buffer[6]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.327      ;
+; 0.224 ; uart:U2|tx_state          ; uart:U2|tx_busy           ; clk          ; clk         ; 0.000        ; 0.037      ; 0.345      ;
+; 0.224 ; uart:U2|rx_count[0]       ; uart:U2|rx_count[2]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.344      ;
+; 0.226 ; adder:U1|sig_state.S2     ; adder:U1|state_of_rx_busy ; clk          ; clk         ; 0.000        ; 0.037      ; 0.347      ;
+; 0.228 ; adder:U1|sig_state.S2     ; adder:U1|tx_ena           ; clk          ; clk         ; 0.000        ; 0.037      ; 0.349      ;
+; 0.254 ; adder:U1|tx_data[3]       ; uart:U2|tx_buffer[5]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.374      ;
+; 0.254 ; adder:U1|tx_data[5]       ; uart:U2|tx_buffer[7]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.374      ;
+; 0.259 ; uart:U2|count_baud[4]     ; uart:U2|baud_pulse        ; clk          ; clk         ; 0.000        ; 0.037      ; 0.380      ;
+; 0.260 ; uart:U2|tx_buffer[5]      ; uart:U2|tx_buffer[4]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.380      ;
+; 0.260 ; uart:U2|tx_buffer[6]      ; uart:U2|tx_buffer[5]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.380      ;
+; 0.261 ; uart:U2|rx_buffer[5]      ; uart:U2|rx_data[4]        ; clk          ; clk         ; 0.000        ; 0.037      ; 0.382      ;
+; 0.262 ; uart:U2|tx_buffer[1]      ; uart:U2|tx_buffer[0]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.382      ;
+; 0.264 ; uart:U2|rx_buffer[8]      ; uart:U2|rx_buffer[7]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.384      ;
+; 0.265 ; uart:U2|rx_buffer[6]      ; uart:U2|rx_buffer[5]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.385      ;
+; 0.266 ; uart:U2|rx_buffer[6]      ; uart:U2|rx_data[5]        ; clk          ; clk         ; 0.000        ; 0.037      ; 0.387      ;
+; 0.268 ; uart:U2|rx_data[0]        ; adder:U1|secret[0]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.388      ;
+; 0.269 ; uart:U2|rx_buffer[3]      ; uart:U2|rx_data[2]        ; clk          ; clk         ; 0.000        ; 0.037      ; 0.390      ;
+; 0.271 ; uart:U2|rx_buffer[4]      ; uart:U2|rx_data[3]        ; clk          ; clk         ; 0.000        ; 0.037      ; 0.392      ;
+; 0.272 ; uart:U2|rx_buffer[8]      ; uart:U2|rx_data[7]        ; clk          ; clk         ; 0.000        ; 0.037      ; 0.393      ;
+; 0.274 ; uart:U2|tx_buffer[0]      ; uart:U2|tx                ; clk          ; clk         ; 0.000        ; 0.036      ; 0.394      ;
+; 0.278 ; uart:U2|rx_buffer[2]      ; uart:U2|rx_data[1]        ; clk          ; clk         ; 0.000        ; 0.037      ; 0.399      ;
+; 0.278 ; uart:U2|rx_buffer[3]      ; uart:U2|rx_buffer[2]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.398      ;
+; 0.278 ; uart:U2|rx_buffer[7]      ; uart:U2|rx_data[6]        ; clk          ; clk         ; 0.000        ; 0.037      ; 0.399      ;
+; 0.291 ; uart:U2|tx_state          ; uart:U2|tx_count[2]       ; clk          ; clk         ; 0.000        ; 0.037      ; 0.412      ;
+; 0.292 ; uart:U2|tx_state          ; uart:U2|tx_count[0]       ; clk          ; clk         ; 0.000        ; 0.037      ; 0.413      ;
 ; 0.296 ; uart:U2|tx_buffer[7]      ; uart:U2|tx_buffer[6]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.416      ;
-; 0.297 ; uart:U2|count_baud[11]    ; uart:U2|count_baud[11]    ; clk          ; clk         ; 0.000        ; 0.044      ; 0.425      ;
-; 0.298 ; uart:U2|tx_buffer[3]      ; uart:U2|tx_buffer[2]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.418      ;
-; 0.298 ; uart:U2|count_os[7]       ; uart:U2|count_os[7]       ; clk          ; clk         ; 0.000        ; 0.044      ; 0.426      ;
-; 0.298 ; uart:U2|count_baud[7]     ; uart:U2|count_baud[7]     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.419      ;
-; 0.299 ; uart:U2|count_baud[6]     ; uart:U2|count_baud[6]     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.420      ;
-; 0.300 ; uart:U2|count_baud[10]    ; uart:U2|count_baud[10]    ; clk          ; clk         ; 0.000        ; 0.044      ; 0.428      ;
-; 0.304 ; uart:U2|os_count[0]       ; uart:U2|os_count[1]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.424      ;
-; 0.306 ; uart:U2|count_baud[4]     ; uart:U2|count_baud[4]     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.427      ;
-; 0.307 ; uart:U2|count_os[0]       ; uart:U2|count_os[0]       ; clk          ; clk         ; 0.000        ; 0.044      ; 0.435      ;
-; 0.308 ; adder:U1|i[3]             ; adder:U1|i[3]             ; clk          ; clk         ; 0.000        ; 0.037      ; 0.429      ;
-; 0.310 ; adder:U1|i[1]             ; adder:U1|i[1]             ; clk          ; clk         ; 0.000        ; 0.037      ; 0.431      ;
-; 0.310 ; adder:U1|i[2]             ; adder:U1|i[2]             ; clk          ; clk         ; 0.000        ; 0.037      ; 0.431      ;
-; 0.314 ; uart:U2|count_baud[7]     ; uart:U2|count_baud[10]    ; clk          ; clk         ; 0.000        ; 0.236      ; 0.634      ;
-; 0.316 ; adder:U1|i[4]             ; adder:U1|i[4]             ; clk          ; clk         ; 0.000        ; 0.037      ; 0.437      ;
-; 0.316 ; uart:U2|count_baud[9]     ; uart:U2|count_baud[10]    ; clk          ; clk         ; 0.000        ; 0.236      ; 0.636      ;
-; 0.320 ; uart:U2|os_count[3]       ; uart:U2|rx_state          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.440      ;
-; 0.320 ; uart:U2|tx_state          ; uart:U2|tx_buffer[4]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.440      ;
-; 0.321 ; uart:U2|rx_buffer[9]      ; uart:U2|rx_buffer[8]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.441      ;
-; 0.324 ; adder:U1|i[0]             ; adder:U1|i[0]             ; clk          ; clk         ; 0.000        ; 0.037      ; 0.445      ;
-; 0.327 ; adder:U1|tx_data[4]       ; uart:U2|tx_buffer[6]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.447      ;
-; 0.327 ; uart:U2|count_baud[6]     ; uart:U2|count_baud[10]    ; clk          ; clk         ; 0.000        ; 0.236      ; 0.647      ;
-; 0.334 ; uart:U2|count_baud[4]     ; uart:U2|count_baud[8]     ; clk          ; clk         ; 0.000        ; 0.236      ; 0.654      ;
-; 0.334 ; adder:U1|tx_data[2]       ; uart:U2|tx_buffer[4]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.454      ;
-; 0.335 ; adder:U1|tmp[2]           ; adder:U1|tx_data[2]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.455      ;
-; 0.340 ; adder:U1|tx_data[5]       ; uart:U2|tx_buffer[10]     ; clk          ; clk         ; 0.000        ; 0.036      ; 0.460      ;
-; 0.340 ; uart:U2|tx_state          ; uart:U2|tx_count[1]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.460      ;
-; 0.340 ; uart:U2|tx_state          ; uart:U2|tx_count[0]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.460      ;
-; 0.341 ; uart:U2|tx_state          ; uart:U2|tx_count[3]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.461      ;
-; 0.348 ; adder:U1|tmp[4]           ; adder:U1|tx_data[4]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.468      ;
-; 0.350 ; adder:U1|tmp[5]           ; adder:U1|tx_data[5]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.470      ;
-; 0.351 ; adder:U1|tx_data[6]       ; uart:U2|tx_buffer[10]     ; clk          ; clk         ; 0.000        ; 0.036      ; 0.471      ;
-; 0.354 ; uart:U2|rx_count[1]       ; uart:U2|rx_count[3]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.474      ;
-; 0.359 ; uart:U2|count_os[5]       ; uart:U2|count_os[5]       ; clk          ; clk         ; 0.000        ; 0.044      ; 0.487      ;
-; 0.360 ; uart:U2|count_os[8]       ; uart:U2|count_os[8]       ; clk          ; clk         ; 0.000        ; 0.044      ; 0.488      ;
-; 0.364 ; uart:U2|os_count[1]       ; uart:U2|os_count[3]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.484      ;
-; 0.365 ; adder:U1|tmp[1]           ; adder:U1|tx_data[1]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.485      ;
-; 0.366 ; uart:U2|count_baud[9]     ; uart:U2|count_baud[9]     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.487      ;
+; 0.297 ; uart:U2|count_baud[1]     ; uart:U2|count_baud[1]     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.418      ;
+; 0.298 ; uart:U2|tx_buffer[4]      ; uart:U2|tx_buffer[3]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.418      ;
+; 0.298 ; uart:U2|count_baud[3]     ; uart:U2|count_baud[3]     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.419      ;
+; 0.299 ; uart:U2|count_baud[2]     ; uart:U2|count_baud[2]     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.420      ;
+; 0.299 ; uart:U2|count_baud[6]     ; uart:U2|baud_pulse        ; clk          ; clk         ; 0.000        ; 0.037      ; 0.420      ;
+; 0.300 ; uart:U2|count_baud[4]     ; uart:U2|count_baud[4]     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.421      ;
+; 0.305 ; adder:U1|i[4]             ; adder:U1|i[4]             ; clk          ; clk         ; 0.000        ; 0.036      ; 0.425      ;
+; 0.308 ; uart:U2|count_baud[0]     ; uart:U2|count_baud[0]     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.429      ;
+; 0.309 ; uart:U2|os_count[0]       ; uart:U2|os_count[1]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.429      ;
+; 0.312 ; adder:U1|i[2]             ; adder:U1|i[2]             ; clk          ; clk         ; 0.000        ; 0.036      ; 0.432      ;
+; 0.313 ; uart:U2|tx_busy           ; adder:U1|tx_ena           ; clk          ; clk         ; 0.000        ; 0.037      ; 0.434      ;
+; 0.317 ; adder:U1|i[3]             ; adder:U1|i[3]             ; clk          ; clk         ; 0.000        ; 0.036      ; 0.437      ;
+; 0.318 ; uart:U2|rx_state          ; uart:U2|rx_busy           ; clk          ; clk         ; 0.000        ; 0.036      ; 0.438      ;
+; 0.323 ; adder:U1|i[1]             ; adder:U1|i[1]             ; clk          ; clk         ; 0.000        ; 0.036      ; 0.443      ;
+; 0.323 ; uart:U2|tx_busy           ; adder:U1|sig_state.S1     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.444      ;
+; 0.324 ; uart:U2|rx_buffer[4]      ; uart:U2|rx_buffer[3]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.444      ;
+; 0.324 ; uart:U2|rx_buffer[5]      ; uart:U2|rx_buffer[4]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.444      ;
+; 0.324 ; adder:U1|i[0]             ; adder:U1|i[0]             ; clk          ; clk         ; 0.000        ; 0.036      ; 0.444      ;
+; 0.324 ; uart:U2|tx_state          ; uart:U2|tx_count[3]       ; clk          ; clk         ; 0.000        ; 0.037      ; 0.445      ;
+; 0.336 ; uart:U2|rx_buffer[2]      ; uart:U2|rx_buffer[1]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.456      ;
+; 0.339 ; adder:U1|i[0]             ; adder:U1|tx_data[0]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.459      ;
+; 0.339 ; uart:U2|count_os[1]       ; uart:U2|count_os[2]       ; clk          ; clk         ; 0.000        ; 0.037      ; 0.460      ;
+; 0.345 ; uart:U2|tx_busy           ; adder:U1|sig_state.S2     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.466      ;
+; 0.348 ; adder:U1|tx_ena           ; uart:U2|tx_busy           ; clk          ; clk         ; 0.000        ; 0.037      ; 0.469      ;
+; 0.349 ; adder:U1|tx_ena           ; uart:U2|tx_state          ; clk          ; clk         ; 0.000        ; 0.037      ; 0.470      ;
+; 0.351 ; uart:U2|count_baud[0]     ; uart:U2|baud_pulse        ; clk          ; clk         ; 0.000        ; 0.037      ; 0.472      ;
+; 0.357 ; uart:U2|count_os[2]       ; uart:U2|count_os[0]       ; clk          ; clk         ; 0.000        ; 0.037      ; 0.478      ;
+; 0.362 ; adder:U1|sig_state.S2     ; adder:U1|sig_state.S0     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.483      ;
+; 0.362 ; uart:U2|rx_count[1]       ; uart:U2|rx_count[3]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.482      ;
+; 0.363 ; uart:U2|count_os[1]       ; uart:U2|count_os[0]       ; clk          ; clk         ; 0.000        ; 0.037      ; 0.484      ;
+; 0.367 ; uart:U2|tx_busy           ; adder:U1|sig_state.S0     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.488      ;
 ; 0.367 ; uart:U2|count_baud[5]     ; uart:U2|count_baud[5]     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.488      ;
-; 0.368 ; uart:U2|count_os[2]       ; uart:U2|count_os[2]       ; clk          ; clk         ; 0.000        ; 0.044      ; 0.496      ;
-; 0.368 ; uart:U2|count_os[4]       ; uart:U2|count_os[4]       ; clk          ; clk         ; 0.000        ; 0.044      ; 0.496      ;
-; 0.370 ; uart:U2|count_baud[2]     ; uart:U2|count_baud[2]     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.491      ;
-; 0.370 ; uart:U2|tx_busy           ; adder:U1|tx_ena           ; clk          ; clk         ; 0.000        ; 0.037      ; 0.491      ;
+; 0.369 ; uart:U2|count_baud[5]     ; uart:U2|baud_pulse        ; clk          ; clk         ; 0.000        ; 0.037      ; 0.490      ;
+; 0.400 ; uart:U2|tx_state          ; uart:U2|tx_count[1]       ; clk          ; clk         ; 0.000        ; 0.037      ; 0.521      ;
+; 0.401 ; uart:U2|count_os[0]       ; uart:U2|count_os[2]       ; clk          ; clk         ; 0.000        ; 0.037      ; 0.522      ;
+; 0.405 ; uart:U2|count_os[0]       ; uart:U2|count_os[1]       ; clk          ; clk         ; 0.000        ; 0.037      ; 0.526      ;
+; 0.405 ; uart:U2|rx_data[0]        ; adder:U1|tx_data[0]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.525      ;
+; 0.405 ; adder:U1|tx_data[4]       ; uart:U2|tx_buffer[6]      ; clk          ; clk         ; 0.000        ; 0.040      ; 0.529      ;
+; 0.407 ; adder:U1|tx_data[3]       ; uart:U2|tx_buffer[10]     ; clk          ; clk         ; 0.000        ; 0.036      ; 0.527      ;
+; 0.408 ; uart:U2|count_os[2]       ; uart:U2|count_os[1]       ; clk          ; clk         ; 0.000        ; 0.037      ; 0.529      ;
+; 0.410 ; uart:U2|count_baud[2]     ; uart:U2|baud_pulse        ; clk          ; clk         ; 0.000        ; 0.037      ; 0.531      ;
+; 0.412 ; adder:U1|i[3]             ; adder:U1|tx_data[0]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.532      ;
+; 0.412 ; adder:U1|tx_data[1]       ; uart:U2|tx_buffer[3]      ; clk          ; clk         ; 0.000        ; 0.040      ; 0.536      ;
+; 0.414 ; uart:U2|rx_data[4]        ; adder:U1|tx_data[4]       ; clk          ; clk         ; 0.000        ; 0.040      ; 0.538      ;
+; 0.414 ; uart:U2|rx_data[1]        ; adder:U1|tx_data[1]       ; clk          ; clk         ; 0.000        ; 0.040      ; 0.538      ;
+; 0.415 ; uart:U2|rx_data[6]        ; adder:U1|secret[6]        ; clk          ; clk         ; 0.000        ; 0.040      ; 0.539      ;
+; 0.420 ; uart:U2|rx_state          ; uart:U2|rx_count[0]       ; clk          ; clk         ; 0.000        ; 0.035      ; 0.539      ;
+; 0.421 ; uart:U2|rx_data[1]        ; adder:U1|secret[1]        ; clk          ; clk         ; 0.000        ; 0.040      ; 0.545      ;
+; 0.423 ; uart:U2|rx_data[2]        ; adder:U1|secret[2]        ; clk          ; clk         ; 0.000        ; 0.040      ; 0.547      ;
+; 0.426 ; uart:U2|rx_state          ; uart:U2|rx_count[2]       ; clk          ; clk         ; 0.000        ; 0.035      ; 0.545      ;
+; 0.427 ; uart:U2|tx_state          ; uart:U2|tx_state          ; clk          ; clk         ; 0.000        ; 0.037      ; 0.548      ;
+; 0.429 ; uart:U2|rx_data[6]        ; adder:U1|tx_data[6]       ; clk          ; clk         ; 0.000        ; 0.040      ; 0.553      ;
 +-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -929,7 +928,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 2
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 0.517 ns
+Worst Case Available Settling Time: 0.481 ns
 
 
 
@@ -939,10 +938,10 @@ Worst Case Available Settling Time: 0.517 ns
 +------------------+----------+-------+----------+---------+---------------------+
 ; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -3.449   ; 0.186 ; N/A      ; N/A     ; -3.000              ;
-;  clk             ; -3.449   ; 0.186 ; N/A      ; N/A     ; -3.000              ;
-; Design-wide TNS  ; -238.39  ; 0.0   ; 0.0      ; 0.0     ; -156.161            ;
-;  clk             ; -238.390 ; 0.000 ; N/A      ; N/A     ; -156.161            ;
+; Worst-case Slack ; -2.759   ; 0.186 ; N/A      ; N/A     ; -3.000              ;
+;  clk             ; -2.759   ; 0.186 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -152.89  ; 0.0   ; 0.0      ; 0.0     ; -126.421            ;
+;  clk             ; -152.890 ; 0.000 ; N/A      ; N/A     ; -126.421            ;
 +------------------+----------+-------+----------+---------+---------------------+
 
 
@@ -1021,7 +1020,7 @@ Worst Case Available Settling Time: 0.517 ns
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clk        ; clk      ; 1821     ; 0        ; 0        ; 0        ;
+; clk        ; clk      ; 815      ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1031,7 +1030,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clk        ; clk      ; 1821     ; 0        ; 0        ; 0        ;
+; clk        ; clk      ; 815      ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1056,7 +1055,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 2     ; 2    ;
-; Unconstrained Input Port Paths  ; 114   ; 114  ;
+; Unconstrained Input Port Paths  ; 94    ; 94   ;
 ; Unconstrained Output Ports      ; 4     ; 4    ;
 ; Unconstrained Output Port Paths ; 4     ; 4    ;
 +---------------------------------+-------+------+
@@ -1121,11 +1120,10 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Dec 16 21:58:01 2019
+    Info: Processing started: Mon Dec 23 15:00:34 2019
 Info: Command: quartus_sta grant -c grant
 Info: qsta_default_script.tcl version: #1
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'grant.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
@@ -1138,10 +1136,10 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.449
+Info (332146): Worst-case setup slack is -2.759
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.449            -238.390 clk 
+    Info (332119):    -2.759            -152.890 clk 
 Info (332146): Worst-case hold slack is 0.453
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -1151,7 +1149,7 @@ Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000            -156.161 clk 
+    Info (332119):    -3.000            -126.421 clk 
 Info (332114): Report Metastability: Found 2 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Slow 1200mV 0C Model
@@ -1160,30 +1158,30 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.060
+Info (332146): Worst-case setup slack is -2.487
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.060            -215.325 clk 
-Info (332146): Worst-case hold slack is 0.401
+    Info (332119):    -2.487            -136.069 clk 
+Info (332146): Worst-case hold slack is 0.402
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.401               0.000 clk 
+    Info (332119):     0.402               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000            -156.161 clk 
+    Info (332119):    -3.000            -126.421 clk 
 Info (332114): Report Metastability: Found 2 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -0.899
+Info (332146): Worst-case setup slack is -0.623
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.899             -44.344 clk 
+    Info (332119):    -0.623             -20.040 clk 
 Info (332146): Worst-case hold slack is 0.186
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -1193,20 +1191,20 @@ Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000            -113.105 clk 
+    Info (332119):    -3.000             -91.323 clk 
 Info (332114): Report Metastability: Found 2 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 2
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 0.517 ns
+    Info (332114): Worst Case Available Settling Time: 0.481 ns
     Info (332114): 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4752 megabytes
-    Info: Processing ended: Mon Dec 16 21:58:04 2019
-    Info: Elapsed time: 00:00:03
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4757 megabytes
+    Info: Processing ended: Mon Dec 23 15:00:36 2019
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

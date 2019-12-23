@@ -16,7 +16,7 @@ ENTITY adder IS
   PORT(
     clk     : IN    STD_LOGIC;                     --system clock
     reset_n : IN    STD_LOGIC;
-    tx_ena  : OUT   STD_LOGIC;                     --initiate transmission
+    tx_ena  : OUT   STD_LOGIC;                    --initiate transmission
     tx_data : OUT   STD_LOGIC_VECTOR(7 DOWNTO 0);  --data to transmit
     rx_busy : IN    STD_LOGIC;                     --data reception in progress       
     rx_data : IN    STD_LOGIC_VECTOR(7 DOWNTO 0);  --data received
@@ -30,8 +30,7 @@ ARCHITECTURE arch OF adder IS
  
   TYPE state IS (S0, S1, S2);
 
-  SIGNAL  secret             : STD_LOGIC_VECTOR(7 DOWNTO 0);
-  SIGNAL  tmp                : STD_LOGIC_VECTOR(7 DOWNTO 0) ; 
+  SIGNAL  secret   : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS =>'0');
   
   SIGNAL sig_state : state := S0;
   
@@ -41,13 +40,15 @@ BEGIN
 
   PROCESS(reset_n,clk)
   VARIABLE i : INTEGER RANGE 0 TO 16 := 0;
+  
   BEGIN       
     IF reset_n = '0' THEN
       secret <= (OTHERS => '0');
-      tmp <= (OTHERS => '0');
+      tx_data <= (OTHERS => '0');
       state_of_rx_busy <= '0';
       sig_state <= S0;
       i := 0;
+      tx_ena <= '0';
                     
     ELSIF(rising_edge(clk)) THEN
       
@@ -62,11 +63,13 @@ BEGIN
          END IF;
 
         WHEN S1 => 
-         tx_ena <= '0';
+        tx_ena <= '0';
          IF (state_of_rx_busy = '1' AND rx_busy = '0' ) THEN 
-            tmp <= rx_data;
-            IF i MOD 2 = 1 THEN
-              tmp <= tmp(7 DOWNTO 1) & secret(7-(i/2));
+            IF (i MOD 2) = 1 THEN
+              tx_data <= rx_data(7 DOWNTO 1) & secret(7-(i/2));
+              --tx_data <= rx_data;
+            ELSE
+              tx_data <= rx_data;
             END IF;
             i := i+1;
             state_of_rx_busy <= '0';
@@ -75,14 +78,18 @@ BEGIN
      
          WHEN S2 =>
          IF tx_busy = '0' THEN
-            tx_data <= tmp;
-            tx_ena <= '1';
-            sig_state <= S1;
+              tx_ena <= '1';
               IF i = 16 THEN
-              i := 0;
-              sig_state <= S0;
+               sig_state <= S0;
+               i := 0;
+              ELSE
+                sig_state <= S1;
               END IF;
           END IF;
+            
+
+              
+
          
  
       WHEN OTHERS =>
