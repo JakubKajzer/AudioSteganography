@@ -17,8 +17,5 @@ Languages:
 - Matlab
 - VHDL
 
-### Made for [KNSS PW](www.knss.pl) ![alt text](https://knss.pl/img/logo/400.png "Logo KNSS")
-
-<p align="center">
-  <img />
-</p>
+### Made for [KNSS PW](www.knss.pl)
+![alt text](https://knss.pl/img/logo/400.png "Logo KNSS")
