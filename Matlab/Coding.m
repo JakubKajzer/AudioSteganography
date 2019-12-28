@@ -1,15 +1,17 @@
+% by Jakub Kajzer
+
 clear all;
 close all;
 [y, Fs] = audioread("samplewav.wav",'native');
 
-secret = "SEKRETY RETY"; %Bez polskich znaków
-ack='0000110'; % 'ACK' binarnie
+secret = "SEKRETY RETY"; %without polish letters
+ack='0000110'; % 'ACK' binary
 secret_char=char(secret);
 secret_bin=dec2bin(secret_char);
-secret_bin=transpose(secret_bin); %dlatego bo reshape ogarnia kolumnowo a nie wierszowo
+secret_bin=transpose(secret_bin); %without this reshape() would work incorrectly
 secret_bin=reshape(secret_bin,1,[]);
 
-
+%Code will be saved on LSB of each sample in audio file 
 
 samples = y*32768;
 sample_int = int16(samples);
@@ -24,27 +26,26 @@ for i=1:numel(scalar_matrix)
     end
 end
 
-for i=1:length(sample_int_abs) %zamiast tego mo¿na przesun¹æ o bit w prawo a potem bit lewo, prostsze w implementacji na FPGA
+for i=1:length(sample_int_abs) 
    
     if mod(sample_int_abs(i),2)== 1;
         sample_int_abs(i)=sample_int_abs(i)-1;
     end
 end
 
-%zapis na ca³ym pliku, ka¿dy zapis bêdzie rozdzielony znakami"#ACK" aby móc
-%rozpoznaæ koniec i pocz¹tek sekwencji. Zapobiega to przez wszystkim przez
-%prób¹ wycinania czêœci pliku dŸwiêkowego. Dodatkowo redundancja danych
-%pozwoli na uzyskanie wiêkszego prawdopodobieñstwa odzyskania danych
+%Audio file will be coded in order like this:
+%AckSecretStringAckSecretString... etc.
+%This solution provides protection against cutting audio from file
 i=1;
-while(length(sample_int_abs)-i > length(ack) + length(secret_bin))%kodowanie bitu na LSB  
+while(length(sample_int_abs)-i > length(ack) + length(secret_bin))
         
     for j=1:length(ack)
-        sample_int_abs(i)=sample_int_abs(i)+ack(j);
+        sample_int_abs(i)=sample_int_abs(i)+ack(j);%coding ACK
         i = i + 1;
     end
     
     for j=1:length(secret_bin)
-        sample_int_abs(i)=sample_int_abs(i)+secret_bin(j);
+        sample_int_abs(i)=sample_int_abs(i)+secret_bin(j);%coding secret
         i = i + 1;
     end
 end

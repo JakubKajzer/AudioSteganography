@@ -1,24 +1,25 @@
+% by Jakub Kajzer
+
 clear all;
 close all;
 [y, Fs] = audioread("samplewav.wav",'native');
 %%
-s = serialport("COM16",115200);
+s = serialport("COM16",115200); %COM port can change
 s.Parity = "even";
 s.ByteOrder = "big-endian";
 s.Timeout = 2;
 configureTerminator(s,"LF");
 %%
-secret = "LOREM IPSUM"; %Bez polskich znaków
-ack='0000110'; % 'ACK' binarnie
+secret = "LOREM IPSUM"; %without polish letters
+ack='0000110'; % 'ACK' binary
 secret_bin=dec2bin(char(secret));
-secret_bin=transpose(secret_bin); %dlatego bo reshape ogarnia kolumnowo a nie wierszowo
+secret_bin=transpose(secret_bin); %without this reshape() would work incorrectly
 secret_bin=reshape(secret_bin,1,[]);
 secret_to_send_bin=[];
 while (length(secret_to_send_bin)+length(secret_bin)+length(ack)<length(y))
-   secret_to_send_bin=[secret_to_send_bin,ack,secret_bin]; 
+   secret_to_send_bin=[secret_to_send_bin,ack,secret_bin]; %building binary code
 end
-%secret_to_send=reshape(secret_to_send_bin,1,[]); to niepotrzebne, bo wektor jest ju¿ w zadanej postaci
-dopelnienie=mod(length(secret_to_send_bin),8); %% powinno byæ do iloœci próbek, a potem do 8 dope³nienie
+dopelnienie=mod(length(secret_to_send_bin),8); %% We must have 8bits code on fpga
 secret_to_send=[secret_to_send_bin,zeros(1,8-dopelnienie)];
 secret_to_send=reshape(secret_to_send,8,[]);
 secret_to_send=transpose(secret_to_send);
@@ -37,10 +38,9 @@ coded = [];
 %%
 j = 1;
 i = 1;
-  for i=1 :8: 2*Fs
+  for i=1 :8: 2*Fs %2*Fs is only for debuging, because on UART its to slow to work on bigger amounts of data
      
      write(s,secret_to_send(j),'uint8');
-    % write(s,0,'uint8');
      write(s,samples(i)  ,'int16');
      coded(i)=read(s,1,'int16');
      write(s,samples(i+1),'int16');
