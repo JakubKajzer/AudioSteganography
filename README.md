@@ -9,11 +9,11 @@ A concept of audio steganography accelerated with FPGA.
 For easier implementation on FPGA board the main algoritm is simply, but effective LSB coding.
 One bit of data is coded on almost every sample in audio file. Quality of sound remains good.
 ## Technology
-##### Software was developed in:
+#### Software was developed in:
  - Matlab R2019b
  - Quartus Prime Lite Edition 18.1
 
-###### Languages:
+##### Languages:
 - Matlab
 - VHDL
 
